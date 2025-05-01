@@ -1,0 +1,22 @@
+{
+  "short_name": "Armory Builder",
+  "name": "Overwatch Stadium - fan made Armory Builder",
+  "description": "Fan made Armory Builder for the Stadium mode of Overwatch, a tool to help you build your own armory for Overwatch.",
+
+  "icons": [
+    {
+      "src": "logo-light.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo-dark.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
