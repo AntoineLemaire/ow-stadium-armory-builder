@@ -6,11 +6,12 @@ import {
   Stack,
   Typography,
   Box,
+  Divider,
 } from "@mui/material";
 import { useBuild } from "../contexts/build-context.js";
 import { useDb } from "../contexts/db-context.js";
 
-function Heroes({ currentHero }) {
+function Heroes({ currentHero, isSmallScreen }) {
   const { heroes, roles } = useDb();
   const { initBuild } = useBuild();
 
@@ -25,7 +26,7 @@ function Heroes({ currentHero }) {
         key={`hero_${hero.id}`}
         onClick={() => selectHero(hero)}
         sx={{
-          width: { xs: 100, sm: 125 },
+          width: { xs: 100, md: 125 },
           cursor: "pointer",
           transition: "box-shadow 0.3s ease",
           "&:hover": {
@@ -35,7 +36,7 @@ function Heroes({ currentHero }) {
         data-active={hero.id === currentHero ? "" : undefined}
       >
         <CardMedia
-          sx={{ height: { xs: 100, sm: 125 } }}
+          sx={{ height: { xs: 100, md: 125 } }}
           image={`${process.env.PUBLIC_URL}/heroes/${hero.id}.png`}
           title={hero.name}
         />
@@ -48,56 +49,89 @@ function Heroes({ currentHero }) {
 
   if (heroes && heroes.length > 0) {
     return (
-      <Stack
-        direction="row"
-        useFlexGap
+      <Box
         sx={{
-          justifyContent: "flex-start",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 6,
-          padding: 2,
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
         }}
       >
-        {roles &&
-          roles.map((role) => (
-            <Box
-              key={role}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: { xs: "column", md: "row" },
-                justifyContent: "flex-start",
-                gap: 2,
-              }}
-            >
+        <Box
+          direction="row"
+          sx={{
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          {roles &&
+            roles.map((role) => (
               <Box
+                key={role}
                 sx={{
-                  width: { xs: 64, md: 100 },
-                  height: { xs: 64, md: 100 },
-                  borderRadius: 1,
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/roles/${role}.svg)`,
-                  filter: "invert(1)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  flexShrink: 0,
-                }}
-              />
-              <Stack
-                direction="row"
-                spacing={2}
-                useFlexGap
-                sx={{
-                  justifyContent: { xs: "center", sm: "flex-start" },
+                  display: "flex",
                   alignItems: "center",
-                  flexWrap: "wrap",
+                  flexDirection: { xs: "column", md: "row" },
+                  justifyContent: "flex-start",
+                  gap: 2,
+                  mb: 2,
                 }}
               >
-                {getRoleHeroes(role)}
-              </Stack>
-            </Box>
-          ))}
-      </Stack>
+                {isSmallScreen ? (
+                  <Divider
+                    flexItem
+                    orientation="horizontal"
+                    variant="middle"
+                    sx={{
+                      "&::before, &::after": {
+                        borderColor: "#ffffff",
+                      },
+                      height: 1,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: { xs: 64, md: 100 },
+                        height: { xs: 64, md: 100 },
+                        borderRadius: 1,
+                        backgroundImage: `url(${process.env.PUBLIC_URL}/roles/${role}.svg)`,
+                        filter: "invert(1)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        flexShrink: 0,
+                      }}
+                    />
+                  </Divider>
+                ) : (
+                  <Box
+                    sx={{
+                      width: { xs: 64, md: 100 },
+                      height: { xs: 64, md: 100 },
+                      borderRadius: 1,
+                      backgroundImage: `url(${process.env.PUBLIC_URL}/roles/${role}.svg)`,
+                      filter: "invert(1)",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      flexShrink: 0,
+                    }}
+                  />
+                )}
+
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  useFlexGap
+                  sx={{
+                    justifyContent: { xs: "center", md: "flex-start" },
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {getRoleHeroes(role)}
+                </Stack>
+              </Box>
+            ))}
+        </Box>
+      </Box>
     );
   } else {
     return "Loading heroes...";
