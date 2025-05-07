@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { basicItems, heroes } from "./db/db";
+import { basicItems, heroes } from "../db/db";
 
 describe("Image existence check", () => {
   const items = [...basicItems.common, ...basicItems.rare, ...basicItems.epic];
@@ -20,7 +20,7 @@ describe("Image existence check", () => {
 
   test.each(ids)('"%s.png" exists', (id) => {
     const filename = `${id}.png`;
-    const filePath = path.resolve(__dirname, "../public/perks", filename);
+    const filePath = path.resolve(__dirname, "../../public/perks", filename);
     if (!fs.existsSync(filePath)) {
       missingFiles.push(filename);
     }
