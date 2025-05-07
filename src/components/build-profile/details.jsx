@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Box,
   Grid,
@@ -38,6 +38,8 @@ function Details() {
     rounds,
   } = useBuild();
 
+  const [showExport, setShowExport] = useState(false);
+
   const theme = useTheme();
   const exportRef = useRef();
   const powerColumns = 4;
@@ -45,6 +47,9 @@ function Details() {
   const itemRows = 2;
 
   const handleCopy = async () => {
+    setShowExport(true);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+
     const element = exportRef.current;
 
     const canvas = await html2canvas(element, {
@@ -74,6 +79,9 @@ function Details() {
         link.download = "image.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
+      }
+      finally{
+        setShowExport(false);
       }
     });
   };
@@ -228,18 +236,20 @@ function Details() {
         </Accordion>
       </Stack>
 
-      <div
-        ref={exportRef}
-        data-export-target
-        style={{
-          display: "none",
-          height: "auto",
-          width: "2700px",
-          backgroundColor: theme.palette.background.default,
-        }}
-      >
-        <BuildExportCanvas hero={currentHero} allRounds={rounds} />
-      </div>
+      {showExport && (
+        <div
+          ref={exportRef}
+          data-export-target
+          style={{
+            display: "none",
+            height: "auto",
+            width: "2700px",
+            backgroundColor: theme.palette.background.default,
+          }}
+        >
+          <BuildExportCanvas hero={currentHero} allRounds={rounds} />
+        </div>
+      )}
     </Box>
   );
 }

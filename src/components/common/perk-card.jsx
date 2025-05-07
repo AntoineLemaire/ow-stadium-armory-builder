@@ -80,6 +80,11 @@ function PerkCard({ perk, perkType, isSelected, isDisabled }) {
               border: getPerkColor(perkGrade),
               backgroundColor: "white",
             }}
+            slotProps={{
+              img: {
+                loading: "lazy",
+              },
+            }}
             variant={perkType === "power" ? "rounded" : "circle"}
           />
         }
