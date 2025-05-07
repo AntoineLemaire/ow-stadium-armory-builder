@@ -51,7 +51,7 @@ function LoadingComponent() {
           }}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/loader.jpeg`}
+            src={`/loader.jpeg`}
             alt="Please wait..."
             style={{
               width: "60%",

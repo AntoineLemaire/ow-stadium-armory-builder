@@ -72,7 +72,7 @@ function PerkCard({ perk, perkType, isSelected, isDisabled }) {
       <CardHeader
         avatar={
           <Avatar
-            src={`${process.env.PUBLIC_URL}/perks/${perk.id}.png`}
+            src={`/perks/${perk.id}.png`}
             alt={perk.name}
             sx={{
               width: 64,
@@ -118,7 +118,7 @@ function PerkCard({ perk, perkType, isSelected, isDisabled }) {
           }}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/icons/credit.svg`}
+            src={`/icons/credit.svg`}
             alt="credits"
             style={{ width: 24, height: 24 }}
           />

@@ -61,7 +61,7 @@ const StatBarLifeSummary = ({ items }) => {
       {/* Image on the left */}
       <Box
         component="img"
-        src={`${process.env.PUBLIC_URL}/icons/png/HP.png`}
+        src={`/icons/png/HP.png`}
         alt="HP/AR/SH"
         sx={{
           width: 20,

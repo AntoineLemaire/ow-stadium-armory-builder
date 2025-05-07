@@ -35,7 +35,7 @@ function BuildExportHeader({ hero }) {
             height: 125,
             backgroundColor: "background.paper",
             borderRadius: 1,
-            backgroundImage: `url(${process.env.PUBLIC_URL}/heroes/${hero.id}.png)`,
+            backgroundImage: `url(/heroes/${hero.id}.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             flexShrink: 0,
@@ -55,7 +55,7 @@ function BuildExportHeader({ hero }) {
           {/* Name + Icon */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
-              src={`${process.env.PUBLIC_URL}/roles/png/${hero.role}.png`}
+              src={`/roles/png/${hero.role}.png`}
               alt={hero.role}
               style={{
                 width: 24,
@@ -92,7 +92,7 @@ function BuildExportHeader({ hero }) {
             >
               <Box
                 component="img"
-                src={`${process.env.PUBLIC_URL}/logo-light.png`}
+                src={`/logo-light.png`}
                 alt="Overwatch Builds"
                 sx={{
                   width: 32,
