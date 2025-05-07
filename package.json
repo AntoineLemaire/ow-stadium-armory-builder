@@ -49,7 +49,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "deploy": "gh-pages -d dist --cname overwatchbuilds.com",
-    "deployPreprod": "gh-pages -d dist --branch gh-pages-preprod"
+    "deployPreprod": "npm run build:preprod && gh-pages -d dist --branch gh-pages-preprod"
   },
   "eslintConfig": {
     "extends": [
