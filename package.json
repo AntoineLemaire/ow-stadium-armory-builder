@@ -41,7 +41,9 @@
   },
   "scripts": {
     "start": "vite",
+    "start:preprod": "vite --mode preprod",
     "build": "tsc && vite build",
+    "build:preprod": "vite build --mode preprod",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "test": "vitest",

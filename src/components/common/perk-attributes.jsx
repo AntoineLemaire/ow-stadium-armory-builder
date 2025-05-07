@@ -20,7 +20,7 @@ function PerkAttributes({ attributes }) {
         ) : (
           <>
             <img
-              src={`/icons/${types[attribute.type]?.icon ?? "default.svg"}`}
+              src={`${import.meta.env.BASE_URL}icons/${types[attribute.type]?.icon ?? "default.svg"}`}
               alt={attribute.type}
               style={{ width: 20, height: 20, marginRight: 8 }}
             />

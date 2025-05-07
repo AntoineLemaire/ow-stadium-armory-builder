@@ -31,7 +31,7 @@ function ArmoryHeader(props) {
         <Toolbar disableGutters>
           <Box
             component="img"
-            src={`/logo-light.svg`}
+            src={`${import.meta.env.BASE_URL}logo-light.svg`}
             alt="Armory Builder Logo"
             sx={{
               height: 32,

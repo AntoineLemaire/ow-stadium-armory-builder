@@ -142,7 +142,7 @@ const StatBar = ({ setHoverAttributes }) => {
       {/* Image on the left */}
       <Box
         component="img"
-        src={`/icons/HP.svg`}
+        src={`${import.meta.env.BASE_URL}icons/HP.svg`}
         alt="HP/AR/SH"
         sx={{
           width: 20,

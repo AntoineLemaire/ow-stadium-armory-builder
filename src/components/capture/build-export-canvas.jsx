@@ -77,7 +77,7 @@ function BuildExportCanvas({ hero, allRounds }) {
               >
                 <Typography variant="body2">Round cost:</Typography>
                 <img
-                  src={`/icons/png/credit.png`}
+                  src={`${import.meta.env.BASE_URL}icons/png/credit.png`}
                   alt="credits"
                   style={{ width: 24, height: 24, marginRight: 4 }}
                 />

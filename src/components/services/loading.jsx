@@ -51,7 +51,7 @@ function LoadingComponent() {
           }}
         >
           <img
-            src={`/loader.jpeg`}
+            src={`${import.meta.env.BASE_URL}loader.jpeg`}
             alt="Please wait..."
             style={{
               width: "60%",

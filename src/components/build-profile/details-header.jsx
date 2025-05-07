@@ -25,7 +25,7 @@ function DetailsHeader({ copyBuild }) {
           height: 100,
           backgroundColor: "background.paper",
           borderRadius: 1,
-          backgroundImage: `url(/heroes/${currentHero.id}.png)`,
+          backgroundImage: `url(${import.meta.env.BASE_URL}heroes/${currentHero.id}.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           flexShrink: 0,
@@ -47,7 +47,7 @@ function DetailsHeader({ copyBuild }) {
         {/* Name + Icon */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
-            src={`/roles/${currentHero.role}.svg`}
+            src={`${import.meta.env.BASE_URL}roles/${currentHero.role}.svg`}
             alt={currentHero.role}
             style={{
               width: 24,
@@ -80,7 +80,7 @@ function DetailsHeader({ copyBuild }) {
             Build cost:
           </Typography>
           <img
-            src={`/icons/credit.svg`}
+            src={`${import.meta.env.BASE_URL}icons/credit.svg`}
             alt="credits"
             style={{ width: 24, height: 24, marginRight: 4 }}
           />
@@ -101,7 +101,7 @@ function DetailsHeader({ copyBuild }) {
             Estimated gains:
           </Typography>
           <img
-            src={`/icons/credit.svg`}
+            src={`${import.meta.env.BASE_URL}icons/credit.svg`}
             alt="credits"
             style={{ width: 24, height: 24, marginRight: 4 }}
           />

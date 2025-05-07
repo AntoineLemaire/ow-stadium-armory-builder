@@ -68,7 +68,7 @@ export default function PerkSummary({ perk }) {
               }}
             >
               <img
-                src={`/icons/credit.svg`}
+                src={`${import.meta.env.BASE_URL}icons/credit.svg`}
                 alt="credits"
                 style={{
                   width: 18,

@@ -36,7 +36,7 @@ const StatBar = ({
       {/* Image on the left */}
       <Box
         component="img"
-        src={`/icons/${icon}`}
+        src={`${import.meta.env.BASE_URL}icons/${icon}`}
         alt={attributeType}
         sx={{
           width: 20,

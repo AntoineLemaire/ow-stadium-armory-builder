@@ -18,7 +18,7 @@ const StatBarSummary = ({ icon, attributeType, value }) => {
       {/* Image on the left */}
       <Box
         component="img"
-        src={`/icons/png/${icon}`}
+        src={`${import.meta.env.BASE_URL}icons/png/${icon}`}
         alt={attributeType}
         sx={{
           width: 20,

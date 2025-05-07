@@ -81,7 +81,7 @@ function PerkMiniCard({ perk, perkType, setHoverPerk, unselectPerk }) {
       {perk && (
         <CardMedia
           component="img"
-          image={`/perks/${perk.id}.png`}
+          image={`${import.meta.env.BASE_URL}perks/${perk.id}.png`}
           alt={perk.name}
           sx={{
             width: "100%",

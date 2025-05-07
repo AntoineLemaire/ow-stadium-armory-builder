@@ -37,7 +37,7 @@ function Heroes({ currentHero }) {
       >
         <CardMedia
           sx={{ height: { xs: 100, md: 125 } }}
-          image={`/heroes/${hero.id}.png`}
+          image={`${import.meta.env.BASE_URL}heroes/${hero.id}.png`}
           title={hero.name}
         />
         <CardContent sx={{ alignItems: "center", justifyContent: "center" }}>
@@ -92,7 +92,9 @@ function Heroes({ currentHero }) {
                       width: { xs: 64, md: 100 },
                       height: { xs: 64, md: 100 },
                       borderRadius: 1,
-                      backgroundImage: `url(/roles/${role}.svg)`,
+                      backgroundImage: `url(${
+                        import.meta.env.BASE_URL
+                      }roles/${role}.svg)`,
                       filter: "invert(1)",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
