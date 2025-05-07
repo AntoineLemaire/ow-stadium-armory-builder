@@ -1,6 +1,6 @@
-import basicItems from './basicItems.json';
-import heroes from './heroes.json';
-import attributeTypes from './attributeTypes.json';
+import basicItems from "./basicItems.json";
+import heroes from "./heroes.json";
+import attributeTypes from "./attributeTypes.json";
 
 const heroesOrder = [
   // Tank
