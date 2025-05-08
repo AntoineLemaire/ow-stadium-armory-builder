@@ -1,6 +1,9 @@
 import { Box, Paper, Link } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function ArmoryFooter() {
+  const { t } = useTranslation("footer");
+
   return (
     <Paper
       elevation={3}
@@ -14,16 +17,16 @@ function ArmoryFooter() {
         borderRadius: 0,
       }}
     >
-      This site is fan made, with lot of{" "}
+      {t("left")}{" "}
       <Box component="span" sx={{ fontSize: "1.2em" }}>
         💖
       </Box>{" "}
-      to Overwatch and all the kind & lovely people of{" "}
+      {t("right")}{" "}
       <Link
         target="_blank"
         rel="noreferrer"
         href="https://www.twitch.tv/gf_iguel"
-        sx={{ color: "inherit", textDecoration: "none" }} // Inherit text color and remove underline
+        sx={{ color: "inherit", textDecoration: "none" }}
       >
         PositivitiLand
       </Link>

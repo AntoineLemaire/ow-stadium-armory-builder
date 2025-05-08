@@ -10,10 +10,12 @@ import {
 } from "@mui/material";
 import { useBuild } from "../contexts/build-context";
 import { useDb } from "../contexts/db-context";
+import { useTranslation } from "react-i18next";
 
 function Heroes({ currentHero }) {
   const { heroes, roles } = useDb();
   const { initBuild } = useBuild();
+  const { t } = useTranslation("common");
 
   const selectHero = (hero) => {
     initBuild(hero);
@@ -121,7 +123,17 @@ function Heroes({ currentHero }) {
       </Box>
     );
   } else {
-    return "Loading heroes...";
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        {t("loading")}
+      </Box>
+    );
   }
 }
 

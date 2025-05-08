@@ -3,6 +3,7 @@ import { Box, Typography, Button, Divider } from "@mui/material";
 import ContentCopy from "@mui/icons-material/ContentCopy";
 import { Heroes, ImportBuildModal } from "../components";
 import { Hero } from "../models/hero";
+import { useTranslation } from "react-i18next";
 
 interface BuildStarterProps {
   currentHero: Hero;
@@ -11,6 +12,7 @@ interface BuildStarterProps {
 
 function BuildStarter({ currentHero, importBuild }: BuildStarterProps) {
   const [importOpen, setImportOpen] = useState(false);
+  const { t } = useTranslation("common");
 
   return (
     <Box
@@ -22,7 +24,7 @@ function BuildStarter({ currentHero, importBuild }: BuildStarterProps) {
       }}
     >
       <Typography variant="h5" component="h2" gutterBottom>
-        Select a hero to start your build
+        {t("selectHero")}
       </Typography>
       <Heroes currentHero={currentHero} />
 
@@ -39,7 +41,7 @@ function BuildStarter({ currentHero, importBuild }: BuildStarterProps) {
         }}
       >
         <Typography variant="h5" component="h2" gutterBottom>
-          Or
+        {t("or")}
         </Typography>
       </Divider>
 
@@ -66,7 +68,7 @@ function BuildStarter({ currentHero, importBuild }: BuildStarterProps) {
           },
         }}
       >
-        Import a Build
+        {t("importBuild")}
       </Button>
 
       <ImportBuildModal
