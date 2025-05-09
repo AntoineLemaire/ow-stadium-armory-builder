@@ -13,6 +13,11 @@ import frCommon from "./locales/fr/common";
 import frFooter from "./locales/fr/footer";
 import frHeroes from './locales/fr/heroes';
 
+const langLocalStorageKey = "osab-lang";
+const savedLang = localStorage.getItem(langLocalStorageKey);
+const defaultLang = savedLang || navigator.language.split("-")[0] || "en"; 
+
+
 i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -30,7 +35,7 @@ i18n.use(initReactI18next).init({
       heroes: frHeroes,
     },
   },
-  lng: "en",
+  lng: defaultLang,
   fallbackLng: "en",
   ns: ["common", "footer", "attributes", "heroes", "itemDescriptions", "items", "powers"],
   defaultNS: "common",
@@ -40,6 +45,10 @@ i18n.use(initReactI18next).init({
   react: {
     useSuspense: false,
   },
+});
+
+i18n.on("languageChanged", (lng) => {
+  localStorage.setItem(langLocalStorageKey, lng);
 });
 
 export default i18n;
