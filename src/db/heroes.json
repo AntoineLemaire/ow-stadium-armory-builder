@@ -1,83 +1,46 @@
 [
   {
     "id": 5,
-    "name": "Reinhardt",
     "role": "Tank",
     "hp": 250,
     "armor": 300,
     "shields": 0,
     "powers": [
       {
-        "position": 12,
-        "id": "5P009",
-        "name": "Smashing!",
-        "description": "When you deal damage with [Rocket Hammer], gain 5% Move Speed and 4% Weapon Lifesteal for 3s, stacking up to 5 times."
+        "id": "5P009"
       },
       {
-        "position": 11,
-        "id": "5P012",
-        "name": "Feeling The Burn",
-        "description": "Every 3rd [Rocket Hammer] swing applies Burn, dealing 30% [Rocket Hammer] damage over 2s."
+        "id": "5P012"
       },
       {
-        "position": 4,
-        "id": "5P010",
-        "name": "Wilhelmwagen",
-        "description": "While [Barrier Field] is deployed, you heal for 15% of the damage it mitigates and gain 30% Move Speed."
+        "id": "5P010"
       },
       {
-        "position": 3,
-        "id": "5P007",
-        "name": "To Me, My Friends!",
-        "description": "While [Barrier Field] is deployed, allies within 5m are healed equal to 3% of your max Life every 1s."
+        "id": "5P007"
       },
       {
-        "position": 1,
-        "id": "5P001",
-        "name": "Amplification Barrier",
-        "description": "Friendly projectiles that pass through your [Barrier Field] deal 15% more damage."
+        "id": "5P001"
       },
       {
-        "position": 2,
-        "id": "5P004",
-        "name": "Barrier Reconstruction",
-        "description": "When you deal damage with [Rocket Hammer] or [Fire Strike], restore health to [Barrier Field] equal to 10% of its max Health."
+        "id": "5P004"
       },
       {
-        "position": 6,
-        "id": "5P002",
-        "name": "Vanguard",
-        "description": "[Charge] grants nearby allies Overhealth equal to 10% of your max Life and 20% Move Speed for 3s."
+        "id": "5P002"
       },
       {
-        "position": 5,
-        "id": "5P005",
-        "name": "Shield Stampede",
-        "description": "+50% [Charge] Knockback Power During [Charge], automatically deploy [Barrier Field]."
+        "id": "5P005"
       },
       {
-        "position": 7,
-        "id": "5P008",
-        "name": "Vroom Boom Boom",
-        "description": "During [Charge], colliding with a wall triggers an explosion that deals 30% of [Charge]'s pin damage."
+        "id": "5P008"
       },
       {
-        "position": 9,
-        "id": "5P006",
-        "name": "Impact Burst",
-        "description": "[Fire Strike] triggers an explosion the first time it hits an enemy, dealing 20% of its damage in a 3m radius."
+        "id": "5P006"
       },
       {
-        "position": 10,
-        "id": "5P003",
-        "name": "Magma Strike",
-        "description": "If [Fire Strike] is cast twice within 2s, the second strike leaves a trail of lava that Burns enemies for 50% of [Fire Strike] damage."
+        "id": "5P003"
       },
       {
-        "position": 8,
-        "id": "5P011",
-        "name": "Blazing Blitz",
-        "description": "After using [Earthshatter], every [Rocket Hammer] swing launches a [Fire Strike] for 4s."
+        "id": "5P011"
       }
     ],
     "items": {
@@ -329,7 +292,6 @@
   },
   {
     "id": 2,
-    "name": "Reaper",
     "role": "Damage",
     "hp": 300,
     "armor": 0,
@@ -649,7 +611,6 @@
   },
   {
     "id": 15,
-    "name": "Soldier 76",
     "role": "Damage",
     "hp": 250,
     "armor": 0,
@@ -896,7 +857,6 @@
   },
   {
     "id": 6,
-    "name": "Mercy",
     "role": "Support",
     "hp": 225,
     "armor": 0,
@@ -1175,7 +1135,6 @@
   },
   {
     "id": 26,
-    "name": "Moira",
     "role": "Support",
     "hp": 225,
     "armor": 0,
@@ -1442,7 +1401,6 @@
   },
   {
     "id": 19,
-    "name": "D.Va",
     "role": "Tank",
     "hp": 250,
     "armor": 300,
@@ -1774,7 +1732,6 @@
   },
   {
     "id": 21,
-    "name": "Genji",
     "role": "Damage",
     "hp": 250,
     "armor": 0,
@@ -2110,7 +2067,6 @@
   },
   {
     "id": 24,
-    "name": "Orisa",
     "role": "Tank",
     "hp": 155,
     "armor": 325,
@@ -2420,7 +2376,6 @@
   },
   {
     "id": 34,
-    "name": "Junker Queen",
     "role": "Tank",
     "hp": 375,
     "armor": 0,
@@ -2773,7 +2728,6 @@
   },
   {
     "id": 13,
-    "name": "Zarya",
     "role": "Tank",
     "hp": 175,
     "armor": 0,
@@ -3030,7 +2984,6 @@
   },
   {
     "id": 35,
-    "name": "Kiriko",
     "role": "Support",
     "hp": 225,
     "armor": 0,
@@ -3355,7 +3308,6 @@
   },
   {
     "id": 22,
-    "name": "Ana",
     "role": "Support",
     "hp": 250,
     "armor": 0,
@@ -3680,7 +3632,6 @@
   },
   {
     "id": 14,
-    "name": "Cassidy",
     "role": "Damage",
     "hp": 275,
     "armor": 0,
@@ -3918,7 +3869,6 @@
   },
   {
     "id": 29,
-    "name": "Ashe",
     "role": "Damage",
     "hp": 250,
     "armor": 0,
@@ -4253,7 +4203,6 @@
   },
   {
     "id": 41,
-    "name": "Juno",
     "hp": 75,
     "armor": 0,
     "shields": 150,
@@ -4570,7 +4519,6 @@
   },
   {
     "id": 20,
-    "name": "Mei",
     "role": "Damage",
     "hp": 300,
     "armor": 0,
@@ -4816,7 +4764,6 @@
   },
   {
     "id": 16,
-    "name": "Lucio",
     "hp": 225,
     "armor": 0,
     "shields": 0,
