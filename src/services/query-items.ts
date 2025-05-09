@@ -1,4 +1,4 @@
-import { basicItems } from "../db/db";
+import { getLocalizedItems } from "../db/db";
 import { Hero } from "../models/hero";
 import { Item } from "../models/item";
 import { AttributeType } from "../models/types/attribute-type";
@@ -16,6 +16,8 @@ const parseItem = (item: any): Item => {
 };
 
 const getAllItems = (): Item[] => {
+  const basicItems = getLocalizedItems();
+  
   return [
     ...basicItems.common.map((item) => parseItem(item)),
     ...basicItems.rare.map((item) => parseItem(item)),

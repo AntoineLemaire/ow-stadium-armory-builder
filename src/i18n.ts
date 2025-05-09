@@ -3,24 +3,36 @@ import { initReactI18next } from "react-i18next";
 
 import enCommon from "./locales/en/common";
 import enFooter from "./locales/en/footer";
+import enAttributes from './locales/en/attributes';
+import enHeroes from './locales/en/heroes';
+import enItemDescriptions from './locales/en/item-descriptions';
+import enItems from './locales/en/items';
+import enPowers from './locales/en/powers';
 
 import frCommon from "./locales/fr/common";
 import frFooter from "./locales/fr/footer";
+import frHeroes from './locales/fr/heroes';
 
 i18n.use(initReactI18next).init({
   resources: {
     en: {
       common: enCommon,
       footer: enFooter,
+      attributes: enAttributes, 
+      heroes: enHeroes,
+      itemDescriptions: enItemDescriptions,
+      items: enItems,
+      powers: enPowers
     },
     fr: {
       common: frCommon,
       footer: frFooter,
+      heroes: frHeroes,
     },
   },
   lng: "en",
   fallbackLng: "en",
-  ns: ["common", "footer"],
+  ns: ["common", "footer", "attributes", "heroes", "itemDescriptions", "items", "powers"],
   defaultNS: "common",
   interpolation: {
     escapeValue: false,

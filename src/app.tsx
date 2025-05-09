@@ -83,7 +83,7 @@ function AppContent() {
         />
 
         {/* Header (app bar) */}
-        <ArmoryHeader pages={[]} />
+        <ArmoryHeader />
 
         {/* Main Content Area */}
         <ArmoryMainContent importBuild={navigation} />

@@ -26,52 +26,48 @@
           "id": "5W001",
           "price": 3750,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "AR", "value": 25, "unit": "" },
+            { "type": "WP", "value": 5, "unit": "%" },
+            { "type": "KR", "value": 40, "unit": "%" }
+          ]
         },
         {
           "id": "5S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Holding crouch increases the height of your next jump by up to 200%"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "5A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "If [Charge] is interrupted by the enemy, refund 50% of [Charge]'s cooldown"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "5S001",
           "price": 3750,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Using [Charge] cleanses all negative effects"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "5S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "[Barrier Field] Health", "value": 20, "unit": "%" },
+            { "type": "[Barrier Field] Size", "value": 20, "unit": "%" }
+          ]
         },
         {
           "id": "5A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Fire Strike] Radius", "value": 50, "unit": "%" }
+          ]
         }
       ],
       "epic": [
@@ -80,61 +76,45 @@
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When you deal damage with [Rocket Hammer], reduce the cooldown of your abilities by 1s"
-            }
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "AS", "value": 10, "unit": "%" }
           ]
         },
         {
           "id": "5W003",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Gain 3% Attack Speed for every 100 missing Life, up to 30%"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "5A004",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "You can now fly during [Charge]"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "ALS", "value": 10, "unit": "%" }
           ]
         },
         {
           "id": "5S003",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Increase [Barrier Field] Health by 100% of your max Life"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "5S004",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Barrier Field] regenerates 50% faster and begins regenerating 50% sooner after being destroyed"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "5A005",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 20, "unit": "%" },
+            { "type": "Fire Strike Projectile Speed", "value": 50, "unit": "%" }
+          ]
         }
       ]
     }
@@ -167,10 +147,8 @@
           "price": 4000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Using [Shadow Step] restores 100% of your ammo"
-            }
+            { "type": "AS", "value": 5, "unit": "%" },
+            { "type": "MA", "value": 25, "unit": "%" }
           ]
         },
         {
@@ -178,33 +156,21 @@
           "price": 4000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Reduce effectiveness of enemy slows by 50%"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "WP", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "2S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While below 50% Life, gain 20% Move Speed"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 5, "unit": "" }]
         },
         {
           "id": "2S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Each [Death Blossom] elimination increases your Health by 25 until the end of the round, up to 100 Health"
-            }
-          ]
+          "attributes": [{ "type": "AL", "value": 15, "unit": "%" }]
         }
       ],
       "epic": [
@@ -212,28 +178,29 @@
           "id": "2S004",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While in Wraith Form, gain the ability to fly and gain 20% Move Speed"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "2S005",
           "price": 10000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "HP", "value": 50, "unit": "" },
+            {
+              "type": "Move Speed during [Wraith Form]",
+              "value": 15,
+              "unit": "%"
+            },
+            { "type": "[Wraith Form] Duration", "value": 33, "unit": "%" }
+          ]
         },
         {
           "id": "2A001",
           "price": 9500,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Using [Wraith Form] reduces the cooldown of [Shadow Step] by 2s"
-            }
+            { "type": "MS", "value": 10, "unit": "%" },
+            { "type": "[Shadow Step] Cast Speed", "value": 30, "unit": "%" }
           ]
         },
         {
@@ -241,39 +208,35 @@
           "price": 11000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Using [Death Blossom] grants you Overhelth equel to 15% of your max Life"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 10, "unit": "%" }
           ]
         },
         {
           "id": "2A002",
           "price": 11000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Death Blossom] gains 5% Ability Power for each enemy within its range"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "2A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 20, "unit": "%" },
+            { "type": "[Death Blossom] Radius", "value": 25, "unit": "%" },
+            {
+              "type": "Move Speed during [Death Blossom]",
+              "value": 20,
+              "unit": "%"
+            }
+          ]
         },
         {
           "id": "2W002",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Every 3rd shot fires both of your [Hellfire Shotguns]. The extra shot does not consume ammo but deals 80% reduced damage"
-            }
-          ]
+          "attributes": [{ "type": "MA", "value": 25, "unit": "%" }]
         }
       ]
     }
@@ -306,26 +269,30 @@
           "price": 4000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Helix Rocket] damage restores 20% of your ammo"
-            }
+            { "type": "AS", "value": 5, "unit": "%" },
+            { "type": "CR", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "15A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Biotic Field] Duration", "value": 30, "unit": "%" }
+          ]
         },
         {
           "id": "15A002",
           "price": 4000,
           "category": "Ability",
           "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "WP", "value": 5, "unit": "%" },
             {
-              "type": "description",
-              "value": "When you damage yourself with [Helix Rocket], it knocks you back 200% further"
+              "type": "Reduced [Helix Rocket] Self-Damage",
+              "value": 90,
+              "unit": "%"
             }
           ]
         },
@@ -333,7 +300,11 @@
           "id": "15S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AS", "value": 5, "unit": "%" },
+            { "type": "[Sprint] Move Speed", "value": 25, "unit": "%" }
+          ]
         }
       ],
       "epic": [
@@ -342,32 +313,23 @@
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Biotic Field] heals allies below 50% Life for 10% more"
-            }
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Biotic Field] Radius", "value": 30, "unit": "%" }
           ]
         },
         {
           "id": "15S002",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While using [Sprint], gain Overhealth equal to 5% of your max Life every 1s, up to 25%, for 5s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "15A004",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When you spend your Ultimate Charge, reset all ability cooldowns. While [Tactical Visor] is active, gain 20% Cooldown Reduction"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         }
       ]
@@ -400,40 +362,28 @@
           "id": "6W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While airborne, gain : +5% Weapon Power, 10% Attack Speed"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "6A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Guardian Angel] Range", "value": 33, "unit": "%" }
+          ]
         },
         {
           "id": "6S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While affected by [Angelic Descent], continuously gain 10% Move Speed every 1s up to 60%"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "6S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While affected by [Angelic Descent] or [Guardian Angel], heal 3% of your Life every 1s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -442,51 +392,59 @@
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Guardian Angel]'s cooldown starts as soon as you jump or crouch"
-            }
+            { "type": "[Guardian Angel] Move Speed", "value": 15, "unit": "%" }
           ]
         },
         {
           "id": "6S003",
           "price": 9000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Your launch velocity is increased by 25% when canceling [Guardian Angel] with crouch or jump"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         },
         {
           "id": "6S004",
           "price": 10000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "Armor", "value": 50, "unit": "" },
+            {
+              "type": "[Caduceus Staff] Damage Boost",
+              "value": 5,
+              "unit": "%"
+            },
+            {
+              "type": "Ultimate Charge Gained from Damage Boost",
+              "value": 15,
+              "unit": "%"
+            }
+          ]
         },
         {
           "id": "6W003",
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Caduceus Blaster] has a 10% chance to fire an extra shot that doesn't consume additional ammo"
-            }
+            { "type": "WP", "value": 10, "unit": "%" },
+            { "type": "MA", "value": 33, "unit": "%" }
           ]
         },
         {
           "id": "6W004",
           "price": 10000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "WP", "value": 10, "unit": "%" },
+            { "type": "[Caduceus Staff] Range", "value": 33, "unit": "%" }
+          ]
         },
         {
           "id": "6A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "CR", "value": 10, "unit": "%" },
+            { "type": "[Resurrection] Range", "value": 75, "unit": "%" }
+          ]
         }
       ]
     }
@@ -518,51 +476,34 @@
           "id": "26W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Biotic Grasp]'s secondary fire restores 50% more [Biotic Energy]"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "26W002",
           "price": 4000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "WP", "value": 10, "unit": "%" },
+            { "type": "Max [Biotic Energy]", "value": 50, "unit": "" }
+          ]
         },
         {
           "id": "26A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Biotic Orb] moves 50% slower while it is healing or dealing damage"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 5, "unit": "%" }]
         },
         {
           "id": "26A002",
           "price": 4500,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "During [Coalescence] gains free flight"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "26S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While using [Fade], you jump 30% higher."
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -570,17 +511,22 @@
           "id": "26W003",
           "price": 11000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "WP", "value": 10, "unit": "%" },
+            {
+              "type": "[Biotic Grasp] Secondary Fire Range",
+              "value": 15,
+              "unit": "%"
+            }
+          ]
         },
         {
           "id": "26A003",
           "price": 11000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "+15% Ability Power, +30% [Biotic Orb] Tendril Range"
-            }
+            { "type": "AP", "value": 15, "unit": "%" },
+            { "type": "[Biotic Orb] Tendril Range", "value": 30, "unit": "%" }
           ]
         },
         {
@@ -588,10 +534,8 @@
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When you use [Fade], refill your [Biotic Energy]"
-            }
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "AS", "value": 15, "unit": "%" }
           ]
         },
         {
@@ -599,10 +543,8 @@
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Allies healed by [Coalescence] deal 15% increased damage"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         }
       ]
@@ -635,62 +577,40 @@
           "id": "19A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "If your [Mech] detonates while mid-air, increase [Self-Destruct] explosion damage and range by 200%"
-            }
-          ]
+          "attributes": [{ "type": "ALS", "value": 15, "unit": "%" }]
         },
         {
           "id": "19A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Every 300 damage you mitigate with [Defense Matrix] reduces [Micro Missiles] cooldown by 1s"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "19A003",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Using [Self-Destruct] drops lava nearby that deals 30 damage every 1s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "19S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "[Boosters] Duration", "value": 25, "unit": "%" }
+          ]
         },
         {
           "id": "19S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While [Defense Matrix] is active, gain 65% damage reduction against beams"
-            }
-          ]
+          "attributes": [{ "type": "AR", "value": 25, "unit": "" }]
         },
         {
           "id": "19S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you mitigate damage with [Defense Matrix], gain Shields equal to 10% of the damage mitigated, up to 100. Resets when your [Mech] is destroyed"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -698,89 +618,49 @@
           "id": "19A004",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Light Gun] gains a secondary fire, which charges up to fire a piercing shot that deals 80 piercing damage"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 20, "unit": "%" }]
         },
         {
           "id": "19S004",
           "price": 11000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you eject from your Mech, gain 5% increased max Health and gain [Nano Boost] for 4s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "19S005",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you deal damage to Barriers while in your [Mech], gain Shields equal to 10% of the damage dealt, up to 200. Resets when your [Mech] is destroyed"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         },
         {
           "id": "19S006",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Fusion Cannons] can now be fired while using [Defense Matrix]"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "19S007",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Gain 5% of damage mitigated by [Defense Matrix] as Ultimate Charge"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         },
         {
           "id": "19S008",
           "price": 9000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you use [Boosters], allies within 16m gain 25% Move Speed for 2s"
-            }
-          ]
+          "attributes": [{ "type": "SH", "value": 50, "unit": "" }]
         },
         {
           "id": "19A005",
           "price": 12000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "The quantity and duration of [Micro Missiles] is increased by 20%"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "19A006",
           "price": 12000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Micro Missiles] deal 25% increased damage and have significantly increased knockback"
-            }
-          ]
+          "attributes": []
         }
       ]
     }
@@ -811,56 +691,43 @@
           "id": "21W001",
           "price": 3750,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While climbing restore 20% of your ammo every 1s"
-            }
-          ]
+          "attributes": [{ "type": "MA", "value": 30, "unit": "%" }]
         },
         {
           "id": "21A001",
           "price": 3750,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Swift Strike] cooldown is reduced by 50% if it deals no damage"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "21A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "CR", "value": 5, "unit": "%" },
+            { "type": "Move Speed during [Deflect]", "value": 15, "unit": "%" }
+          ]
         },
         {
           "id": "21S001",
           "price": 4000,
           "category": "Survival",
           "attributes": [
-            { "type": "description", "value": "[Deflect] blocks Beam attacks" }
+            { "type": "AR", "value": 25, "unit": "" },
+            { "type": "AS", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "21S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While climbing, heal 5% of your Life every 1s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "21S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            { "type": "description", "value": "Gain an additional jump" }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -868,62 +735,58 @@
           "id": "21W002",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Quick Melee] can critically hit when hitting enemies from behind, dealing 50% increased damage"
-            }
-          ]
+          "attributes": [{ "type": "MD", "value": 25, "unit": "%" }]
         },
         {
           "id": "21W003",
           "price": 10000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "WP", "value": 10, "unit": "%" },
+            { "type": "[Dragonblade] Duration", "value": 4, "unit": "" }
+          ]
         },
         {
           "id": "21W004",
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Damaging an enemy with [Swift Strike] restores 20% of your ammo"
-            }
+            { "type": "AS", "value": 10, "unit": "%" },
+            { "type": "MA", "value": 30, "unit": "%" }
           ]
         },
         {
           "id": "21A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "ALS", "value": 15, "unit": "%" },
+            { "type": "[Swift Strike] Width", "value": 50, "unit": "%" }
+          ]
         },
         {
           "id": "21A004",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "During [Swift Strike], deflect incoming projectiles toward your reticle"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "21S004",
           "price": 10000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "AR", "value": 50, "unit": "" },
+            { "type": "CR", "value": 5, "unit": "%" },
+            { "type": "[Deflect] Duration", "value": 1, "unit": "s" }
+          ]
         },
         {
           "id": "21S005",
           "price": 10000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "15% Ultimate Cost Reduction, convert 100 Health to Armor, when you use Dragonblade, heal your Armor fully"
-            }
+            { "type": "Ultimate Cost Reduction", "value": 15, "unit": "%" }
           ]
         }
       ]
@@ -956,95 +819,58 @@
           "id": "24W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Recover from being [Overheated] 25% faster"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "24W002",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Deal 25% more damage to enemies farther than 12m away"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "24W003",
           "price": 5000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Critical Hits reduce your [Heat] by 5%"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "24A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Energy Javelin] deals 25% increased damage to enemies farther than 12m away"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "24A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Javelin Spin] Duration", "value": 35, "unit": "%" }
+          ]
         },
         {
           "id": "24A003",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While [Javelin Spin] is active, gain 50% damage reduction to beams"
-            }
-          ]
+          "attributes": [{ "type": "AR", "value": 25, "unit": "" }]
         },
         {
           "id": "24S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Fortify] grants additional Overhealth equal to 10% of your Max Life"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "24S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you deal damage with [Energy Javelin], heal 10% of your max Life over 3s"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "24S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "After using an ability, restore your Armor equal to 3% of your Max Life"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -1052,40 +878,28 @@
           "id": "24A004",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "ALS", "value": 20, "unit": "%" },
+            { "type": "[Fortify] Duration", "value": 50, "unit": "%" }
+          ]
         },
         {
           "id": "24A005",
           "price": 11000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Energy Javelin] cooldown is reduced by 15%, but each use generates 25 [Heat]"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "24A006",
           "price": 12000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While using [Javelin Spin], gain free flight and 20% Move Speed"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "24S004",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you use [Fortify], all allies within line of sight gains unstoppable for 2s"
-            }
-          ]
+          "attributes": [{ "type": "AR", "value": 50, "unit": "" }]
         }
       ]
     }
@@ -1117,67 +931,40 @@
           "id": "34W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While not holding [Jagged Blade], [Quick Melee] deals 75% more damage and knocks back"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "34W002",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Commanding Shout] grants you +15% Attack Speed"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 5, "unit": "%" }]
         },
         {
           "id": "34A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Jagged Blade]'s pull strength is increased by 35%"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "34S001",
           "price": 4000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When knockback, gain 25%  increased Move Speed for 3s"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "KR", "value": 50, "unit": "%" }
           ]
         },
         {
           "id": "34S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When [Wound] gets removed instead of expiring, gain 10% of Max Life as Overhealth, up to 150"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "34S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While within 12m of an enemy with a [Wound], gain 10% Move Speed and 5% Attack Speed"
-            }
-          ]
+          "attributes": [{ "type": "MS", "value": 10, "unit": "%" }]
         }
       ],
       "epic": [
@@ -1186,32 +973,23 @@
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When you [Wound] an enemy, gain 10% Attack Speed for 4s, stacking up to 3 times"
-            }
+            { "type": "MA", "value": 33, "unit": "%" },
+            { "type": "WPLS", "value": 10, "unit": "%" }
           ]
         },
         {
           "id": "34W004",
           "price": 12000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Gain 5% Weapon Power for each enemy with a [Wound] within 12m"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 15, "unit": "%" }]
         },
         {
           "id": "34A002",
           "price": 9500,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Rampage] and [Carnage] hits grant 10% Attack Speed for 4s"
-            }
+            { "type": "CR", "value": 5, "unit": "%" },
+            { "type": "ALS", "value": 10, "unit": "%" }
           ]
         },
         {
@@ -1219,10 +997,8 @@
           "price": 11000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Commanding Shout] will affect allies that are out of line of sight"
-            }
+            { "type": "AP", "value": 25, "unit": "%" },
+            { "type": "[Commanding Shout] Radius", "value": 50, "unit": "%" }
           ]
         },
         {
@@ -1230,31 +1006,26 @@
           "price": 10000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Carnage] and [Jagged Blade] impacts damage grants Overhealth equal to 40% of damage dealt"
-            }
+            { "type": "HP", "value": 50, "unit": "" },
+            { "type": "CR", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "34S005",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While casting [Rampage] or [Carnage], gain 50% damage reduction"
-            }
-          ]
+          "attributes": [{ "type": "AR", "value": 50, "unit": "" }]
         },
         {
           "id": "34S006",
           "price": 10000,
           "category": "Survival",
           "attributes": [
+            { "type": "HP", "value": 50, "unit": "" },
             {
-              "type": "description",
-              "value": "Allies affected by [Commanding Shout] are healed for 5% of Junker Queen 's life every second"
+              "type": "[Commanding Shout] Overhealth",
+              "value": 30,
+              "unit": "%"
             }
           ]
         }
@@ -1288,28 +1059,24 @@
           "id": "13W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Energy] cannot be reduced below 20."
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 5, "unit": "%" }]
         },
         {
           "id": "13A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Projected Barrier] Range", "value": 20, "unit": "%" }
+          ]
         },
         {
           "id": "13S001",
           "price": 3750,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Particle Cannon]'s secondary fire self knockback is increased by 100% and no longer damages yourself."
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "MS", "value": 5, "unit": "%" }
           ]
         },
         {
@@ -1317,10 +1084,8 @@
           "price": 4000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "After using a [Barrier], start regenerating Shields instantly"
-            }
+            { "type": "SH", "value": 25, "unit": "" },
+            { "type": "AP", "value": 5, "unit": "%" }
           ]
         },
         {
@@ -1328,10 +1093,8 @@
           "price": 4000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "While [Particle Barrier] is active, become unstoppable and [Quick Melee] knocks back enemies."
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "MD", "value": 15, "unit": "%" }
           ]
         }
       ],
@@ -1340,40 +1103,32 @@
           "id": "13W002",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Consecutive [Particle Cannon] secondary fire sots consume 20% less Ammo, up to 60% for your current magazine"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 15, "unit": "%" }]
         },
         {
           "id": "13W003",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Particle Cannon]'s primary fire range is increased by 20%"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "13A002",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Casting [Projected Barrier] on an refunds 20% of [Barrier] cooldown"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         },
         {
           "id": "13A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" },
+            { "type": "[Barrier] Duration", "value": 40, "unit": "%" }
+          ]
         }
       ]
     }
@@ -1405,62 +1160,40 @@
           "id": "35W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Kunai] bounce off surfaces 1 time"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "35W002",
           "price": 5000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you deal damage, gain 200% [Healing Ofuda] Projectile Speed for 5s"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "35W003",
           "price": 5000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you heal an ally, grant them 10% increased Move Speed for 3s"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "35A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "[Kitsune Rush] Duration", "value": 35, "unit": "%" }
+          ]
         },
         {
           "id": "35A002",
           "price": 5000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When you use an ability gain 20% Attack Speed for 3s"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "35S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Gain the ability to [Double Jump]"
-            }
-          ]
+          "attributes": [{ "type": "MS", "value": 10, "unit": "%" }]
         }
       ],
       "epic": [
@@ -1468,73 +1201,53 @@
           "id": "35W004",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "After casting an ability, restore 100% of your ammo"
-            }
-          ]
+          "attributes": [{ "type": "RS", "value": 35, "unit": "%" }]
         },
         {
           "id": "35W005",
           "price": 12000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "WP", "value": 15, "unit": "%" },
+            {
+              "type": "[Healing Ofuda] Projectile Speed",
+              "value": 100,
+              "unit": "%"
+            }
+          ]
         },
         {
           "id": "35A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Swift Step] heals nearby allies by 80 Life over 2s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "35A004",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Allies affected by [Kitsune Rush] are healed for 80 every 1s"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         },
         {
           "id": "35A005",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Protection Suzu] grants 25% Attack Speed and 25% Move Speed for 4s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "35S002",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Swift Step], you gain 100 Overhealth for 4s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "35S003",
           "price": 11000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Protection Suzu] grants 100 Overhealth for 5s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 20, "unit": "%" }]
         }
       ]
     }
@@ -1567,72 +1280,50 @@
           "price": 4000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "For each enemy or ally affected by [Biotic Grenade], gain 5% Attack Speed, up to 25%"
-            }
+            { "type": "Biotic Grenade Duration", "value": 15, "unit": "%" }
           ]
         },
         {
           "id": "22W002",
           "price": 5000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Unscoped [Biotic Rifle] projectiles are 100% larger"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
         },
         {
           "id": "22W003",
           "price": 5000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "Deal 20% more damage to airborne enemies"
-            }
+            { "type": "WP", "value": 10, "unit": "%" },
+            { "type": "Faster Scope Speed", "value": 200, "unit": "%" }
           ]
         },
         {
           "id": "22A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Landing a [Sleep Dart] on target affected by [Biotic Grenade] reduces its cooldown by 35%"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "22S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Jumping in mid-air will dash you a short distance"
-            }
-          ]
+          "attributes": [{ "type": "MS", "value": 5, "unit": "%" }]
         },
         {
           "id": "22S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "SH", "value": 25, "unit": "" },
+            { "type": "Nano Boost Duration", "value": 15, "unit": "%" }
+          ]
         },
         {
           "id": "22S003",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While affected by [Biotic Grenade], Ana gains 100 Overhealth"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -1640,62 +1331,40 @@
           "id": "22W004",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Unscoped [Biotic Rifle] shots have a 50% chance not to consume Ammo"
-            }
-          ]
+          "attributes": [{ "type": "MA", "value": 4, "unit": "" }]
         },
         {
           "id": "22A002",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Sleep Dart] gains: 500% Collision Size, 100% Projectile Speed, 20% Sleep Duration"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "22A003",
           "price": 9000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Sleep Dart] direct hit deals 100 bonus damage"
-            }
-          ]
+          "attributes": [{ "type": "ALS", "value": 50, "unit": "%" }]
         },
         {
           "id": "22A004",
           "price": 12000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 20, "unit": "%" },
+            { "type": "[Biotic Grenade] Duration", "value": 30, "unit": "%" }
+          ]
         },
         {
           "id": "22A005",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Biotic Grenade] cooldown is reduced by 1s for each target it hits"
-            }
-          ]
+          "attributes": [{ "type": "ALS", "value": 25, "unit": "%" }]
         },
         {
           "id": "22S004",
           "price": 9000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Nano Boost] can target allies through walls and its range is increased to 60m"
-            }
-          ]
+          "attributes": [{ "type": "SH", "value": 50, "unit": "" }]
         }
       ]
     }
@@ -1727,45 +1396,25 @@
           "id": "14W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Reloading within 6m of an enemy adds 20% of Max Ammo as extra Ammo"
-            }
-          ]
+          "attributes": [{ "type": "RS", "value": 10, "unit": "%" }]
         },
         {
           "id": "14A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Deadeye] eliminations reduce [Flashbang] max cooldown by 10%, up to 40% for the round"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "14A002",
           "price": 5000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Combat Roll] reduces [Flashbang] cooldown"
-            }
-          ]
+          "attributes": [{ "type": "CR", "value": 10, "unit": "%" }]
         },
         {
           "id": "14S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Deadeye] eliminations reward extra 500 Stadium Cash each"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -1773,45 +1422,28 @@
           "id": "14W002",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Deal 15% increased primary fire damage to enemies in the Damage role"
-            }
-          ]
+          "attributes": [{ "type": "WPLS", "value": 20, "unit": "%" }]
         },
         {
           "id": "14A003",
           "price": 11000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Flashbang] explosion radius is increased by 50%"
-            }
+            { "type": "AP", "value": 20, "unit": "%" },
+            { "type": "CR", "value": 10, "unit": "%" }
           ]
         },
         {
           "id": "14S002",
           "price": 12000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Receives 25% less damage from enemy farther than 12m"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         },
         {
           "id": "14S003",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Heal 10 Life for each Ammo loaded using [Combat Roll]"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         }
       ]
     }
@@ -1843,62 +1475,43 @@
           "id": "29W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Gain 3% Attack Speed for each remaining Ammo above 50% of your Max Ammo"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 5, "unit": "%" }]
         },
         {
           "id": "29W002",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "+5% Weapon Power, [The Viper], [Coach Gun], and [Dynamite] deal 10% more damage to enemies that are below you"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 5, "unit": "%" }]
         },
         {
           "id": "29W003",
           "price": 5000,
           "category": "Weapon",
-          "attributes": []
+          "attributes": [
+            { "type": "MA", "value": 25, "unit": "%" },
+            { "type": "RS", "value": 15, "unit": "%" }
+          ]
         },
         {
           "id": "29A001",
           "price": 4000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When Burn gets removed instead of expiring, gain 3% Ultimate Charge"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "29A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Damage dealt to Burning targets grants 20% more Ultimate Charge"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "29S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "After using [Coach Gun], gain 20% Move Speed for 3s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -1906,73 +1519,49 @@
           "id": "29W004",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When the target is further than 10m, scoped shot gains 1% damage for each meter"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "29W005",
           "price": 11000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When the target is within 10m, unscoped shot gains 15% increased damage"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "29A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Deal 25% increased damage to Burning enemies"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "29A004",
           "price": 10000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 15, "unit": "%" },
+            { "type": "[Dynamite] Explosion Radius", "value": 40, "unit": "%" }
+          ]
         },
         {
           "id": "29A005",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Coach Gun] has 50% increased self-knockback"
-            }
-          ]
+          "attributes": [{ "type": "CR", "value": 10, "unit": "%" }]
         },
         {
           "id": "29S002",
           "price": 10000,
           "category": "Survival",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When [B.O.B.] finishes charging, [B.O.B.] gains 300 Armor"
-            }
+            { "type": "HP", "value": 50, "unit": "" },
+            { "type": "AR", "value": 25, "unit": "" }
           ]
         },
         {
           "id": "29S003",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Your Burning effects gain 35% Lifesteal"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         }
       ]
     }
@@ -2004,35 +1593,31 @@
           "id": "41W001",
           "price": 4000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While airborne, [Mediblaster] deals 15% more damage"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 5, "unit": "%" }]
         },
         {
           "id": "41A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While aiming [Pulsar Torpedoes], gain Overhealth equal to 50% of your max Shields"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "41A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "Hyper Ring Duration", "value": 25, "unit": "%" }
+          ]
         },
         {
           "id": "41S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": []
+          "attributes": [
+            { "type": "SH", "value": 25, "unit": "" },
+            { "type": "[Glide Boost] Duration", "value": 25, "unit": "%" }
+          ]
         }
       ],
       "epic": [
@@ -2040,32 +1625,24 @@
           "id": "41W002",
           "price": 12000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Mediblaster] deals 15% increased damage and healing to targets farther than 12m away"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 15, "unit": "%" }]
         },
         {
           "id": "41A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Pulsar Torpedoes] explode on hit, deal 20 damage to nearby enemies"
-            }
-          ]
+          "attributes": [{ "type": "ALS", "value": 10, "unit": "%" }]
         },
         {
           "id": "41W003",
           "price": 11000,
           "category": "Weapon",
           "attributes": [
+            { "type": "AS", "value": 10, "unit": "%" },
             {
-              "type": "description",
-              "value": "After using [Pulsar Torpedoes], gain 25% Attack Speed for 4s"
+              "type": "[Pulsar Torpedoes] Projectile Speed",
+              "value": 35,
+              "unit": "%"
             }
           ]
         },
@@ -2073,55 +1650,33 @@
           "id": "41S002",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "+75 Shield, during [Glide Boost], gain 10% Damage Reduction"
-            }
-          ]
+          "attributes": [{ "type": "SH", "value": 75, "unit": "" }]
         },
         {
           "id": "41W004",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "During [Glide Boost], gain 20% Attack Speed and your [Quick Melee] knocks enemies back"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 15, "unit": "%" }]
         },
         {
           "id": "41A004",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Allies affected by [Hyper Ring] restore 25 Shields every 1s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "41S003",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Orbital Ray] gains 25% increased healing"
-            }
-          ]
+          "attributes": [{ "type": "SH", "value": 75, "unit": "" }]
         },
         {
           "id": "41A005",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "When you use [Orbital Ray], reset your cooldowns"
-            }
+            { "type": "SH", "value": 50, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         }
       ]
@@ -2154,23 +1709,13 @@
           "id": "20S001",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Primary Fire and [Blizzard] can remove burn"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "20S002",
           "price": 4000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Cryo-Freeze] duration is increased by 25%"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -2178,78 +1723,43 @@
           "id": "20W001",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Max Ammo is increased by 75% but reloading takes 50% longer"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 15, "unit": "%" }]
         },
         {
           "id": "20W002",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Frozen ground increases Mei's Movement Speed by 35%"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 15, "unit": "%" }]
         },
         {
           "id": "20W003",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "While within [Blizzard], gain 10% Attack Speed"
-            }
-          ]
+          "attributes": [{ "type": "AS", "value": 10, "unit": "%" }]
         },
         {
           "id": "20A001",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Ability Power is increased by 5% per each spawned Ice Pillars"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
         },
         {
           "id": "20A002",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "On near death, go into [Cryo-Freeze] and gain 15% Ultimate Charge. Can happen once every round"
-            }
-          ]
+          "attributes": []
         },
         {
           "id": "20A003",
           "price": 10000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Blizzard] deals 100% increased damage"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "20S003",
           "price": 10000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Ice Wall] Duration is increased by 1 second and health is increased by 100%"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ]
     }
@@ -2281,45 +1791,28 @@
           "id": "16A001",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "When allies leave your [Crossfade] area, the effect lingers for 2s"
-            }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "16A002",
           "price": 4000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "While in [Speed Boost], [Soundwave] also knocks you back"
-            }
+            { "type": "WP", "value": 5, "unit": "%" },
+            { "type": "AP", "value": 5, "unit": "%" }
           ]
         },
         {
           "id": "16A003",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "Environmental kills grant [Nano Boost] for 5s"
-            }
-          ]
+          "attributes": [{ "type": "CR", "value": 5, "unit": "%" }]
         },
         {
           "id": "16S001",
           "price": 3750,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "After [Wallriding], gain 30% Move Speed for 2s"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -2328,50 +1821,39 @@
           "price": 10000,
           "category": "Weapon",
           "attributes": [
-            {
-              "type": "description",
-              "value": "After using [Soundwave], your next [Quick Melee] grants decaying Overhealth equal to 200% of damage dealt"
-            }
+            { "type": "HP", "value": 50, "unit": "" },
+            { "type": "MD", "value": 25, "unit": "%" }
           ]
         },
         {
           "id": "16W002",
           "price": 10000,
           "category": "Weapon",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "[Sonic Amplifier] projectiles ricochet off walls 3 times"
-            }
-          ]
+          "attributes": [{ "type": "WP", "value": 15, "unit": "%" }]
         },
         {
           "id": "16A004",
           "price": 10000,
           "category": "Ability",
           "attributes": [
-            {
-              "type": "description",
-              "value": "[Sound Barrier] effectiveness is increased by 25% for every 1s [Sound Barrier] is channeled, up to 50%"
-            }
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 15, "unit": "%" }
           ]
         },
         {
           "id": "16A005",
           "price": 11000,
           "category": "Ability",
-          "attributes": []
+          "attributes": [
+            { "type": "AP", "value": 20, "unit": "%" },
+            { "type": "[Amp It Up] Duration", "value": 33, "unit": "%" }
+          ]
         },
         {
           "id": "16S002",
           "price": 9000,
           "category": "Survival",
-          "attributes": [
-            {
-              "type": "description",
-              "value": "After [Wallriding], gain an additonal jump while airborne"
-            }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ]
     }

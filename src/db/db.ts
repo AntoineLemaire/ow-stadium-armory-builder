@@ -3,8 +3,16 @@ import heroes from "./heroes.json";
 import attributeTypes from "./attributeTypes.json";
 import i18n from "../i18n";
 import { Hero } from "../models/hero";
+import { Items } from "../models/items";
+import { Item } from "../models/item";
+import { Power } from "../models/power";
 
+/**
+ * Return tue localized attributes
+ * @returns An array of attribute type
+ */
 const getLocalizedAttributeTypes = () => {
+  console.log("getLocalizedAttributes called");
   const t = i18n.getFixedT(null, "attributes"); // accès direct sans hook
 
   return Object.fromEntries(
@@ -19,12 +27,15 @@ const getLocalizedAttributeTypes = () => {
 };
 
 /**
- * Build the localized heroes.
+ * Return the localized heroes.
  * @returns An array of Hero.
  */
 const getLocalizedHeroes = (): Hero[] => {
+  console.log("getLocalizedHeroes called");
   const h = i18n.getFixedT(null, "heroes");
   const p = i18n.getFixedT(null, "powers");
+  const i = i18n.getFixedT(null, "items");
+  const d = i18n.getFixedT(null, "itemDescriptions");
 
   const order = h("order", { returnObjects: true }) as number[];
 
@@ -38,16 +49,68 @@ const getLocalizedHeroes = (): Hero[] => {
         // Should always be true
         if (heroData) {
           // Get powers from translation file
-          const powers = heroData.powers.map((powerId) =>
-            p(powerId, { returnObjects: true })
+          const powers = heroData.powers.map(
+            (powerId) =>
+              ({
+                id: powerId,
+                ...p(powerId, { returnObjects: true }),
+              } as Power)
+          );
+
+          // Get items from translation file
+          const items: Items = {
+            common: [],
+            rare: [],
+            epic: [],
+          };
+
+          Object.entries(heroData.items).forEach(([itemType, heroItems]) => {
+            const itemKey = itemType as keyof Items;
+            items[itemKey].push(
+              ...heroItems.map((item) => {
+                const copyItem = {
+                  ...item,
+                  attributes: [...item.attributes],
+                };
+                const translatedProperties = i(copyItem.id, {
+                  returnObjects: true,
+                }) as { position: number; name: string };
+                const translatedDescriptions = d(copyItem.id, {
+                  returnObjects: true,
+                });
+
+                if (
+                  Array.isArray(translatedDescriptions) &&
+                  translatedDescriptions.length > 0
+                ) {
+                  const setDescriptions = new Set(translatedDescriptions);
+                  copyItem.attributes.push(...setDescriptions);
+                }
+
+                return {
+                  ...copyItem,
+                  ...translatedProperties,
+                } as Item;
+              })
+            );
+          });
+
+          // order items
+          Object.entries(items).forEach(([, items]) =>
+            items.sort(
+              (a, b) => (a.position ?? Infinity) - (b.position ?? Infinity)
+            )
           );
 
           // Return Hero object.
           return {
             ...heroData,
-            powers: powers,
+            powers: powers.sort(
+              (a, b) => (a.position ?? Infinity) - (b.position ?? Infinity)
+            ),
+            items: items,
             id: id,
-            name: h(String(id)),
+            name: h(`names.${id}`),
           } as Hero;
         } else {
           // Add warning if mismatch between order & heroes.
@@ -61,22 +124,49 @@ const getLocalizedHeroes = (): Hero[] => {
   );
 };
 
-// Sort basic items
-Object.values(basicItems).forEach((items) =>
-  items.sort((a, b) => (a.position ?? Infinity) - (b.position ?? Infinity))
-);
+/**
+ * Cross data from translations and base input to create full items
+ * @param rawItems the items coming from the datasource
+ * @returns An array of Item
+ */
+const rebuildLocalizedItems = (rawItems: Array<any>): Item[] => {
+  const i = i18n.getFixedT(null, "items");
+  const d = i18n.getFixedT(null, "itemDescriptions");
 
-// Sort heroes capacities
-heroes.forEach((hero) => {
-  // Sort powers
-  hero.powers.sort(
-    (a, b) => (a.position ?? Infinity) - (b.position ?? Infinity)
-  );
+  return rawItems.map((rawItem) => {
+    const copyItem = { ...rawItem, attributes: [rawItem.attributes] };
+    const translatedProperties = i(copyItem.id, {
+      returnObjects: true,
+    }) as { position: number; name: string };
+    const translatedDescriptions = d(copyItem.id, {
+      returnObjects: true,
+    });
 
-  // Sort items (comon, rare, epic)
-  Object.values(hero.items).forEach((arr) =>
-    arr.sort((a, b) => (a.position ?? Infinity) - (b.position ?? Infinity))
-  );
-});
+    if (
+      Array.isArray(translatedDescriptions) &&
+      translatedDescriptions.length > 0
+    ) {
+      copyItem.attributes.push(...translatedDescriptions);
+    }
 
-export { basicItems, getLocalizedHeroes, getLocalizedAttributeTypes };
+    return {
+      ...copyItem,
+      ...translatedProperties,
+    } as Item;
+  });
+};
+
+/**
+ * Return the localized Items
+ * @returns An Items object
+ */
+const getLocalizedItems = (): Items => {
+  console.log("getLocalizedItems called");
+  return {
+    common: rebuildLocalizedItems(basicItems.common),
+    rare: rebuildLocalizedItems(basicItems.rare),
+    epic: rebuildLocalizedItems(basicItems.epic),
+  };
+};
+
+export { getLocalizedItems, getLocalizedHeroes, getLocalizedAttributeTypes };
