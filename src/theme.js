@@ -133,6 +133,28 @@ const owTheme = createTheme({
         },
       },
     },
+     MuiInput: {
+      styleOverrides: {
+        underline: {
+          '&:before': {
+            borderBottom: `1px solid ${colors.offWhite}`,
+          },
+          '&:hover:not(.Mui-disabled):before': {
+            borderBottom: `2px solid ${colors.offWhite}`,
+          },
+          '&:after': {
+            borderBottom: `1px solid ${colors.offWhite}`,
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        icon: {
+          color: colors.offWhite,
+        }
+      }
+    },
     MuiSwitch: {
       styleOverrides: {
         switchBase: ({ theme }) => ({

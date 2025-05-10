@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LanguageSwitcher from "./common/language-switcher";
+import LanguageSwitcher from "./common/language-selector";
 
 function ArmoryHeader() {
   return (
@@ -51,8 +51,6 @@ function ArmoryHeader() {
           >
             Overwatch Builds - Armory Builder
           </Typography>
-          
-          <LanguageSwitcher />
 
           <Typography
             variant="h4"
@@ -75,16 +73,33 @@ function ArmoryHeader() {
             Overwatch Builds
           </Typography>
 
-          <Box sx={{ flexGrow: 0, ml: "auto" }}>
-            <IconButton
-              component="a"
-              href="https://github.com/gabrielgasnot/ow-stadium-armory-builder"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit"
-            >
-              <GitHubIcon />
-            </IconButton>
+          <Box
+            sx={{
+              display: "flex",
+              flexGrow: 0,
+              ml: "auto",
+              gap: {
+                xs: 0,
+                sm: 3,
+              },
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              <LanguageSwitcher />
+            </Box>
+            <Box>
+              <IconButton
+                component="a"
+                href="https://github.com/gabrielgasnot/ow-stadium-armory-builder"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+              >
+                <GitHubIcon />
+              </IconButton>
+            </Box>
           </Box>
         </Toolbar>
       </Container>

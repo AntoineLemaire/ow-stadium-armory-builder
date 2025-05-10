@@ -12,9 +12,9 @@ import enPowers from './locales/en/powers';
 import frCommon from "./locales/fr/common";
 import frFooter from "./locales/fr/footer";
 import frHeroes from './locales/fr/heroes';
+import STORAGE_KEYS from "./constants/storage-keys";
 
-const langLocalStorageKey = "osab-lang";
-const savedLang = localStorage.getItem(langLocalStorageKey);
+const savedLang = localStorage.getItem(STORAGE_KEYS.LANGUAGE);
 const defaultLang = savedLang || navigator.language.split("-")[0] || "en"; 
 
 
@@ -48,7 +48,7 @@ i18n.use(initReactI18next).init({
 });
 
 i18n.on("languageChanged", (lng) => {
-  localStorage.setItem(langLocalStorageKey, lng);
+  localStorage.setItem(STORAGE_KEYS.LANGUAGE, lng);
 });
 
 export default i18n;
