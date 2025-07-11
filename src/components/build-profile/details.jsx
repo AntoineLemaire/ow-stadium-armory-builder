@@ -18,6 +18,8 @@ import {
 import DetailsHeader from "./details-header";
 import PerkMiniCard from "../common/perk-mini-card";
 import html2canvas from "html2canvas";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 import StatsPanel from "./stats-panel";
 import BuildRoundPanel from "./build-round-panel";
 import { useHero } from "../../contexts/hero-context";
@@ -114,6 +116,75 @@ function Details() {
         setShowExport(false);
       }
     });
+  };
+
+  const downloadBuild = async (buildData) => {
+    const zip = new JSZip();
+
+    setShowExport(true);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+
+    const element = exportRef.current;
+    if (!element) return;
+
+    // Wait for all images inside the export element to load (including fallback)
+    await waitForImagesToLoad(element);
+
+    const canvas = await html2canvas(element, {
+      onclone: (clonedDoc) => {
+        const clonedNode = clonedDoc.body.querySelector("[data-export-target]");
+        if (clonedNode) {
+          clonedNode.style.display = "block";
+        }
+      },
+      scale: 1.25, // higher resolution screenshot
+      allowTaint: false,
+      imageTimeout: 10000,
+      useCORS: true,
+    });
+
+    const mainBlob =
+      ((await new Promise()) < Blob) |
+      (null >
+        ((resolve) => canvas.toBlob((blob) => resolve(blob), "image/png")));
+
+    if (mainBlob) {
+      zip.file(`${buildData.heroId}-build.png`, mainBlob);
+    }
+
+    // Add a text file with the link to the build ?
+
+    // Get all "data-key" elements (using Perks ID)
+    const elements = document.querySelectorAll("[data-key]");
+
+    // Round by round
+    for (const roundId of buildData.rounds) {
+      for (const el of elements) {
+        const perkId = el.getAttribute("data-key");
+        
+      }
+    }
+
+    let i = 1;
+    for (const el of elements) {
+      const key = el.getAttribute("data-key");
+
+      const canvas = await html2canvas(el);
+      const blob =
+        ((await new Promise()) < Blob) |
+        (null >
+          ((resolve) => canvas.toBlob((blob) => resolve(blob), "image/png")));
+      if (blob) {
+        const folder = zip.folder("screenshots/round-" + i);
+        folder?.file(`vignette-${i}.png`, blob);
+        i++;
+      }
+    }
+    folder?.file(`capture-${key}.png`, blob);
+
+    // Génère et télécharge le zip
+    const content = await zip.generateAsync({ type: "blob" });
+    saveAs(content, "captures.zip");
   };
 
   const getPerkMiniCardDesktop = (perks, perkType, index) => {
