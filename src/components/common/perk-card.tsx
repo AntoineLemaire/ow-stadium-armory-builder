@@ -43,6 +43,8 @@ function PerkCard({
 
   return (
     <Card
+      key={perk.id}
+      data-key={perk.id}
       sx={{
         width: "100%",
         minWidth: "300px",
