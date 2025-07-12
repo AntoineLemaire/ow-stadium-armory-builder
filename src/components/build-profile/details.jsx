@@ -30,6 +30,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 import RenderPowers from "./powers-render.js";
 import RenderItems from "./items-render.js";
+import buildShareLink from "../../services/build-share-link";
+import exportBuild from "../../services/export-build";
 
 function Details() {
   const { t } = useTranslation("common");
@@ -118,7 +120,19 @@ function Details() {
     });
   };
 
-  const downloadBuild = async (buildData) => {
+  function canvasToBlobAsync(canvas) {
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          resolve(blob);
+        } else {
+          reject(new Error("Failed to convert canvas to blob."));
+        }
+      }, "image/png");
+    });
+  }
+
+  const downloadBuild = async () => {
     const zip = new JSZip();
 
     setShowExport(true);
@@ -130,6 +144,7 @@ function Details() {
     // Wait for all images inside the export element to load (including fallback)
     await waitForImagesToLoad(element);
 
+    // Obtain the main build screenshot
     const canvas = await html2canvas(element, {
       onclone: (clonedDoc) => {
         const clonedNode = clonedDoc.body.querySelector("[data-export-target]");
@@ -143,44 +158,38 @@ function Details() {
       useCORS: true,
     });
 
-    const mainBlob =
-      ((await new Promise()) < Blob) |
-      (null >
-        ((resolve) => canvas.toBlob((blob) => resolve(blob), "image/png")));
+    const mainBlob = await canvasToBlobAsync(canvas);
 
     if (mainBlob) {
-      zip.file(`${buildData.heroId}-build.png`, mainBlob);
+      zip.file(`${currentHero.name.toLowerCase()}-build.png`, mainBlob);
     }
 
-    // Add a text file with the link to the build ?
+    // Add a text file with the link to the build
+    const shareLink = buildShareLink(exportBuild(currentHero, rounds));
+    zip.file(`${currentHero.name.toLowerCase()}-link.txt`, shareLink);
 
     // Get all "data-key" elements (using Perks ID)
     const elements = document.querySelectorAll("[data-key]");
 
     // Round by round
-    for (const roundId of buildData.rounds) {
+    for (const round of rounds) {
+      // Find all elements used in the current round
       for (const el of elements) {
         const perkId = el.getAttribute("data-key");
-        
+
+        if (
+          round.powers.some((power) => power.id === perkId) ||
+          round.items.some((item) => item.id === perkId)
+        ) {
+          const canvaElement = await html2canvas(el);
+          const blob = await canvasToBlobAsync(canvaElement);
+          if (blob) {
+            const folder = zip.folder("screenshots/round-" + round.roundId);
+            folder?.file(`${perkId}.png`, blob);
+          }
+        }
       }
     }
-
-    let i = 1;
-    for (const el of elements) {
-      const key = el.getAttribute("data-key");
-
-      const canvas = await html2canvas(el);
-      const blob =
-        ((await new Promise()) < Blob) |
-        (null >
-          ((resolve) => canvas.toBlob((blob) => resolve(blob), "image/png")));
-      if (blob) {
-        const folder = zip.folder("screenshots/round-" + i);
-        folder?.file(`vignette-${i}.png`, blob);
-        i++;
-      }
-    }
-    folder?.file(`capture-${key}.png`, blob);
 
     // Génère et télécharge le zip
     const content = await zip.generateAsync({ type: "blob" });
@@ -259,7 +268,7 @@ function Details() {
         spacing={1}
         sx={{ flexGrow: 1, minHeight: 0, width: "100%", paddingBottom: 3 }}
       >
-        <DetailsHeader copyBuild={handleCopy} />
+        <DetailsHeader copyBuild={handleCopy} downloadBuild={downloadBuild} />
         <BuildRoundPanel />
         <Card className="no-hover" sx={{ height: "100%" }}>
           <CardHeader title={t("power")} />

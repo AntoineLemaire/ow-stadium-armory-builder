@@ -19,6 +19,8 @@ export default {
   capture: "Impr. Écran",
   captureBuild:
     "Créer une capture d'écran de tout votre build (toutes les manches sur 1 seule capture)",
+  downloadBuild:
+    "Télécharger un fichier zip contenant une capture d'écran de tout votre build (toutes les manches sur 1 seule capture), un lien vers votre build ainsi que d'autres éléments.",
   cost: "Coût",
   gain: "Gains estimés",
   weapon: "Arme",
