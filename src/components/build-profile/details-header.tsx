@@ -5,15 +5,30 @@ import { useHero } from "../../contexts/hero-context";
 import { useBuild } from "../../contexts/build-context";
 import { Item } from "../../models/item";
 import { useTranslation } from "react-i18next";
+import DownloadIcon from "@mui/icons-material/Download";
+import { useState } from "react";
 
 interface DetailsHeaderProps {
   copyBuild: () => void;
+  downloadBuild: (generatedLink: string, buildData: any) => void;
 }
 
-function DetailsHeader({ copyBuild }: DetailsHeaderProps) {
+function DetailsHeader({ copyBuild, downloadBuild }: DetailsHeaderProps) {
   const { t } = useTranslation("common");
   const { currentHero } = useHero();
   const { selectedItems, shareBuild, estimatedCredits } = useBuild();
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Paper
       elevation={3}
@@ -105,7 +120,6 @@ function DetailsHeader({ copyBuild }: DetailsHeaderProps) {
             flexDirection: { xs: "row" },
             alignItems: { xs: "flex-start", md: "center" }, // Align left on mobile, center on desktop
           }}
-          className="no-capture"
         >
           <Typography component="span" sx={{ mr: 0.5 }}>
             {t("gain")}
@@ -121,7 +135,7 @@ function DetailsHeader({ copyBuild }: DetailsHeaderProps) {
         </Box>
 
         {/* Share buttons */}
-        <Box sx={{ mt: 1 }} className="no-capture">
+        <Box sx={{ mt: 1 }}>
           <Stack direction={{ xs: "column", lg: "row" }} spacing={1}>
             <Button
               variant="contained"
@@ -130,19 +144,23 @@ function DetailsHeader({ copyBuild }: DetailsHeaderProps) {
               fullWidth
               startIcon={<ShareIcon />}
               title={t("shareBuild")}
-            >
-              {t("share")}
-            </Button>
+            ></Button>
             <Button
               variant="contained"
               color="primary"
-              onClick={copyBuild} // your screen capture handler
+              onClick={copyBuild}
               fullWidth
               startIcon={<CameraAltIcon />}
               title={t("captureBuild")}
-            >
-              {t("capture")}
-            </Button>
+            ></Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => downloadBuild("ABC", {})}
+              fullWidth
+              startIcon={<DownloadIcon />}
+              title={t("downloadBuild")}
+            ></Button>
           </Stack>
         </Box>
       </Box>
