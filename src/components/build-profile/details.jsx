@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import ReactDOM from "react-dom/client";
 import {
   Box,
   Grid,
@@ -32,10 +33,11 @@ import RenderPowers from "./powers-render.js";
 import RenderItems from "./items-render.js";
 import buildShareLink from "../../services/build-share-link";
 import exportBuild from "../../services/export-build";
+import PerkCard from "../common/perk-card";
 
 function Details() {
   const { t } = useTranslation("common");
-  const { currentHero } = useHero();
+  const { currentHero, heroSkills } = useHero();
   const { showMessage } = useUI();
   const {
     selectedItems,
@@ -48,33 +50,51 @@ function Details() {
   } = useBuild();
 
   const [showExport, setShowExport] = useState(false);
+  const [usedPerks, setUsedPerks] = useState([]);
 
   const theme = useTheme();
   const exportRef = useRef();
+  const exportRefBis = useRef();
   const powerColumns = 4;
   const itemColumns = 3;
   const itemRows = 2;
 
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
-  const waitForImagesToLoad = (container) => {
+  const waitForImagesToLoad = (container, timeoutMs = 10000) => {
     const images = Array.from(container.querySelectorAll("img"));
-    const promises = images.map(
-      (img) =>
-        new Promise((resolve) => {
-          if (img.complete && img.naturalHeight !== 0) {
-            resolve();
-          } else {
-            img.onload = () => {
-              resolve();
-            };
-            img.onerror = () => {
-              resolve();
-            }; // resolve even on error to avoid hanging
-          }
-        })
-    );
-    return Promise.all(promises).then(() => undefined);
+    if (images.length === 0) return Promise.resolve();
+
+    let resolvedCount = 0;
+
+    return new Promise((resolve) => {
+      const checkDone = () => {
+        resolvedCount++;
+        if (resolvedCount === images.length) resolve();
+      };
+
+      images.forEach((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          checkDone();
+        } else {
+          const done = () => {
+            img.onload = null;
+            img.onerror = null;
+            checkDone();
+          };
+          img.onload = done;
+          img.onerror = done;
+        }
+      });
+
+      // Timeout de sécurité
+      setTimeout(() => {
+        console.warn(
+          "⚠️ waitForImagesToLoad: Timeout reached, resolving anyway."
+        );
+        resolve();
+      }, timeoutMs);
+    });
   };
 
   const handleCopy = async () => {
@@ -126,7 +146,7 @@ function Details() {
         if (blob) {
           resolve(blob);
         } else {
-          reject(new Error("Failed to convert canvas to blob."));
+          reject(new Error("Failed to generate blob from canvas"));
         }
       }, "image/png");
     });
@@ -134,6 +154,36 @@ function Details() {
 
   const downloadBuild = async () => {
     const zip = new JSZip();
+
+    const perks = [];
+
+    for (const round of rounds) {
+      const newPowers = round.powers.filter(
+        (power) => !perks.some((p) => p.id === power.id)
+      );
+      newPowers.forEach((power) =>
+        perks.push({
+          id: power.id,
+          name: power.name,
+          data: power,
+          type: "power",
+        })
+      );
+
+      const newItems = round.items.filter(
+        (item) => !perks.some((i) => i.id === item.id)
+      );
+      newItems.forEach((item) =>
+        perks.push({
+          id: item.id,
+          name: item.name,
+          data: item,
+          type: "item",
+          skills: item.skills,
+        })
+      );
+    }
+    setUsedPerks(perks);
 
     setShowExport(true);
     await new Promise((resolve) => setTimeout(resolve, 200));
@@ -169,31 +219,38 @@ function Details() {
     zip.file(`${currentHero.name.toLowerCase()}-link.txt`, shareLink);
 
     // Get all "data-key" elements (using Perks ID)
-    const elements = document.querySelectorAll("[data-key]");
+    const perkArea = exportRefBis.current;
+    if (!perkArea) return;
 
-    // Round by round
+    await waitForImagesToLoad(perkArea);
+
+    // Build a list of powers and items used in the build
     for (const round of rounds) {
-      // Find all elements used in the current round
-      for (const el of elements) {
-        const perkId = el.getAttribute("data-key");
+      const perks = round.powers.concat(round.items);
+      for (const perk of perks) {
+        const perkElement = perkArea.querySelector(
+          "[data-key='" + perk.id + "']"
+        );
+        if (!perkElement) continue;
 
-        if (
-          round.powers.some((power) => power.id === perkId) ||
-          round.items.some((item) => item.id === perkId)
-        ) {
-          const canvaElement = await html2canvas(el);
-          const blob = await canvasToBlobAsync(canvaElement);
-          if (blob) {
-            const folder = zip.folder("screenshots/round-" + round.roundId);
-            folder?.file(`${perkId}.png`, blob);
-          }
+        const roundPerkCanvas = await html2canvas(perkElement, {
+          scale: 1.25, // higher resolution screenshot
+          allowTaint: false,
+          imageTimeout: 10000,
+          useCORS: true,
+        });
+        const perkBlob = await canvasToBlobAsync(roundPerkCanvas);
+
+        if (perkBlob) {
+          const folder = zip.folder("perks/round-" + round.roundId);
+          folder?.file(`${perk.name}.png`, perkBlob);
         }
       }
     }
 
     // Génère et télécharge le zip
     const content = await zip.generateAsync({ type: "blob" });
-    saveAs(content, "captures.zip");
+    saveAs(content, `owbuilds-${currentHero.name.toLowerCase()}.zip`);
   };
 
   const getPerkMiniCardDesktop = (perks, perkType, index) => {
@@ -316,17 +373,39 @@ function Details() {
       </Stack>
 
       {showExport && (
-        <div
-          ref={exportRef}
-          data-export-target
-          style={{
-            display: "none",
-            height: "auto",
-            width: "2700px",
-            backgroundColor: theme.palette.background.default,
-          }}
-        >
-          <BuildExportCanvas hero={currentHero} allRounds={rounds} />
+        <div>
+          <div
+            ref={exportRef}
+            data-export-target
+            style={{
+              display: "none",
+              height: "auto",
+              width: "2700px",
+              backgroundColor: theme.palette.background.default,
+            }}
+          >
+            <BuildExportCanvas hero={currentHero} allRounds={rounds} />
+          </div>
+          <div
+            ref={exportRefBis}
+            data-export-perks
+            style={{
+              height: "auto",
+              width: "auto",
+              backgroundColor: theme.palette.background.default,
+            }}
+          >
+            {Array.from(usedPerks).map((perk) => (
+              <PerkCard
+                key={perk.id}
+                perk={perk.data}
+                perkType={perk.type}
+                skills={perk.skills}
+                isSelected={false}
+                isDisabled={false}
+              />
+            ))}
+          </div>
         </div>
       )}
     </Box>
