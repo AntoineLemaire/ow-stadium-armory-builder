@@ -15,6 +15,8 @@ import {
   Tooltip,
   useTheme,
   useMediaQuery,
+  Backdrop,
+  CircularProgress,
 } from "@mui/material";
 import DetailsHeader from "./details-header";
 import PerkMiniCard from "../common/perk-mini-card";
@@ -34,6 +36,7 @@ import RenderItems from "./items-render.js";
 import buildShareLink from "../../services/build-share-link";
 import exportBuild from "../../services/export-build";
 import PerkCard from "../common/perk-card";
+import { getPerksBlob } from "../capture/round-data";
 
 function Details() {
   const { t } = useTranslation("common");
@@ -50,6 +53,7 @@ function Details() {
   } = useBuild();
 
   const [showExport, setShowExport] = useState(false);
+  const [exportProgress, setExportProgress] = useState("");
   const [usedPerks, setUsedPerks] = useState([]);
 
   const theme = useTheme();
@@ -153,104 +157,101 @@ function Details() {
   }
 
   const downloadBuild = async () => {
-    const zip = new JSZip();
-
-    const perks = [];
-
-    for (const round of rounds) {
-      const newPowers = round.powers.filter(
-        (power) => !perks.some((p) => p.id === power.id)
-      );
-      newPowers.forEach((power) =>
-        perks.push({
-          id: power.id,
-          name: power.name,
-          data: power,
-          type: "power",
-        })
-      );
-
-      const newItems = round.items.filter(
-        (item) => !perks.some((i) => i.id === item.id)
-      );
-      newItems.forEach((item) =>
-        perks.push({
-          id: item.id,
-          name: item.name,
-          data: item,
-          type: "item",
-          skills: item.skills,
-        })
-      );
-    }
-    setUsedPerks(perks);
-
+    setExportProgress(t("generatingZip"));
     setShowExport(true);
     await new Promise((resolve) => setTimeout(resolve, 200));
 
-    const element = exportRef.current;
-    if (!element) return;
+    try {
+      const zip = new JSZip();
 
-    // Wait for all images inside the export element to load (including fallback)
-    await waitForImagesToLoad(element);
+      const perks = [];
 
-    // Obtain the main build screenshot
-    const canvas = await html2canvas(element, {
-      onclone: (clonedDoc) => {
-        const clonedNode = clonedDoc.body.querySelector("[data-export-target]");
-        if (clonedNode) {
-          clonedNode.style.display = "block";
-        }
-      },
-      scale: 1.25, // higher resolution screenshot
-      allowTaint: false,
-      imageTimeout: 10000,
-      useCORS: true,
-    });
-
-    const mainBlob = await canvasToBlobAsync(canvas);
-
-    if (mainBlob) {
-      zip.file(`${currentHero.name.toLowerCase()}-build.png`, mainBlob);
-    }
-
-    // Add a text file with the link to the build
-    const shareLink = buildShareLink(exportBuild(currentHero, rounds));
-    zip.file(`${currentHero.name.toLowerCase()}-link.txt`, shareLink);
-
-    // Get all "data-key" elements (using Perks ID)
-    const perkArea = exportRefBis.current;
-    if (!perkArea) return;
-
-    await waitForImagesToLoad(perkArea);
-
-    // Build a list of powers and items used in the build
-    for (const round of rounds) {
-      const perks = round.powers.concat(round.items);
-      for (const perk of perks) {
-        const perkElement = perkArea.querySelector(
-          "[data-key='" + perk.id + "']"
+      for (const round of rounds) {
+        const newPowers = round.powers.filter(
+          (power) => !perks.some((p) => p.id === power.id)
         );
-        if (!perkElement) continue;
+        newPowers.forEach((power) =>
+          perks.push({
+            id: power.id,
+            name: power.name,
+            data: power,
+            type: "power",
+          })
+        );
 
-        const roundPerkCanvas = await html2canvas(perkElement, {
-          scale: 1.25, // higher resolution screenshot
-          allowTaint: false,
-          imageTimeout: 10000,
-          useCORS: true,
-        });
-        const perkBlob = await canvasToBlobAsync(roundPerkCanvas);
+        const newItems = round.items.filter(
+          (item) => !perks.some((i) => i.id === item.id)
+        );
+        newItems.forEach((item) =>
+          perks.push({
+            id: item.id,
+            name: item.name,
+            data: item,
+            type: "item",
+            skills: heroSkills,
+          })
+        );
+      }
 
-        if (perkBlob) {
-          const folder = zip.folder("perks/round-" + round.roundId);
-          folder?.file(`${perk.name}.png`, perkBlob);
+      setExportProgress(t("generatingZipBuild"));
+
+      const perksBlob = await getPerksBlob(perks, theme);
+
+      const element = exportRef.current;
+      if (!element) return;
+
+      // Wait for all images inside the export element to load (including fallback)
+      await waitForImagesToLoad(element);
+
+      // Obtain the main build screenshot
+      const canvas = await html2canvas(element, {
+        onclone: (clonedDoc) => {
+          const clonedNode = clonedDoc.body.querySelector(
+            "[data-export-target]"
+          );
+          if (clonedNode) {
+            clonedNode.style.display = "block";
+          }
+        },
+        scale: 1.25, // higher resolution screenshot
+        allowTaint: false,
+        imageTimeout: 10000,
+        useCORS: true,
+      });
+
+      const mainBlob = await canvasToBlobAsync(canvas);
+
+      if (mainBlob) {
+        zip.file(`${currentHero.name.toLowerCase()}-build.png`, mainBlob);
+      }
+
+      // Add a text file with the link to the build
+      const shareLink = buildShareLink(exportBuild(currentHero, rounds));
+      zip.file(`${currentHero.name.toLowerCase()}-link.txt`, shareLink);
+
+      // Build a list of powers and items used in the build
+      for (const round of rounds) {
+        const roundPerks = round.powers.concat(round.items);
+        setExportProgress(t("generatingZipRound") + round.roundId);
+
+        for (const roundPerk of roundPerks) {
+          if (perksBlob.has(roundPerk.id)) {
+            const perkBlob = perksBlob.get(roundPerk.id);
+            const folder = zip.folder("perks/round-" + round.roundId);
+            folder?.file(`${roundPerk.name}.png`, perkBlob);
+          }
         }
       }
-    }
 
-    // Génère et télécharge le zip
-    const content = await zip.generateAsync({ type: "blob" });
-    saveAs(content, `owbuilds-${currentHero.name.toLowerCase()}.zip`);
+      setExportProgress(t("generatingZipFinal"));
+
+      // Génère et télécharge le zip
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, `owbuilds-${currentHero.name.toLowerCase()}.zip`);
+    } finally {
+      setExportProgress("");
+      setShowExport(false);
+    }
   };
 
   const getPerkMiniCardDesktop = (perks, perkType, index) => {
@@ -372,6 +373,16 @@ function Details() {
         </Accordion>
       </Stack>
 
+      <Backdrop
+        open={showExport}
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
+        <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+          <CircularProgress color="inherit" />
+          <Typography>{exportProgress}</Typography>
+        </Box>
+      </Backdrop>
+
       {showExport && (
         <div>
           <div
@@ -385,26 +396,6 @@ function Details() {
             }}
           >
             <BuildExportCanvas hero={currentHero} allRounds={rounds} />
-          </div>
-          <div
-            ref={exportRefBis}
-            data-export-perks
-            style={{
-              height: "auto",
-              width: "auto",
-              backgroundColor: theme.palette.background.default,
-            }}
-          >
-            {Array.from(usedPerks).map((perk) => (
-              <PerkCard
-                key={perk.id}
-                perk={perk.data}
-                perkType={perk.type}
-                skills={perk.skills}
-                isSelected={false}
-                isDisabled={false}
-              />
-            ))}
           </div>
         </div>
       )}

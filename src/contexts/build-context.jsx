@@ -15,6 +15,7 @@ const BuildContext = createContext();
 
 class Round {
   constructor(roundId, powers = [], items = []) {
+    this.id = roundId;
     this.roundId = roundId;
     this.powers = powers;
     this.items = items;
