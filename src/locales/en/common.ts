@@ -41,4 +41,8 @@ export default {
   roundCost: "Round cost",
   selectPower: "Select a first Power",
   selectItem: "Select a first Weapon, Ability or Survival item.",
-};
+  generatingZip: "Generating your zip file...",
+  generatingZipBuild: "Extracting build data...",
+  generatingZipRound: "Extracting perks data for round ",
+  generatingZipFinal: "Downloading the zip file",
+}

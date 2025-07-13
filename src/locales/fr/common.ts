@@ -41,4 +41,8 @@ export default {
   roundCost: "Coût de la manche",
   selectPower: "Sélectionnez un premier pouvoir dans Puissance",
   selectItem: "Sélectionnez un premier objet dans Arme, Capacité ou Survie",
+  generatingZip: "Génération du fichier zip en cours...",
+  generatingZipBuild: "Extraction des données du build..",
+  generatingZipRound: "Extraction des données des perks pour le round ",
+  generatingZipFinal: "Téléchargement du fichier zip.",
 };
