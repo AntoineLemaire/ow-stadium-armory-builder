@@ -18,7 +18,7 @@ export const getRoundsBlob = async (rounds: Round[], theme: Theme) => {
   position: fixed;
   top: -9999px;
   left: -9999px;
-  width: 600px;
+  width: 380px;
   height: auto;
   opacity: 0;
   pointer-events: none;
@@ -67,7 +67,7 @@ export const getPerksBlob = async (
   position: fixed;
   top: -9999px;
   left: -9999px;
-  width: 600px;
+  width: 380px;
   height: auto;
   opacity: 0;
   pointer-events: none;

@@ -5,8 +5,7 @@ import {
   CardHeader,
   Grid,
   Stack,
-  Typography,
-  useTheme,
+  Typography
 } from "@mui/material";
 import PerkPrintable from "../common/perk-printable";
 import { GradedItem } from "../../models/graded-item";
@@ -53,7 +52,7 @@ function BuildExportRound({
   return (
     <Box
       key={round.id}
-      sx={compactMode ? { width: 600 } : { margin: 2, width: 350 }}
+      sx={compactMode ? { width: 380 } : { margin: 2, width: 350 }}
     >
       <Typography variant="h5">
         {t("round")} {round.id}
