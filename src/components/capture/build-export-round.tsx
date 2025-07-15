@@ -6,6 +6,7 @@ import {
   Grid,
   Stack,
   Typography,
+  useTheme,
 } from "@mui/material";
 import PerkPrintable from "../common/perk-printable";
 import { GradedItem } from "../../models/graded-item";
@@ -14,6 +15,7 @@ import { Item } from "../../models/item";
 import { Round } from "../../models/round";
 import { useTranslation } from "react-i18next";
 import StatsSummary from "./stats-summary";
+import { JSX } from "react";
 
 function BuildExportRound({
   round,
@@ -49,7 +51,10 @@ function BuildExportRound({
   };
 
   return (
-    <Box key={round.id} sx={{ margin: 2, width: 350 }}>
+    <Box
+      key={round.id}
+      sx={compactMode ? { width: 600 } : { margin: 2, width: 350 }}
+    >
       <Typography variant="h5">
         {t("round")} {round.id}
       </Typography>
@@ -78,52 +83,32 @@ function BuildExportRound({
           paddingBottom: 3,
         }}
       >
-        <Card className="no-hover" sx={{ height: "100%" }}>
+        <Card sx={{ boxShadow: "none" }}>
           <CardHeader title={t("power")} />
           <CardContent>
-            <Stack
-              spacing={2}
-              sx={{
-                flexDirection: "column",
-                display: "flex",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-              }}
-            >
-              {[...Array(powerColumns)].map((_, index) =>
-                displayPerk(round.powers, "power", index)
-              )}
-            </Stack>
+            <DisplayPowers
+              compactMode={compactMode}
+              maxPowers={powerColumns}
+              roundPowers={round.powers}
+              displayPerk={displayPerk}
+            />
           </CardContent>
         </Card>
 
-        <Card className="no-hover">
+        <Card sx={{ boxShadow: "none" }}>
           <CardHeader title={t("items")} />
           <CardContent>
-            <Stack
-              spacing={2}
-              sx={{
-                flexDirection: "column",
-                display: "flex",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                gap: 1,
-              }}
-            >
-              {[...Array(itemRows)].map((_, rowIndex) =>
-                [...Array(itemColumns)].map((_, index) =>
-                  displayPerk(
-                    round.items,
-                    "item",
-                    rowIndex * itemColumns + index
-                  )
-                )
-              )}
-            </Stack>
+            <DisplayItems
+              compactMode={compactMode}
+              itemRows={itemRows}
+              itemColumns={itemColumns}
+              roundItems={round.items}
+              displayPerk={displayPerk}
+            />
           </CardContent>
         </Card>
 
-        <Card className="no-hover">
+        <Card sx={{ boxShadow: "none" }}>
           <CardHeader title="Stats" />
           <CardContent>
             <Grid
@@ -139,6 +124,126 @@ function BuildExportRound({
         </Card>
       </Stack>
     </Box>
+  );
+}
+
+function DisplayPowers({
+  compactMode,
+  maxPowers,
+  roundPowers,
+  displayPerk,
+}: {
+  compactMode: boolean;
+  maxPowers: number;
+  roundPowers: Power[];
+  displayPerk: (
+    perks: (Item | Power | GradedItem)[],
+    perkType: string,
+    index: number
+  ) => JSX.Element | null;
+}) {
+  return compactMode ? (
+    <Grid
+      container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center",
+        backgroundColor: "transparent",
+      }}
+    >
+      {[...Array(maxPowers)].map((_, index) => (
+        <Grid
+          size={3}
+          key={index}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {displayPerk(roundPowers, "power", index)}
+        </Grid>
+      ))}
+    </Grid>
+  ) : (
+    <Stack
+      spacing={2}
+      sx={{
+        flexDirection: "column",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+      }}
+    >
+      {[...Array(maxPowers)].map((_, index) =>
+        displayPerk(roundPowers, "power", index)
+      )}
+    </Stack>
+  );
+}
+
+function DisplayItems({
+  compactMode,
+  itemRows,
+  itemColumns,
+  roundItems,
+  displayPerk,
+}: {
+  compactMode: boolean;
+  itemRows: number;
+  itemColumns: number;
+  roundItems: (Item | GradedItem)[];
+  displayPerk: (
+    perks: (Item | Power | GradedItem)[],
+    perkType: string,
+    index: number
+  ) => JSX.Element | null;
+}) {
+  return compactMode ? (
+    <Grid
+      container
+      spacing={1}
+      sx={{
+        textAlign: "center",
+        backgroundColor: "transparent",
+      }}
+    >
+      {[...Array(itemRows)].map((_, rowIndex) =>
+        [...Array(itemColumns)].map((_, index) => (
+          <Grid
+            spacing={2}
+            size={4}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            key={index}
+          >
+            {displayPerk(roundItems, "item", rowIndex * itemColumns + index)}
+          </Grid>
+        ))
+      )}
+    </Grid>
+  ) : (
+    <Stack
+      spacing={2}
+      sx={{
+        flexDirection: "column",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        gap: 1,
+      }}
+    >
+      {[...Array(itemRows)].map((_, rowIndex) =>
+        [...Array(itemColumns)].map((_, index) =>
+          displayPerk(roundItems, "item", rowIndex * itemColumns + index)
+        )
+      )}
+    </Stack>
   );
 }
 
