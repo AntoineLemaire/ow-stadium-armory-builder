@@ -19,6 +19,7 @@ export default function PerkPrintable({
 
   return (
     <Box
+      key={perk.id}
       sx={{
         display: "flex",
         justifyContent: "space-between",

@@ -28,7 +28,10 @@ function BuildExportCanvas({ hero, allRounds }) {
   const displayPerk = (perks, perkType, index) => {
     if (!perks[index]) return null;
     return (
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+      <Box
+        key={perks[index].id}
+        sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+      >
         <Typography variant="h6">
           {perkType === "power" && `${t("round")} ${2 * index + 1}`}
           {perkType === "item" && `${t("item")} ${index + 1}`}
@@ -101,7 +104,6 @@ function BuildExportCanvas({ hero, allRounds }) {
                   <CardHeader title={t("power")} />
                   <CardContent>
                     <Stack
-                      container
                       spacing={2}
                       sx={{
                         flexDirection: "column",

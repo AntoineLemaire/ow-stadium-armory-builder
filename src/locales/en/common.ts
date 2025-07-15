@@ -19,6 +19,7 @@ export default {
   capture: "Capture",
   captureBuild:
     "Create a screen capture of your whole build (all the rounds in 1 capture)",
+  download: "Download",
   downloadBuild:
     "Download a zip file containing the screen capture of your whole build (all the rounds in 1 capture), a link to your build and other data.",
   cost: "Build cost",
@@ -45,4 +46,4 @@ export default {
   generatingZipBuild: "Extracting build data...",
   generatingZipRound: "Extracting perks data for round ",
   generatingZipFinal: "Downloading the zip file",
-}
+};

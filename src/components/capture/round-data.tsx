@@ -37,52 +37,15 @@ export const getPerksBlob = async (
   for (const perk of perks) {
     if (blobCache.has(perk.id)) continue;
 
-    const wrapper = document.createElement("div");
-    captureContainer.appendChild(wrapper);
-
-    const root = createRoot(wrapper);
-    root.render(
-      <ThemeProvider theme={theme}>
-        <AppProviders>
-          <PerkExportableCard
-            key={perk.id}
-            perk={perk.data}
-            perkType={perk.type}
-            skills={perk.skills}
-          />
-        </AppProviders>
-      </ThemeProvider>
-    );
-
-    // Attendre le rendu complet
-    await new Promise((r) =>
-      requestAnimationFrame(() => requestAnimationFrame(r))
-    );
-
-    await document.fonts.ready;
-
-    await Promise.all(
-      Array.from(wrapper.querySelectorAll("img"))
-        .filter((img) => !img.complete)
-        .map(
-          (img) =>
-            new Promise<void>((resolve) => {
-              img.onload = () => resolve();
-              img.onerror = () => resolve();
-            })
-        )
-    );
-
-    const canvas = await html2canvas(wrapper, {
-      backgroundColor: "#000000",
-      useCORS: true,
-    });
-
-    const blob = await new Promise<Blob | null>((resolve) =>
-      canvas.toBlob((b) => resolve(b), "image/png")
-    );
+    const blob = await getPerkBlob(captureContainer, perk, theme);
     if (blob) {
       blobCache.set(perk.id, blob);
+    } else {
+      console.warn(`Retrying to capture ${perk.name}...`);
+      const retriedBlob = await getPerkBlob(captureContainer, perk, theme);
+      if (retriedBlob) {
+        blobCache.set(perk.id, retriedBlob);
+      }
     }
   }
 
@@ -90,4 +53,64 @@ export const getPerksBlob = async (
   document.body.removeChild(captureContainer);
 
   return blobCache;
+};
+
+const getPerkBlob = async (
+  captureContainer: HTMLDivElement,
+  perk: {
+    id: string;
+    name: string;
+    data: Item | Power;
+    type: "power" | "item";
+    skills?: Skill[];
+  },
+  theme: Theme
+) => {
+  const wrapper = document.createElement("div");
+
+  captureContainer.appendChild(wrapper);
+
+  const root = createRoot(wrapper);
+  root.render(
+    <ThemeProvider theme={theme}>
+      <AppProviders>
+        <PerkExportableCard
+          key={perk.id}
+          perk={perk.data}
+          perkType={perk.type}
+          skills={perk.skills}
+        />
+      </AppProviders>
+    </ThemeProvider>
+  );
+
+  // Attendre le rendu complet
+  await new Promise((r) =>
+    requestAnimationFrame(() => requestAnimationFrame(r))
+  );
+
+  await document.fonts.ready;
+
+  await Promise.all(
+    Array.from(wrapper.querySelectorAll("img"))
+      .filter((img) => !img.complete)
+      .map(
+        (img) =>
+          new Promise<void>((resolve) => {
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          })
+      )
+  );
+
+  const canvas = await html2canvas(wrapper, {
+    backgroundColor: "#000000",
+    useCORS: true,
+  });
+
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob((b) => resolve(b), "image/png")
+  );
+
+  return blob;
 };
