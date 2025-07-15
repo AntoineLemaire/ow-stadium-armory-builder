@@ -235,11 +235,11 @@ function Details() {
         const roundPerks = round.powers.concat(round.items);
         if (roundPerks.length === 0) continue;
 
-        const folder = zip.folder("perks/round-" + round.roundId);
+        const folder = zip.folder(`${t("round").toLowerCase()}-${round.roundId}`);
 
         if (roundsBlob.has(round.roundId)) {
           const roundBlob = roundsBlob.get(round.roundId);
-          folder.file(`round-${round.roundId}.png`, roundBlob);
+          folder.file(`_${t("round").toLowerCase()}-${round.roundId}.png`, roundBlob);
         }
 
         setExportProgress(t("generatingZipRound") + round.roundId);
@@ -247,7 +247,7 @@ function Details() {
         for (const roundPerk of roundPerks) {
           if (perksBlob.has(roundPerk.id)) {
             const perkBlob = perksBlob.get(roundPerk.id);
-            folder?.file(`${roundPerk.name}.png`, perkBlob);
+            folder.file(`${roundPerk.name}.png`, perkBlob);
           }
         }
       }
