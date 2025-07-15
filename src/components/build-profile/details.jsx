@@ -326,7 +326,11 @@ function Details() {
         spacing={1}
         sx={{ flexGrow: 1, minHeight: 0, width: "100%", paddingBottom: 3 }}
       >
-        <DetailsHeader copyBuild={handleCopy} downloadBuild={downloadBuild} />
+        <DetailsHeader
+          isDesktop={isDesktop}
+          copyBuild={handleCopy}
+          downloadBuild={downloadBuild}
+        />
         <BuildRoundPanel />
         <Card className="no-hover" sx={{ height: "100%" }}>
           <CardHeader title={t("power")} />

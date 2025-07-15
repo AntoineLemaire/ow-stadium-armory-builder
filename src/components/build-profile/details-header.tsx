@@ -1,4 +1,11 @@
-import { Stack, IconButton, Typography, Box, Paper } from "@mui/material";
+import {
+  Stack,
+  IconButton,
+  Typography,
+  Box,
+  Paper,
+  Button,
+} from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { useHero } from "../../contexts/hero-context";
@@ -6,14 +13,18 @@ import { useBuild } from "../../contexts/build-context";
 import { Item } from "../../models/item";
 import { useTranslation } from "react-i18next";
 import DownloadIcon from "@mui/icons-material/Download";
-import { useState } from "react";
 
 interface DetailsHeaderProps {
+  isDesktop: boolean;
   copyBuild: () => void;
-  downloadBuild: (generatedLink: string, buildData: any) => void;
+  downloadBuild: () => void;
 }
 
-function DetailsHeader({ copyBuild, downloadBuild }: DetailsHeaderProps) {
+function DetailsHeader({
+  isDesktop,
+  copyBuild,
+  downloadBuild,
+}: DetailsHeaderProps) {
   const { t } = useTranslation("common");
   const { currentHero } = useHero();
   const { selectedItems, shareBuild, estimatedCredits } = useBuild();
@@ -125,29 +136,61 @@ function DetailsHeader({ copyBuild, downloadBuild }: DetailsHeaderProps) {
 
         {/* Share buttons */}
         <Box sx={{ mt: 1 }}>
-          <Stack direction={{ xs: "column", lg: "row" }} spacing={1}>
-            <IconButton
-              color="secondary"
-              onClick={() => shareBuild()}
-              title={t("shareBuild")}
-            >
-              <ShareIcon />
-            </IconButton>
-            <IconButton
-              color="secondary"
-              onClick={copyBuild}
-              title={t("captureBuild")}
-            >
-              <CameraAltIcon />
-            </IconButton>
-            <IconButton
-              color="secondary"
-              onClick={() => downloadBuild("ABC", {})}
-              title={t("downloadBuild")}
-            >
-              <DownloadIcon />
-            </IconButton>
-          </Stack>
+          {isDesktop && (
+            <Stack direction={{ xs: "column", lg: "row" }} spacing={2}>
+              <IconButton onClick={() => shareBuild()} title={t("shareBuild")}>
+                <ShareIcon />
+              </IconButton>
+              <IconButton
+                color="secondary"
+                onClick={copyBuild}
+                title={t("captureBuild")}
+              >
+                <CameraAltIcon />
+              </IconButton>
+              <IconButton
+                color="secondary"
+                onClick={downloadBuild}
+                title={t("downloadBuild")}
+              >
+                <DownloadIcon />
+              </IconButton>
+            </Stack>
+          )}
+          {!isDesktop && (
+            <Stack direction={{ xs: "column", lg: "row" }} spacing={2}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => shareBuild()}
+                fullWidth
+                startIcon={<ShareIcon />}
+                title={t("shareBuild")}
+              >
+                {t("share")}
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={copyBuild} // your screen capture handler
+                fullWidth
+                startIcon={<CameraAltIcon />}
+                title={t("captureBuild")}
+              >
+                {t("capture")}
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={downloadBuild} // your screen capture handler
+                fullWidth
+                startIcon={<DownloadIcon />}
+                title={t("downloadBuild")}
+              >
+                {t("download")}
+              </Button>
+            </Stack>
+          )}
         </Box>
       </Box>
     </Paper>

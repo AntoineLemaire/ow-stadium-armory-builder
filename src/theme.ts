@@ -1,3 +1,4 @@
+import { ThemeContext } from "@emotion/react";
 import { createTheme, alpha } from "@mui/material/styles";
 
 // Extend the Palette interface to include custom colors
@@ -219,9 +220,18 @@ const owTheme = createTheme({
     },
     MuiIconButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           userSelect: "none",
-        },
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.secondary.main,
+          borderRadius: 50,
+          padding: "8px",
+          boxShadow: "2px",
+          "&:hover": {
+            backgroundColor: theme.palette.action.hover,
+            boxShadow: 4,
+          },
+        }),
       },
     },
     MuiCardHeader: {
