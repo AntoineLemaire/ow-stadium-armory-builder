@@ -1,4 +1,4 @@
-import { Stack, Button, Typography, Box, Paper } from "@mui/material";
+import { Stack, IconButton, Typography, Box, Paper } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { useHero } from "../../contexts/hero-context";
@@ -17,17 +17,6 @@ function DetailsHeader({ copyBuild, downloadBuild }: DetailsHeaderProps) {
   const { t } = useTranslation("common");
   const { currentHero } = useHero();
   const { selectedItems, shareBuild, estimatedCredits } = useBuild();
-
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Paper
@@ -137,30 +126,27 @@ function DetailsHeader({ copyBuild, downloadBuild }: DetailsHeaderProps) {
         {/* Share buttons */}
         <Box sx={{ mt: 1 }}>
           <Stack direction={{ xs: "column", lg: "row" }} spacing={1}>
-            <Button
-              variant="contained"
-              color="primary"
+            <IconButton
+              color="secondary"
               onClick={() => shareBuild()}
-              fullWidth
-              startIcon={<ShareIcon />}
               title={t("shareBuild")}
-            ></Button>
-            <Button
-              variant="contained"
-              color="primary"
+            >
+              <ShareIcon />
+            </IconButton>
+            <IconButton
+              color="secondary"
               onClick={copyBuild}
-              fullWidth
-              startIcon={<CameraAltIcon />}
               title={t("captureBuild")}
-            ></Button>
-            <Button
-              variant="contained"
-              color="primary"
+            >
+              <CameraAltIcon />
+            </IconButton>
+            <IconButton
+              color="secondary"
               onClick={() => downloadBuild("ABC", {})}
-              fullWidth
-              startIcon={<DownloadIcon />}
               title={t("downloadBuild")}
-            ></Button>
+            >
+              <DownloadIcon />
+            </IconButton>
           </Stack>
         </Box>
       </Box>
