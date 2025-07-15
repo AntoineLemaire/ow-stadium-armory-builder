@@ -36,7 +36,7 @@ import RenderItems from "./items-render.js";
 import buildShareLink from "../../services/build-share-link";
 import exportBuild from "../../services/export-build";
 import PerkCard from "../common/perk-card";
-import { getPerksBlob } from "../capture/round-data";
+import { getPerksBlob, getRoundsBlob } from "../capture/round-data";
 
 function Details() {
   const { t } = useTranslation("common");
@@ -196,6 +196,7 @@ function Details() {
       setExportProgress(t("generatingZipBuild"));
 
       const perksBlob = await getPerksBlob(perks, theme);
+      const roundsBlob = await getRoundsBlob(rounds, theme);
 
       const element = exportRef.current;
       if (!element) return;
@@ -232,12 +233,20 @@ function Details() {
       // Build a list of powers and items used in the build
       for (const round of rounds) {
         const roundPerks = round.powers.concat(round.items);
+        if (roundPerks.length === 0) continue;
+
+        const folder = zip.folder("perks/round-" + round.roundId);
+
+        if (roundsBlob.has(round.roundId)) {
+          const roundBlob = roundsBlob.get(round.roundId);
+          folder.file(`round-${round.roundId}.png`, roundBlob);
+        }
+
         setExportProgress(t("generatingZipRound") + round.roundId);
 
         for (const roundPerk of roundPerks) {
           if (perksBlob.has(roundPerk.id)) {
             const perkBlob = perksBlob.get(roundPerk.id);
-            const folder = zip.folder("perks/round-" + round.roundId);
             folder?.file(`${roundPerk.name}.png`, perkBlob);
           }
         }
