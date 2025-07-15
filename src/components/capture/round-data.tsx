@@ -6,6 +6,48 @@ import PerkExportableCard from "./perk-exportable-card";
 import { createRoot } from "react-dom/client";
 import { Theme, ThemeProvider } from "@mui/material";
 import AppProviders from "../../contexts/app-context";
+import { Round } from "../../models/round";
+import BuildExportRound from "./build-export-round";
+
+export const getRoundsBlob = async (rounds: Round[], theme: Theme) => {
+  const blobCache = new Map<number, Blob>();
+
+  // Crée le conteneur invisible
+  const captureContainer = document.createElement("div");
+  captureContainer.style.cssText = `
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  width: 600px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+`;
+  document.body.appendChild(captureContainer);
+
+  // Génère les thumbnails invisibles
+  for (const round of rounds) {
+    if (blobCache.has(round.id)) continue;
+
+    const blob = await getRoundBlob(captureContainer, round, theme);
+
+    if (blob) {
+      blobCache.set(round.id, blob);
+    } else {
+      console.warn(`Retrying to capture round ${round.id}...`);
+      const retriedBlob = await getRoundBlob(captureContainer, round, theme);
+      if (retriedBlob) {
+        blobCache.set(round.id, retriedBlob);
+      }
+    }
+  }
+
+  // Nettoie les composants
+  document.body.removeChild(captureContainer);
+
+  return blobCache;
+};
 
 export const getPerksBlob = async (
   perks: {
@@ -80,6 +122,55 @@ const getPerkBlob = async (
           perkType={perk.type}
           skills={perk.skills}
         />
+      </AppProviders>
+    </ThemeProvider>
+  );
+
+  // Attendre le rendu complet
+  await new Promise((r) =>
+    requestAnimationFrame(() => requestAnimationFrame(r))
+  );
+
+  await document.fonts.ready;
+
+  await Promise.all(
+    Array.from(wrapper.querySelectorAll("img"))
+      .filter((img) => !img.complete)
+      .map(
+        (img) =>
+          new Promise<void>((resolve) => {
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          })
+      )
+  );
+
+  const canvas = await html2canvas(wrapper, {
+    backgroundColor: "#000000",
+    useCORS: true,
+  });
+
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob((b) => resolve(b), "image/png")
+  );
+
+  return blob;
+};
+
+const getRoundBlob = async (
+  captureContainer: HTMLDivElement,
+  round: Round,
+  theme: Theme
+) => {
+  const wrapper = document.createElement("div");
+
+  captureContainer.appendChild(wrapper);
+
+  const root = createRoot(wrapper);
+  root.render(
+    <ThemeProvider theme={theme}>
+      <AppProviders>
+        <BuildExportRound round={round} compactMode={true} />
       </AppProviders>
     </ThemeProvider>
   );

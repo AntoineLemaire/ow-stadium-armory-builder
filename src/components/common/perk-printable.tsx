@@ -7,8 +7,10 @@ import { useTranslation } from "react-i18next";
 
 export default function PerkPrintable({
   perk,
+  compact = false,
 }: {
   perk: Item | Power | GradedItem;
+  compact?: boolean;
 }) {
   if (!perk) return null;
   const theme = useTheme();
@@ -47,41 +49,43 @@ export default function PerkPrintable({
           }
         />
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexDirection: "column",
-        }}
-      >
-        <Typography
-          variant="h6"
+      {!compact && (
+        <Box
           sx={{
-            mr: 1,
-            fontWeight: 600,
-            textDecoration: "none",
-            color: `${
-              assertIsGradedItem(perk)
-                ? theme.palette.custom.grades[
-                    perk.grade as keyof typeof theme.palette.custom.grades
-                  ]
-                : "text.primary"
-            }`,
+            display: "flex",
+            justifyContent: "space-around",
+            flexDirection: "column",
           }}
         >
-          {perk.name}
-        </Typography>
-        {assertIsItem(perk) && (
           <Typography
-            variant="body2"
+            variant="h6"
             sx={{
-              color: "text.secondary",
+              mr: 1,
+              fontWeight: 600,
+              textDecoration: "none",
+              color: `${
+                assertIsGradedItem(perk)
+                  ? theme.palette.custom.grades[
+                      perk.grade as keyof typeof theme.palette.custom.grades
+                    ]
+                  : "text.primary"
+              }`,
             }}
           >
-            {t(perk.category.toLowerCase())}
+            {perk.name}
           </Typography>
-        )}
-      </Box>
+          {assertIsItem(perk) && (
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+              }}
+            >
+              {t(perk.category.toLowerCase())}
+            </Typography>
+          )}
+        </Box>
+      )}
     </Box>
   );
 }
