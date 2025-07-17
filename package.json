@@ -17,6 +17,8 @@
     "@mui/material": "^7.0.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/zxcvbn": "^4.4.5",
+    "firebase": "^11.10.0",
     "html2canvas": "^1.4.1",
     "i18next": "^25.1.1",
     "pako": "^2.1.0",
@@ -24,7 +26,8 @@
     "react-dom": "^19.1.0",
     "react-i18next": "^15.5.1",
     "react-router-dom": "^7.5.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",

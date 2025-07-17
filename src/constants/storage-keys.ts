@@ -1,5 +1,5 @@
 const STORAGE_KEYS = {
-    LANGUAGE: "osag-lang"
-}
+  LANGUAGE: "osab-lang",
+};
 
 export default STORAGE_KEYS;
