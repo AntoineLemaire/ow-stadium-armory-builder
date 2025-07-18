@@ -1,4 +1,4 @@
-import { TextField, useTheme } from "@mui/material";
+import { Box, TextField, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import zxcvbn from "zxcvbn";
 
@@ -47,8 +47,9 @@ function PasswordStrengthBar({
   ];
 
   return (
-    <>
+    <Box>
       <TextField
+        fullWidth
         label="Password"
         type="password"
         value={password}
@@ -81,7 +82,14 @@ function PasswordStrengthBar({
       <div style={{ marginTop: 4, fontWeight: "bold", color }}>{label}</div>
 
       {/* Password Requirements */}
-      <ul style={{ paddingLeft: 20 }}>
+      <ul
+        style={{
+          paddingLeft: 20,
+          alignItems: "flex-start",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {requirements.map(({ label, test }) => (
           <li
             key={label}
@@ -106,7 +114,7 @@ function PasswordStrengthBar({
           </ul>
         </div>
       )}
-    </>
+    </Box>
   );
 }
 

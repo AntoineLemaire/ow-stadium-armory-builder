@@ -14,13 +14,14 @@ import {
   useTheme,
 } from "@mui/material";
 import owTheme from "./theme";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import ShareBuildModal from "./components/services/share-build";
 import AppProviders from "./contexts/app-context";
 import { useBuild } from "./contexts/build-context";
 import { useUI } from "./contexts/ui-context";
 import useBuildNavigation from "./hooks/use-build-navigation";
 import SnackbarNotification from "./hooks/snackbar-notification";
+import LoginPage from "./pages/login-page";
 
 function App() {
   return (
@@ -46,11 +47,19 @@ function AppContent() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   useEffect(() => {
+    if (!encodedString) {
+      setLoading(false);
+      return;
+    }
+
+    if (encodedString === "login") {
+      setLoading(false);
+      return;
+    }
+
     if (!hasNavigated.current && encodedString) {
       hasNavigated.current = true;
       navigation(encodedString);
-    } else if (!encodedString) {
-      setLoading(false);
     }
   }, [encodedString, navigation]);
 
@@ -94,8 +103,16 @@ function AppContent() {
         {/* Header (app bar) */}
         <ArmoryHeader />
 
-        {/* Main Content Area */}
-        <ArmoryMainContent importBuild={navigation} />
+        {/* Routing area */}
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/"
+            element={<ArmoryMainContent importBuild={navigation} />}
+          />
+          {/* Add more routes as needed */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
 
         {isDesktop && <ArmoryFooter />}
         <div

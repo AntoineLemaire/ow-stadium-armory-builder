@@ -312,6 +312,19 @@ const owTheme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-root": {
+            backgroundColor: alpha(colors.offWhite, 0.1), // Slightly transparent white
+            borderRadius: "4px",
+            "&:hover": {
+              backgroundColor: alpha(colors.offWhite, 0.2), // Darker on hover
+            },
+          },
+        },
+      },
+    },
   },
 });
 
