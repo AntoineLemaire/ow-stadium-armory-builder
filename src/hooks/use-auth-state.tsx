@@ -13,7 +13,7 @@ import {
   isUsernameTaken,
   updateLastConnection,
 } from "../components/firebase/firestore";
-import AuthForm from "../components/common/auth-form";
+import AuthForm from "../components/auth/auth-form";
 import { useNavigate } from "react-router-dom";
 
 interface UseAuthStateReturn {
@@ -33,6 +33,7 @@ const useAuthState = (): UseAuthStateReturn => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthChange(async (firebaseUser) => {
@@ -51,6 +52,7 @@ const useAuthState = (): UseAuthStateReturn => {
     setPassword("");
     setUsername("");
     setError("");
+    setPrivacyPolicyAccepted(false);
     setAuthMode("signIn");
   };
 
@@ -58,6 +60,12 @@ const useAuthState = (): UseAuthStateReturn => {
 
   const handleRegister = useCallback(async () => {
     setError("");
+    if (!privacyPolicyAccepted) {
+      setError(
+        "You must accept the privacy policy to register, but let us remind you that creating an account is <strong>NOT</strong> mandatory to use Overwatchbuilds."
+      );
+      return;
+    }
     if (!email || !password || !username) {
       setError("Please fill all fields.");
       return;
@@ -126,6 +134,8 @@ const useAuthState = (): UseAuthStateReturn => {
       setPassword={setPassword}
       username={username}
       setUsername={setUsername}
+      privacyPolicyAccepted={privacyPolicyAccepted}
+      setPrivacyPolicyAccepted={setPrivacyPolicyAccepted}
       error={error}
       onSignIn={handleSignIn}
       onRegister={handleRegister}
