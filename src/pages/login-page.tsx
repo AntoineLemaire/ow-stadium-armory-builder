@@ -1,8 +1,23 @@
 import { Box } from "@mui/material";
-import useAuthState from "../hooks/use-auth-state";
+import { useAuth } from "../contexts/auth-context";
+import AuthForm from "../components/auth/auth-form";
 
 const LoginPage = () => {
-  const { authContent } = useAuthState();
+  const {
+    authMode,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    username,
+    setUsername,
+    privacyPolicyAccepted,
+    setPrivacyPolicyAccepted,
+    error,
+    handleRegister,
+    handleSignIn,
+    toggleAuthMode,
+  } = useAuth();
 
   return (
     <Box
@@ -17,7 +32,21 @@ const LoginPage = () => {
         paddingBottom: { xs: 0, md: "10px" },
       }}
     >
-      {authContent}
+      <AuthForm
+        authMode={authMode}
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        username={username}
+        setUsername={setUsername}
+        privacyPolicyAccepted={privacyPolicyAccepted}
+        setPrivacyPolicyAccepted={setPrivacyPolicyAccepted}
+        error={error}
+        onSignIn={handleSignIn}
+        onRegister={handleRegister}
+        onToggleMode={toggleAuthMode}
+      />
     </Box>
   );
 };

@@ -1,0 +1,42 @@
+export default {
+  fillAllFields: "Veuillez renseigner tous les champs.",
+  privacyNotAccepted:
+    "Vous devez accepter la politique de confidentialité pour vous inscrire, mais permettez-nous de vous rappeler que la création d'un compte n'est <strong>PAS</strong> obligatoire pour utiliser Overwatchbuilds.",
+  invalidUsername:
+    "Le nom d'utilisateur doit comporter de 3 à 20 caractères, lettres, chiffres ou underscores.",
+  weakPassword: "Le mot de passe n'est pas assez fort.",
+  usernameTaken: "Ce nom d'utilisateur est déjà utilisé.",
+  unknownError: "Une erreur inconnue est survenue.",
+  missingEmailPassword: "Veuillez entrer un email et un mot de passe.",
+  signIn: "Se connecter",
+  register: "S'inscrire",
+  signInRegister: "Se connecter / S'inscrire",
+  botDetected: "Bot détecté - soumission rejetée",
+  usernameHelp: "3-20 caractères, lettres, chiffres, underscores",
+  email: "Email",
+  password: "Mot de passe",
+  username: "Nom d'utilisateur",
+  privacyText: {
+    row1: "Votre vie privée est <strong>vraiment</strong> importante pour nous, et nous tenons à vous rappeler que vous pouvez utiliser l'Armory Builder sans créer de compte.",
+    row2: "Créer un compte vous permet de sauvegarder vos builds, de voter pour des builds et d'autres fonctionnalités qui nécessitent que nous identifions clairement un utilisateur.",
+    row3: "Cependant, un compte personnel n'est <strong>pas</strong> obligatoire car vous pouvez créer un build et le partager avec les options disponibles.",
+    row4: "Notre courte (honnêtement, nous l'avons écrite aussi courte que possible) notice de politique de confidentialité explique comment nous traitons vos données et quels droits vous avez.",
+  },
+  privacyPolicyAccept: "J'ai lu et j'accepte la",
+  privacyPolicy: "Politique de confidentialité",
+  createAccount: "Créer un compte",
+  haveAccount: "Vous avez un compte ? Se connecter",
+  close: "Fermer",
+  passwordRequirements: {
+    minLength: "Au moins 8 caractères.",
+    uppercase: "Au moins 1 lettre majuscule.",
+    number: "Au moins 1 chiffre.",
+    specialChar: "Au moins 1 caractère spécial.",
+  },
+  passwordStrength: {
+    weak: "Faible",
+    ok: "OK",
+    strong: "Fort",
+  },
+  warning: "Avertissement",
+};

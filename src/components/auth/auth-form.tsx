@@ -7,6 +7,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Divider,
   IconButton,
   TextField,
   Typography,
@@ -15,6 +16,7 @@ import PasswordStrengthBar from "./password-strength-bar";
 import { useUI } from "../../contexts/ui-context";
 import CloseIcon from "@mui/icons-material/Close";
 import PrivacyPolicy from "./privacy-policy";
+import { Trans, useTranslation } from "react-i18next";
 
 interface AuthFormProps {
   authMode: "signIn" | "register";
@@ -26,7 +28,7 @@ interface AuthFormProps {
   setUsername: (username: string) => void;
   privacyPolicyAccepted: boolean;
   setPrivacyPolicyAccepted: (accepted: boolean) => void;
-  error: string;
+  error: string | null;
   onSignIn: () => void;
   onRegister: () => void;
   onToggleMode: () => void;
@@ -47,6 +49,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
   onRegister,
   onToggleMode,
 }) => {
+  const { t } = useTranslation("auth");
   const nameRef = useRef<HTMLInputElement>(null);
   const [displayPrivacyPolicy, setDisplayPrivacyPolicy] = useState(false);
   const { setSnackBarMessage } = useUI();
@@ -60,8 +63,8 @@ const AuthForm: React.FC<AuthFormProps> = ({
     e.preventDefault();
 
     if (nameRef.current?.value) {
-      setSnackBarMessage("Bot detected - submission rejected");
-      console.warn("Bot detected - submission rejected");
+      setSnackBarMessage(t("botDetected"));
+      console.warn(t("botDetected"));
       return;
     } else {
       if (authMode === "signIn") {
@@ -87,12 +90,12 @@ const AuthForm: React.FC<AuthFormProps> = ({
       {authMode === "register" && (
         <TextField
           fullWidth
-          label="Username"
+          label={t("username")}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           size="small"
           required
-          helperText="3-15 chars, letters, numbers, underscores"
+          helperText={t("usernameHelp")}
         />
       )}
       {authMode === "register" && (
@@ -106,7 +109,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
       )}
       <TextField
         fullWidth
-        label="Email"
+        label={t("email")}
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -116,7 +119,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
       {authMode === "signIn" && (
         <TextField
           fullWidth
-          label="Password"
+          label={t("password")}
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -134,21 +137,36 @@ const AuthForm: React.FC<AuthFormProps> = ({
       )}
       {authMode === "register" && (
         <>
+          <Divider
+            orientation="horizontal"
+            variant="middle"
+            sx={{
+              borderColor: "#ffffff",
+              justifyContent: "center",
+
+              height: "1px",
+            }}
+          />
           <Typography variant="caption" color="textSecondary">
-            Your Privacy is <strong>really</strong> important to us, and we want
-            to remind you that you can use the Armory Builder without creating
-            an account.
+            <Trans
+              i18nKey={t("privacyText.row1")}
+              components={{ strong: <strong /> }}
+            />
             <br />
-            Creating an account allows you to save your builds for easier
-            access, vote for builds and other features that requires us to
-            clearly identify a user.
+            <Trans
+              i18nKey={t("privacyText.row2")}
+              components={{ strong: <strong /> }}
+            />
             <br />
-            However, a personal account is <strong>not</strong> mandatory as you
-            can create a build and share it with the available options.
+            <Trans
+              i18nKey={t("privacyText.row3")}
+              components={{ strong: <strong /> }}
+            />
             <br />
-            Our short (honestly, we wrote it as short as possible) Privacy
-            Policy notice explains how we handle your data and what rights you
-            have.
+            <Trans
+              i18nKey={t("privacyText.row4")}
+              components={{ strong: <strong /> }}
+            />
             <br />
           </Typography>
           <Box>
@@ -159,14 +177,14 @@ const AuthForm: React.FC<AuthFormProps> = ({
               onChange={(e) => setPrivacyPolicyAccepted(e.target.checked)}
             />
             <Typography variant="caption" color="textSecondary">
-              I have read and accept the{" "}
+              {t("privacyPolicyAccept")}{" "}
               <Button
                 variant="text"
                 size="small"
                 onClick={() => setDisplayPrivacyPolicy(true)}
                 sx={{ padding: 0, textDecoration: "underline" }}
               >
-                Privacy Policy
+                {t("privacyPolicy")}
               </Button>
             </Typography>
           </Box>
@@ -179,7 +197,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
             onClick={onSignIn}
             sx={{ padding: "0px 10px 0px 10px" }}
           >
-            Sign In
+            {t("signIn")}
           </Button>
         ) : (
           <Button
@@ -187,7 +205,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
             variant="contained"
             sx={{ padding: "0px 10px 0px 10px" }}
           >
-            Register
+            {t("register")}
           </Button>
         )}
         <Button
@@ -195,15 +213,13 @@ const AuthForm: React.FC<AuthFormProps> = ({
           onClick={onToggleMode}
           sx={{ padding: "0px 10px 0px 10px" }}
         >
-          {authMode === "signIn"
-            ? "Create account"
-            : "Have an account? Sign In"}
+          {authMode === "signIn" ? t("createAccount") : t("haveAccount")}
         </Button>
       </Box>
 
       {displayPrivacyPolicy && (
         <Dialog open={displayPrivacyPolicy} onClose={closePrivacyPolicyDialog}>
-          <DialogTitle>Privacy Policy</DialogTitle>
+          <DialogTitle>{t("privacyPolicy")}</DialogTitle>
           <IconButton
             aria-label="close"
             onClick={closePrivacyPolicyDialog}
@@ -228,7 +244,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
                 closePrivacyPolicyDialog();
               }}
             >
-              Close
+              {t("close")}
             </Button>
           </DialogActions>
         </Dialog>

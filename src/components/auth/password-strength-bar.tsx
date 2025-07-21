@@ -1,9 +1,7 @@
 import { Box, TextField, useTheme } from "@mui/material";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import zxcvbn from "zxcvbn";
-
-const strengthLabels = ["Weak", "Weak", "OK", "OK", "Strong"];
-const strengthColors = ["#ff4d4d", "#ff4d4d", "#ffcc00", "#ffcc00", "#00cc44"];
 
 function PasswordStrengthBar({
   password,
@@ -13,6 +11,22 @@ function PasswordStrengthBar({
   setPassword: (pwd: string) => void;
 }) {
   const theme = useTheme();
+  const { t } = useTranslation("auth");
+
+  const strengthLabels = [
+    t("passwordStrength.weak"),
+    t("passwordStrength.ok"),
+    t("passwordStrength.ok"),
+    t("passwordStrength.strong"),
+  ];
+  const strengthColors = [
+    "#ff4d4d",
+    "#ff4d4d",
+    "#ffcc00",
+    "#ffcc00",
+    "#00cc44",
+  ];
+
   const [feedback, setFeedback] = useState<string[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,14 +48,20 @@ function PasswordStrengthBar({
 
   // Example password requirements to display
   const requirements = [
-    { label: "At least 8 characters", test: (pw: string) => pw.length >= 8 },
     {
-      label: "Contains uppercase letter",
+      label: t("passwordRequirements.minLength"),
+      test: (pw: string) => pw.length >= 8,
+    },
+    {
+      label: t("passwordRequirements.uppercase"),
       test: (pw: string) => /[A-Z]/.test(pw),
     },
-    { label: "Contains number", test: (pw: string) => /\d/.test(pw) },
     {
-      label: "Contains special character",
+      label: t("passwordRequirements.number"),
+      test: (pw: string) => /\d/.test(pw),
+    },
+    {
+      label: t("passwordRequirements.specialChar"),
       test: (pw: string) => /[!@#$%^&*(),.?":{}|<>]/.test(pw),
     },
   ];
@@ -50,7 +70,7 @@ function PasswordStrengthBar({
     <Box>
       <TextField
         fullWidth
-        label="Password"
+        label={t("password")}
         type="password"
         value={password}
         onChange={handleChange}
@@ -106,8 +126,15 @@ function PasswordStrengthBar({
       {/* zxcvbn Feedback */}
       {feedback.length > 0 && (
         <div style={{ marginTop: 1, color: theme.palette.text.secondary }}>
-          <strong>Warnings:</strong>
-          <ul>
+          <strong>{t("warning")}:</strong>
+          <ul
+            style={{
+              paddingLeft: 20,
+              alignItems: "flex-start",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             {feedback.map((msg, i) => (
               <li key={i}>{msg}</li>
             ))}

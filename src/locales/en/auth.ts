@@ -1,0 +1,42 @@
+export default {
+  fillAllFields: "Please fill all fields.",
+  privacyNotAccepted:
+    "You must accept the privacy policy to register, but let us remind you that creating an account is <strong>NOT</strong> mandatory to use Overwatchbuilds.",
+  invalidUsername:
+    "Username must be 3-20 characters, letters, numbers, or underscores.",
+  weakPassword: "Password is not strong enough.",
+  usernameTaken: "Username is already taken.",
+  unknownError: "Unknown error occurred.",
+  missingEmailPassword: "Please enter email and password.",
+  signIn: "Sign In",
+  register: "Register",
+  signInRegister: "Sign In / Register",
+  botDetected: "Bot detected - submission rejected",
+  usernameHelp: "3-20 chars, letters, numbers, underscores",
+  email: "Email",
+  password: "Password",
+  username: "Username",
+  privacyText: {
+    row1: "Your Privacy is <strong>really</strong> important to us, and we want to remind you that you can use the Armory Builder without creating an account.",
+    row2: "Creating an account allows you to save your builds for easier access, vote for builds and other features that requires us to clearly identify a user.",
+    row3: "However, a personal account is <strong>not</strong> mandatory as you can create a build and share it with the available options.",
+    row4: "Our short (honestly, we wrote it as short as possible) Privacy Policy notice explains how we handle your data and what rights you have.",
+  },
+  privacyPolicyAccept: "I have read and accept the",
+  privacyPolicy: "Privacy Policy",
+  createAccount: "Create an account",
+  haveAccount: "Have an account? Sign In",
+  close: "Close",
+  passwordRequirements: {
+    minLength: "At least 8 characters.",
+    uppercase: "At least 1 uppercase letter.",
+    number: "At least 1 number.",
+    specialChar: "At least 1 special character.",
+  },
+  passwordStrength: {
+    weak: "Weak",
+    ok: "OK",
+    strong: "Strong",
+  },
+  warning: "Warning",
+};

@@ -17,12 +17,12 @@ import HandymanIcon from "@mui/icons-material/Handyman";
 import LoginIcon from "@mui/icons-material/Login";
 import LanguageSwitcher from "./common/language-selector";
 import { useState } from "react";
-import useAuthState from "../hooks/use-auth-state";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/auth-context";
 
 function ArmoryHeader() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { userProfile, handleSignOut } = useAuthState();
+  const { userProfile, handleSignOut } = useAuth();
 
   const toggleDrawer = (open: boolean) => () => setDrawerOpen(open);
 

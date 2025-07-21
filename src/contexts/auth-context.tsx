@@ -1,33 +1,68 @@
-import { useState, useEffect, useCallback, ReactNode } from "react";
-import zxcvbn from "zxcvbn";
-import { UserProfile } from "../models/user-profile";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+  useCallback,
+} from "react";
+import { User } from "firebase/auth";
 import {
   login,
   logout,
   onAuthChange,
   register,
 } from "../components/firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { UserProfile } from "../models/user-profile";
 import {
   createUserProfile,
   getUserProfile,
   isUsernameTaken,
   updateLastConnection,
 } from "../components/firebase/firestore";
-import AuthForm from "../components/auth/auth-form";
-import { useNavigate } from "react-router-dom";
+import zxcvbn from "zxcvbn";
+import { useTranslation } from "react-i18next";
 
-interface UseAuthStateReturn {
+interface AuthContextType {
   userProfile: UserProfile | null;
   authMode: "signIn" | "register";
-  authContent: ReactNode;
+  email: string;
+  setEmail: (email: string) => void;
+  password: string;
+  setPassword: (password: string) => void;
+  username: string;
+  setUsername: (username: string) => void;
+  handleRegister: () => Promise<void>;
+  handleSignIn: () => Promise<void>;
   handleSignOut: () => Promise<void>;
+  toggleAuthMode: () => void;
+  privacyPolicyAccepted: boolean;
+  setPrivacyPolicyAccepted: (accepted: boolean) => void;
+  error: string | null;
+  isAuthenticated: boolean;
 }
 
-const useAuthState = (): UseAuthStateReturn => {
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const useAuth = (): AuthContextType => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
+
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation("auth");
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [error, setError] = useState("");
   const [authMode, setAuthMode] = useState<"signIn" | "register">("signIn");
+  const [error, setError] = useState<string | null>(null);
 
   // Form fields
   const [email, setEmail] = useState("");
@@ -56,33 +91,29 @@ const useAuthState = (): UseAuthStateReturn => {
     setAuthMode("signIn");
   };
 
-  const isValidUsername = (name: string) => /^[a-zA-Z0-9_]{3,15}$/.test(name);
+  const isValidUsername = (name: string) => /^[a-zA-Z0-9_]{3,20}$/.test(name);
 
   const handleRegister = useCallback(async () => {
     setError("");
     if (!privacyPolicyAccepted) {
-      setError(
-        "You must accept the privacy policy to register, but let us remind you that creating an account is <strong>NOT</strong> mandatory to use Overwatchbuilds."
-      );
+      setError(t("privacyNotAccepted"));
       return;
     }
     if (!email || !password || !username) {
-      setError("Please fill all fields.");
+      setError(t("fillAllFields"));
       return;
     }
     if (!isValidUsername(username)) {
-      setError(
-        "Username must be 3-15 characters, letters, numbers, or underscores."
-      );
+      setError(t("invalidUsername"));
       return;
     }
     if (zxcvbn(password).score < 3) {
-      setError("Password is not strong enough.");
+      setError(t("weakPassword"));
       return;
     }
     try {
       if (await isUsernameTaken(username)) {
-        setError("Username is already taken.");
+        setError(t("usernameTaken"));
         return;
       }
       const userCredential = await register(email, password);
@@ -90,16 +121,14 @@ const useAuthState = (): UseAuthStateReturn => {
       await createUserProfile(uid, username);
       resetForm();
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "An unknown error occurred."
-      );
+      setError(err instanceof Error ? err.message : t("unknownError"));
     }
   }, [email, password, username]);
 
   const handleSignIn = useCallback(async () => {
     setError("");
     if (!email || !password) {
-      setError("Please enter email and password.");
+      setError(t("missingEmailPassword"));
       return;
     }
     try {
@@ -108,9 +137,7 @@ const useAuthState = (): UseAuthStateReturn => {
       resetForm();
       navigate("/");
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "An unknown error occurred."
-      );
+      setError(err instanceof Error ? err.message : t("unknownError"));
     }
   }, [email, password]);
 
@@ -124,26 +151,28 @@ const useAuthState = (): UseAuthStateReturn => {
     setAuthMode(authMode === "signIn" ? "register" : "signIn");
   };
 
-  // Compose the auth form UI with props and handlers
-  const authContent = (
-    <AuthForm
-      authMode={authMode}
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
-      username={username}
-      setUsername={setUsername}
-      privacyPolicyAccepted={privacyPolicyAccepted}
-      setPrivacyPolicyAccepted={setPrivacyPolicyAccepted}
-      error={error}
-      onSignIn={handleSignIn}
-      onRegister={handleRegister}
-      onToggleMode={toggleAuthMode}
-    />
+  return (
+    <AuthContext.Provider
+      value={{
+        userProfile,
+        error,
+        authMode,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        username,
+        setUsername,
+        privacyPolicyAccepted,
+        setPrivacyPolicyAccepted,
+        handleRegister,
+        handleSignIn,
+        handleSignOut,
+        toggleAuthMode,
+        isAuthenticated: !!userProfile,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
-
-  return { userProfile, authMode, authContent, handleSignOut };
 };
-
-export default useAuthState;
