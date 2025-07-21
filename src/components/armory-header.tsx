@@ -15,6 +15,7 @@ import {
   ListItemText,
   ListItemIcon,
   Tooltip,
+  Avatar,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -26,6 +27,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth-context";
 import { useTranslation } from "react-i18next";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 function ArmoryHeader() {
   const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("md"));
@@ -188,19 +190,50 @@ function ArmoryHeader() {
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 300 }}>
           <List>
+            <ListItem
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <IconButton
+                onClick={toggleDrawer(false)}
+                edge="start"
+                color="inherit"
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  width: "100%",
+                }}
+              >
+                <ChevronRightIcon />
+              </IconButton>
+            </ListItem>
             {isAuthenticated ? (
-              <ListItem>
-                <Button
-                  fullWidth
-                  startIcon={<HandymanIcon />}
-                  sx={{
-                    justifyContent: "flex-start",
-                    padding: "10px ",
-                  }}
-                >
-                  {userProfile?.username}
-                </Button>
-              </ListItem>
+              <>
+                <ListItem sx={{ gap: 2 }}>
+                  <Avatar>
+                    <HandymanIcon />
+                  </Avatar>
+                  <Typography variant="h5">{userProfile?.username}</Typography>
+                </ListItem>
+                <ListItem>
+                  <Button
+                    fullWidth
+                    startIcon={<LogoutIcon />}
+                    onClick={() => {
+                      handleSignOut();
+                      setDrawerOpen(false);
+                    }}
+                    sx={{
+                      justifyContent: "flex-start",
+                      padding: "10px ",
+                    }}
+                  >
+                    {tAuth("signOut")}
+                  </Button>
+                </ListItem>
+              </>
             ) : (
               <ListItem>
                 <Button
@@ -218,6 +251,8 @@ function ArmoryHeader() {
                 </Button>
               </ListItem>
             )}
+          </List>
+          <List sx={{ position: "absolute", bottom: 0 }}>
             <ListItem>
               <Button
                 fullWidth
@@ -234,24 +269,6 @@ function ArmoryHeader() {
                 Github
               </Button>
             </ListItem>
-            {userProfile && (
-              <ListItem>
-                <Button
-                  fullWidth
-                  startIcon={<LogoutIcon />}
-                  onClick={() => {
-                    handleSignOut();
-                    setDrawerOpen(false);
-                  }}
-                  sx={{
-                    justifyContent: "flex-start",
-                    padding: "10px ",
-                  }}
-                >
-                  {tAuth("signOut")}
-                </Button>
-              </ListItem>
-            )}
           </List>
         </Box>
       </Drawer>
