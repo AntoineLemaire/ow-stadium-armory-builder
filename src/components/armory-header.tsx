@@ -9,6 +9,12 @@ import {
   Drawer,
   List,
   Button,
+  useMediaQuery,
+  Menu,
+  MenuItem,
+  ListItemText,
+  ListItemIcon,
+  Tooltip,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -19,12 +25,24 @@ import LanguageSwitcher from "./common/language-selector";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth-context";
+import { useTranslation } from "react-i18next";
 
 function ArmoryHeader() {
+  const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("md"));
+  const { t: tAuth } = useTranslation("auth");
+  const { t: tCommon } = useTranslation("common");
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { userProfile, handleSignOut } = useAuth();
-
+  const { userProfile, handleSignOut, isAuthenticated } = useAuth();
   const toggleDrawer = (open: boolean) => () => setDrawerOpen(open);
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -102,14 +120,67 @@ function ArmoryHeader() {
                 <LanguageSwitcher />
               </Box>
 
-              <IconButton
-                edge="end"
-                color="inherit"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-              >
-                <MenuIcon />
-              </IconButton>
+              {isDesktop ? (
+                <List sx={{ display: "flex", flexDirection: "row", gap: 1 }}>
+                  {isAuthenticated ? (
+                    <ListItem>
+                      <Button
+                        fullWidth
+                        color="inherit"
+                        startIcon={<HandymanIcon />}
+                        sx={{
+                          justifyContent: "flex-start",
+                          whiteSpace: "nowrap",
+                        }}
+                        onClick={handleClick}
+                      >
+                        {userProfile?.username}
+                      </Button>
+                    </ListItem>
+                  ) : (
+                    <ListItem>
+                      <Button
+                        component={Link}
+                        to="/login"
+                        startIcon={<LoginIcon />}
+                        sx={{
+                          justifyContent: "flex-start",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {tAuth("signIn")}
+                      </Button>
+                    </ListItem>
+                  )}
+                  <ListItem>
+                    <Tooltip
+                      id="button-codeRepo"
+                      title={tCommon("visitUsOnGithub")}
+                      arrow
+                    >
+                      <IconButton
+                        edge="end"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        href="https://github.com/gabrielgasnot/ow-stadium-armory-builder"
+                        about="github"
+                      >
+                        <GitHubIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </ListItem>
+                </List>
+              ) : (
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={toggleDrawer(true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              )}
             </Box>
           </Toolbar>
         </Container>
@@ -117,21 +188,17 @@ function ArmoryHeader() {
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 300 }}>
           <List>
-            {userProfile ? (
+            {isAuthenticated ? (
               <ListItem>
                 <Button
                   fullWidth
-                  href="https://github.com/gabrielgasnot/ow-stadium-armory-builder"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
                   startIcon={<HandymanIcon />}
                   sx={{
                     justifyContent: "flex-start",
                     padding: "10px ",
                   }}
                 >
-                  {userProfile.username}
+                  {userProfile?.username}
                 </Button>
               </ListItem>
             ) : (
@@ -147,7 +214,7 @@ function ArmoryHeader() {
                   }}
                   onClick={() => setDrawerOpen(false)}
                 >
-                  Sign in / Register
+                  {tAuth("signInRegister")}
                 </Button>
               </ListItem>
             )}
@@ -169,14 +236,38 @@ function ArmoryHeader() {
             </ListItem>
             {userProfile && (
               <ListItem>
-                <Button startIcon={<LogoutIcon />} onClick={handleSignOut}>
-                  Sign out
+                <Button
+                  fullWidth
+                  startIcon={<LogoutIcon />}
+                  onClick={() => {
+                    handleSignOut();
+                    setDrawerOpen(false);
+                  }}
+                  sx={{
+                    justifyContent: "flex-start",
+                    padding: "10px ",
+                  }}
+                >
+                  {tAuth("signOut")}
                 </Button>
               </ListItem>
             )}
           </List>
         </Box>
       </Drawer>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <MenuItem
+          onClick={() => {
+            handleSignOut();
+            handleClose();
+          }}
+        >
+          <ListItemIcon sx={{ color: "text.secondary" }}>
+            <LogoutIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>{tAuth("signOut")}</ListItemText>
+        </MenuItem>
+      </Menu>
     </>
   );
 }

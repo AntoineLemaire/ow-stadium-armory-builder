@@ -9,6 +9,7 @@ export default {
   unknownError: "Une erreur inconnue est survenue.",
   missingEmailPassword: "Veuillez entrer un email et un mot de passe.",
   signIn: "Se connecter",
+  signOut: "Se déconnecter",
   register: "S'inscrire",
   signInRegister: "Se connecter / S'inscrire",
   botDetected: "Bot détecté - soumission rejetée",

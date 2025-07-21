@@ -9,6 +9,7 @@ export default {
   unknownError: "Unknown error occurred.",
   missingEmailPassword: "Please enter email and password.",
   signIn: "Sign In",
+  signOut: "Sign Out",
   register: "Register",
   signInRegister: "Sign In / Register",
   botDetected: "Bot detected - submission rejected",

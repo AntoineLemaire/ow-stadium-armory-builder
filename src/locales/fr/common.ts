@@ -39,4 +39,5 @@ export default {
   roundCost: "Coût de la manche",
   selectPower: "Sélectionnez un premier pouvoir dans Puissance",
   selectItem: "Sélectionnez un premier objet dans Arme, Capacité ou Survie",
+  visitUsOnGithub: "Rendez-nous visite sur GitHub",
 };

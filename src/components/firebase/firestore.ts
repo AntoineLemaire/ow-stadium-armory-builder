@@ -23,8 +23,12 @@ export const getUserProfile = async (
   return {
     username: data.username,
     role: data.role,
-    createdAt: (data.createdAt as Timestamp).toDate(),
-    lastConnection: (data.lastConnection as Timestamp).toDate(),
+    createdAt: data.createdAt
+      ? (data.createdAt as Timestamp).toDate()
+      : new Date(),
+    lastConnection: data.lastConnection
+      ? (data.lastConnection as Timestamp).toDate()
+      : new Date(),
   };
 };
 

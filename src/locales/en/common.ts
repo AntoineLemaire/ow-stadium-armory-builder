@@ -39,4 +39,5 @@ export default {
   roundCost: "Round cost",
   selectPower: "Select a first Power",
   selectItem: "Select a first Weapon, Ability or Survival item.",
+  visitUsOnGithub: "Visit us on GitHub",
 };
