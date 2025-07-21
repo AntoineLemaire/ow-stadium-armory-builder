@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useTheme } from "@mui/material";
-import { useMemo } from "react";
+import { Link } from "@mui/material";
 
 const PrivacyPolicy: React.FC = () => {
-  const theme = useTheme();
-
   const privacyTexts = {
     en: {
       title: "Privacy Notice — Authentication and User Data",

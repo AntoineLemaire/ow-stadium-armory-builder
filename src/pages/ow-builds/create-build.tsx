@@ -1,12 +1,12 @@
 import { Box, Button, Popper, useMediaQuery, useTheme } from "@mui/material";
-import { ArmoryFooter, Details, Perks, PerkSummary } from "../components";
+import { ArmoryFooter, Details, Perks, PerkSummary } from "../../components";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link as RouterLink } from "react-router-dom";
-import { useHero } from "../contexts/hero-context";
-import { useUI } from "../contexts/ui-context";
+import { useHero } from "../../contexts/hero-context";
+import { useUI } from "../../contexts/ui-context";
 import { useTranslation } from "react-i18next";
 
-function BuildMain() {
+function CreateBuild() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const { t } = useTranslation("common");
@@ -102,4 +102,4 @@ function BuildMain() {
   );
 }
 
-export default BuildMain;
+export default CreateBuild;

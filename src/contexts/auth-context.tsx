@@ -6,7 +6,6 @@ import React, {
   ReactNode,
   useCallback,
 } from "react";
-import { User } from "firebase/auth";
 import {
   login,
   logout,
@@ -20,7 +19,7 @@ import {
   getUserProfile,
   isUsernameTaken,
   updateLastConnection,
-} from "../components/firebase/firestore";
+} from "../components/firebase/user";
 import zxcvbn from "zxcvbn";
 import { useTranslation } from "react-i18next";
 

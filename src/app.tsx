@@ -21,7 +21,7 @@ import { useBuild } from "./contexts/build-context";
 import { useUI } from "./contexts/ui-context";
 import useBuildNavigation from "./hooks/use-build-navigation";
 import SnackbarNotification from "./hooks/snackbar-notification";
-import LoginPage from "./pages/login-page";
+import { BrowseBuilds, LoginPage } from "./pages";
 
 function App() {
   return (
@@ -106,6 +106,7 @@ function AppContent() {
         {/* Routing area */}
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/browse" element={<BrowseBuilds />} />
           <Route
             path="/"
             element={<ArmoryMainContent importBuild={navigation} />}

@@ -32,7 +32,7 @@ function Heroes({ currentHero }: HeroesProps) {
         key={`hero_${hero.id}`}
         onClick={() => selectHero(hero)}
         sx={{
-          width: { xs: 100, md: 125 },
+          width: 100,
           cursor: "pointer",
           transition: "box-shadow 0.3s ease",
           "&:hover": {
@@ -42,7 +42,7 @@ function Heroes({ currentHero }: HeroesProps) {
         data-active={hero.id === currentHero ? "" : undefined}
       >
         <CardMedia
-          sx={{ height: { xs: 100, md: 125 } }}
+          sx={{ height: 100 }}
           image={`${import.meta.env.BASE_URL}heroes/${hero.id}.png`}
           title={hero.name}
         />
@@ -95,8 +95,8 @@ function Heroes({ currentHero }: HeroesProps) {
                 >
                   <Box
                     sx={{
-                      width: { xs: 64, md: 100 },
-                      height: { xs: 64, md: 100 },
+                      width: 64,
+                      height: 64,
                       borderRadius: 1,
                       backgroundImage: `url(${
                         import.meta.env.BASE_URL

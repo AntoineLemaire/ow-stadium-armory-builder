@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { useAuth } from "../contexts/auth-context";
-import AuthForm from "../components/auth/auth-form";
+import { useAuth } from "../../contexts/auth-context";
+import AuthForm from "../../components/auth/auth-form";
 
 const LoginPage = () => {
   const {

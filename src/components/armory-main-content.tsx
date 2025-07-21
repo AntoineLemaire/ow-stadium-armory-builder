@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import BuildStarter from "../pages/build-starter";
-import BuildMain from "../pages/build-main";
+import { CreateBuild, HeroPicker } from "../pages";
 import { useHero } from "../contexts/hero-context";
 
 interface ArmoryMainContentProps {
@@ -22,9 +21,9 @@ function ArmoryMainContent({ importBuild }: ArmoryMainContentProps) {
       }}
     >
       {!currentHero && (
-        <BuildStarter currentHero={currentHero} importBuild={importBuild} />
+        <HeroPicker currentHero={currentHero} importBuild={importBuild} />
       )}
-      {currentHero && <BuildMain />}
+      {currentHero && <CreateBuild />}
     </Box>
   );
 }

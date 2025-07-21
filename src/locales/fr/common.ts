@@ -1,5 +1,5 @@
 export default {
-  selectHero: "Sélectionnez votre héros",
+  selectHero: "Sélectionnez votre héros et créez votre propre build",
   or: "Ou",
   importBuild: "Importez un build",
   pasteBuild: "Copier l'ID de build",
@@ -40,4 +40,5 @@ export default {
   selectPower: "Sélectionnez un premier pouvoir dans Puissance",
   selectItem: "Sélectionnez un premier objet dans Arme, Capacité ou Survie",
   visitUsOnGithub: "Rendez-nous visite sur GitHub",
+  browseBuilds: "Explorer les builds",
 };
