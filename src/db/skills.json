@@ -441,7 +441,7 @@
   },
   {
     "id": "4I001",
-    "affectedBy": ["WP", "WPLS", "AS"]
+    "affectedBy": ["WP", "WPLS", "AS", "MA", "RS"]
   },
   {
     "id": "4I002",
@@ -462,5 +462,21 @@
   {
     "id": "4I006",
     "affectedBy": []
+  },
+  {
+    "id": "9I001",
+    "affectedBy": ["WP", "WPLS", "AS", "MA", "RS"]
+  },
+  {
+    "id": "9I002",
+    "affectedBy": ["AP", "ALS", "CR"]
+  },
+  {
+    "id": "9I003",
+    "affectedBy": ["AP", "CR"]
+  },
+  {
+    "id": "9I004",
+    "affectedBy": ["AP", "ALS"]
   }
 ]
