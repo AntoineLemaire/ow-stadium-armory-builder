@@ -6,6 +6,7 @@ export default {
     24, // Orisa
     5, // Reinhardt
     31, // Sigma
+    9, // Winston
     13, // Zarya
 
     // DPS
@@ -33,6 +34,7 @@ export default {
     "34": "Junker Queen",
     "24": "Orisa",
     "5": "Reinhardt",
+    "9": "Winston",
     "13": "Zarya",
     "29": "Ashe",
     "14": "Cassidy",
