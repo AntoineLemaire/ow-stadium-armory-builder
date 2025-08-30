@@ -7,6 +7,7 @@ import {
   Attribute,
 } from "../../models/attribute";
 import Skill from "../../models/skill";
+import HighlightText from "../common/highlight-text";
 
 function PerkExportableAttributes({
   attributes,
@@ -22,13 +23,10 @@ function PerkExportableAttributes({
     attributes.map((attribute, index) => (
       <Box key={index} style={{ display: "flex", alignItems: "center" }}>
         {assertIsDescriptionAttribute(attribute) ? (
-          <Typography
-            color={theme.palette.text.secondary}
-            variant="body2"
-            marginTop="0.3rem"
-          >
-            {attribute.value}
-          </Typography>
+          <HighlightText
+            text={attribute.value}
+            color={theme.palette.text.primary}
+          />
         ) : assertIsStatAttribute(attribute) ? (
           <>
             <Box
