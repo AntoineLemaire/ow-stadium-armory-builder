@@ -1573,5 +1573,76 @@ export default {
     name: "Vitesse Excessive",
     description:
       "Lorsque vous infligez des dégâts avec votre arme, votre vitesse de déplacement est augmentée de <e>5 %</e> et votre vitesse d'attaque de <e>3 %</e> pendant <e>3 s</e>. Cet effet peut se cumuler <e>6 fois</e>.Les tirs directs octroient le double de cumuls.",
+  },
+  "9P001": {
+    position: 1,
+    name: "Disjoncteur",
+    description: "Les dégâts <e>électriques</e> sont augmentés de <e>5 %</e>. Vous obtenez un surplus de points de vie égal à <e>15 %</e> des dégâts <e>électriques</e> infligés, jusqu'à un maximum de <e>100</e>.",
+  },
+  "9P002": {
+    position: 2,
+    name: "Faisceau Électrique",
+    description:
+      "Portée maximum du tir principal de [Canon Tesla]: <e>+20%</e>. Les dégâts du tir principal de [Canon Tesla] sont augmentés de <e>3 %</e> par cible touchée.",
+  },
+  "9P003": {
+    position: 3,
+    name: "Paratonnerre",
+    description:
+      "Les tirs secondaires à pleine charge réussis avec [Canon Tesla] ricochent sur toutes les autres cibles adverses dans un rayon de <e>6m</e>, infligeant des dégâts réduits de <e>50 %</e>.",
+  },
+  "9P004": {
+    position: 4,
+    name: "Survoltage",
+    description:
+      "Les tirs secondaires de [Canon Tesla]peuvent infliger des dégâts critiques à hauteur de <e>175 %</e> des dégâts normaux.",
+  },
+  "9P005": {
+    position: 8,
+    name: "Saut Lunaire",
+    description:
+      "Vous obtenez <e>2 %</e> de bonus de charge de la capacité ultime par cible touchée par l'atterrissage de [Propulseurs]. Lorsque vous utilisez [Propulseurs], vous obtenez un surplus de points de vie égale à <e>5 %</e> de vos points de vie maximum par <e>seconde</e>, jusqu'à un maximum de <ap>100</ap> points de vie en surplus.",
+  },
+  "9P006": {
+    position: 5,
+    name: "Alunissage",
+    description:
+      "Vous récupérez un montant de points de vie équivalent à <e>7 %</e> de vos points de vie maximum par cible touchée par l'atterrissage de [Propulseurs].",
+  },
+  "9P007": {
+    position: 6,
+    name: "Poing Primordial",
+    description:
+      "Les éliminations avec un [coup en mêlée] ou avec [Propulseurs] réinitialisent le temps de recharge des [Propulseurs]. Les dégâts de votre [coup en mêlée] augmentent de <e>5 %</e> pour chaque tranche de <e>25</e> points d'armure dont vous bénéficiez.",
+  },
+  "9P008": {
+    position: 9,
+    name: "Générateur de Poche",
+    description:
+      "A l'activation de [Générateur d'Écran], un petit [Générateur d'Écran] supplémentaire dôté de <e>5 %</e> de points de vie vient protéger Winston.",
+  },
+  "9P009": {
+    position: 10,
+    name: "Relai de Surtension",
+    description:
+      "Les personnages alliés dans le [Générateur d'Écran] obtiennent un suplus temporaire de <ap>25</ap> points de vie par <e>seconde</e>, jusqu'à un maximum de <ap>100</ap> points de vie en surplus.",
+  },
+  "9P010": {
+    position: 8,
+    name: "Champ Tesla",
+    description:
+      "Les adversaires se trouvant dans le [Générateur d'Écran] subissent <ap>40</ap> points de dégâts <e>électriques</e> par seconde.",
+  },
+  "9P011": {
+    position: 12,
+    name: "Onde Primordiale",
+    description:
+      "Après avoir utilisé [Propulseurs], appuez sur la touche de saut pour frapper rapidement le sol dans la direction que vous regardez. Pendant [Rage Primordiale], la vitesse à laquelle vous frappez le sol est augmentée de <e>50 %</e>.",
+  },
+  "9P012": {
+    position: 11,
+    name: "Cuir Dur",
+    description:
+      "A l'activation de [Rage Primordiale], vous obtenez un montant d'armure supplémentaire égal à <e>100%</e> de votre armure maximum.",
   }
 };
