@@ -510,4 +510,21 @@ export default {
     primary:
       "Hold [Space] to hover. Slows falling when fuel is empty. Fuel only regenerates while on the ground.",
   },
+  "9I001": {
+    name: "Tesla Cannon",
+    primary: "Electric frontal-cone weapon.",
+    secondary: "Hold to charge, release to fire focused electricity.",
+  },
+  "9I002": {
+    name: "Jump Pack",
+    primary: "Leap forward into the air. Landing on an enemy damages them.",
+  },
+  "9I003": {
+    name: "Barrier Projector",
+    primary: "Deploy a protective energy dome.",
+  },
+  "9I004": {
+    name: "Primal Rage",
+    primary: "Gain immense health, but you can only leap and punch enemies.",
+  },
 };
