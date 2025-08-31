@@ -1622,7 +1622,7 @@ export default {
   },
   "27P003": {
     position: 3,
-    name: "Whirl Whip",
+    name: "Whirlwhip",
     description:
       "After using [Shield Bash] or [Whip Shot], your next [Rocket Flail] swing hits all enemies around you within <e>5m</e>.",
   },

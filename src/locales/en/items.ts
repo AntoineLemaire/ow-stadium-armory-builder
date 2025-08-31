@@ -329,4 +329,14 @@ export default {
   "9S004": { position: 1, name: "S. Pacearmor" },
   "9S005": { position: 2, name: "Fortified Jump Pack" },
   "9S006": { position: 3, name: "Simian Supplements" },
+  "27W001": { position: 1, name: "Omni-Boots" },
+  "27A001": { position: 1, name: "Haste Paste" },
+  "27A002": { position: 1, name: "Chain Extender" },
+  "27A003": { position: 2, name: "Scavenged Steel" },
+  "27A004": { position: 3, name: "Mitzi's Medicine" },
+  "27S001": { position: 1, name: "Squire's Satchel" },
+  "27S002": { position: 2, name: "Valkyrian Core" },
+  "27S003": { position: 1, name: "Dragons' Incinerator" },
+  "27S004": { position: 2, name: "Hardlight Weave" },
+  "27S005": { position: 3, name: "Nullifier Neuroworks" }
 };

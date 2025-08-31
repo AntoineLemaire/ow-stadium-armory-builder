@@ -2077,4 +2077,77 @@ export default {
         "Les points de vie maximum de [Générateur d'écran] sont augmentés de <ap>300</ap>.",
     },
   ],
+  "27W001": [
+    {
+      type: "Distance de [Charge de Bouclier]",
+      value: 40,
+      unit: "%",
+    },
+  ],
+  "27A001": [
+    {
+      type: "description",
+      value:
+        "[Module de Réparation] augmente la vitesse de déplacement de la cible de <e>10 %</e> lorsqu'il est actif.",
+    },
+  ],
+  "27A002": [
+    {
+      type: "Portée de [Fléau Cinglant]",
+      value: 50,
+      unit: "%",
+    },
+  ],
+  "27A003": [
+    {
+      type: "description",
+      value: "Les dégâts de capacité octroient <e>3 %</e> de charge de la capacité ultime.",
+    },
+  ],
+  "27A004": [
+    {
+      type: "description",
+      value:
+        "Les soins de [Module de Réparation] peuvent octroyer aux personnages alliés jusqu'à <e>75 points de vie en surplus</e> tant qu'il est actif.",
+    },
+  ],
+  "27S001": [
+    {
+      type: "description",
+      value:
+        "Tant que [Bouclier-Écran] est actif, les dégâts que vous subissez sont réduits de <e>25 %</e>.",
+    }
+  ],
+  "27S002": [
+    {
+      type: "description",
+      value:
+        "Une fois que [Bouclier-Écran] est détruit, celui-ci commence à se régénérer <e>50 %</e> plus tôt.",
+    }
+  ],
+  "27S003": [
+    {
+      type: "Durée de [Ralliement]",
+      value: 20,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value: "Les adversaires au sein de [Ralliement] brûlent à hauteur de <e>5 %</e> de leurs points de vie maximum <e>par seconde</e>, ce qui vous soigne du même montant.",
+    },
+  ],
+  "27S004": [
+    {
+      type: "description",
+      value:
+        "Augmente les points de vie de [Bouclier-Écran] d'un montant égal à <e>150 %</e> de votre maximum d'armure.",
+    },
+  ],
+  "27S005": [
+    {
+      type: "description",
+      value:
+        "Les dégâts de [Fléau à Réaction] réduisent le temps de recharge de [Module de Réparation] de <e>0,5 s</e>.",
+    },
+  ],
 };
