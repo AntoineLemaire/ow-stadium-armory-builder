@@ -1506,14 +1506,14 @@ export default {
     {
       type: "description",
       value:
-        "La dernière cible adverse vous ayant éliminé vous est <e>révélée</E> lorsqu'elle est à proximité. Les dégâts que vous lui infligez sont augmentés de <e>10 %</E> et les dégâts que vous subissez de sa part sont réduits de <e>10 %</e>.",
+        "La dernière cible adverse vous ayant éliminé vous est <e>révélée</e> lorsqu'elle est à proximité. Les dégâts que vous lui infligez sont augmentés de <e>10 %</e> et les dégâts que vous subissez de sa part sont réduits de <e>10 %</e>.",
     },
   ],
   "00S019": [
     {
       type: "description",
       value:
-        "Lorsque vous subissez au moins <e>150</e> points de dégâts en une seule fois (avant atténuation des dégâts), vous gagnez un surplus de points de vie égal à <e>20 %</E> des dégâts subis pendant <e>3 s</e> et vos points de bouclier commencent à se régénérer immédiatement.",
+        "Lorsque vous subissez au moins <e>150</e> points de dégâts en une seule fois (avant atténuation des dégâts), vous gagnez un surplus de points de vie égal à <e>20 %</e> des dégâts subis pendant <e>3 s</e> et vos points de bouclier commencent à se régénérer immédiatement.",
     },
   ],
   "00S020": [
@@ -1961,6 +1961,120 @@ export default {
       type: "description",
       value:
         "Lorsque vous utilisez [Barrage], vous obtenez un surplus depoints de vie égal à <e>25 %</e> de vos points de vie max. pendant <e>3 s</e>.",
+    },
+  ],
+
+  "9W001": [
+    {
+      type: "description",
+      value:
+        "[Canon Tesla] inflige <e>50 %</e> de dégâts supplémentaires aux objets deployables, comme les tourelles et les écrans.",
+    },
+  ],
+  "9W002": [
+    {
+      type: "description",
+      value:
+        "Vous obtenez un surplus depoints de vie égal à <e>15 %</e> des dégâts infligés par le tir secondaire de [Canon Tesla], jusqu'à un maximum de <e>100</e> points de vie en surplus.",
+    },
+  ],
+  "9W003": [
+    {
+      type: "description",
+      value:
+        "Votre puissance d'arme est augmentée de <e>10 %</e> tant que vous êtes à l'intérieur d'un [Générateur d'écran].",
+    },
+  ],
+  "9W004": [
+    {
+      type: "description",
+      value:
+        "Les dégâts du tir secondaire de [Canon Tesla] sont augmentés de <e>25 %</e>.",
+    },
+  ],
+  "9A001": [
+    {
+      type: "description",
+      value:
+        "Après avoir activé les [Propulseurs], la vitesse de déplacement de Winston est augmentée de <e>50 %</e> pendant <e>2 s</e> lors du prochain saut.",
+    },
+  ],
+  "9A002": [
+    {
+      type: "description",
+      value:
+        "La zone d'atterrissage de [Propulseurs] peut augmenter pour atteindre <e>100 %</e> en l'air.",
+    },
+  ],
+  "9A003": [
+    {
+      type: "description",
+      value:
+        "[Générateur d'écran] explose lorsqu'il disparaît, infligeant <ap>25</ap> points de dégâts <e>électriques</e> aux adversaires à proximité.",
+    },
+  ],
+  "9A004": [
+    {
+      type: "Durée de [Rage Primordiale]",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "Dégâts de base de [Propulseurs]",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value:
+        "Pendant [Rage Primordiale], les dégâts de base des [Propulseurs] deviennent <e>électriques</e> et peuvent être augmentés de <e>100 %</e> supplémentaires en l'air.",
+    },
+  ],
+  "9S001": [
+    {
+      type: "description",
+      value:
+        "Après avoir gagné une manche, Winston obtient <e>2000</e> de crédits bonus.",
+    },
+  ],
+  "9S002": [
+    {
+      type: "description",
+      value:
+        "[Propulseurs] dissipe tous les effets négatifs que vous subissez.",
+    },
+  ],
+  "9S003": [
+    {
+      type: "description",
+      value:
+        "Lorsque vous avez moins de <e>50 %</e> de vos points de vie, les dégâts que vous subissez des fusils à pompe tels que ceux du tir principal de Faucheur, la Reine de Junkers et D.Va sont réduits de <e>25 %</e>.",
+    },
+  ],
+  "9S004": [
+    {
+      type: "description",
+      value:
+        "À la fin de [Rage Primordiale], vou obtenez un surplus de <ap>150</ap> points de vie.",
+    },
+  ],
+  "9S005": [
+    {
+      type: "description",
+      value:
+        "Les dégâts subis pendant l'utilisation de [Propulseurs] sont réduits de <e>35%</e>.",
+    },
+  ],
+  "9S006": [
+    {
+      type: "Durée de [Générateur d'écran]",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value:
+        "Les points de vie maximum de [Générateur d'écran] sont augmentés de <ap>300</ap>.",
     },
   ],
 };

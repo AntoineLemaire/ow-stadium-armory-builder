@@ -133,7 +133,7 @@ export default {
     position: 3,
     name: "Fête de la Moisson",
     description:
-      "Les coups de [Pompes funèbres] ont <e>10 %</e> de chances de faire apparaître un globe d'âme. Lorsque vous ramassez un globe, vous récupérez <e>25 %</e> points de vie et <e>25 %</E> munitions, et votre vitesse de déplacement augmente de <e>25 %</e> pendant <e>3 s</e>.",
+      "Les coups de [Pompes funèbres] ont <e>10 %</e> de chances de faire apparaître un globe d'âme. Lorsque vous ramassez un globe, vous récupérez <e>25 %</e> points de vie et <e>25 %</e> munitions, et votre vitesse de déplacement augmente de <e>25 %</e> pendant <e>3 s</e>.",
   },
   "2P012": {
     position: 5,
@@ -187,7 +187,7 @@ export default {
     position: 6,
     name: "Cratère",
     description:
-      "Le rayon d'explosion de [Roquette LX] augmente de <e>40 %</E> et les dégâts de l'explosion augmentent de <e>15 %</e>.",
+      "Le rayon d'explosion de [Roquette LX] augmente de <e>40 %</e> et les dégâts de l'explosion augmentent de <e>15 %</e>.",
   },
   "15P009": {
     position: 7,
@@ -199,7 +199,7 @@ export default {
     position: 3,
     name: "Cible en Fuite",
     description:
-      "Pendant [Sprint], vous récupérez <e>10 %</e> de munitions par seconde et votre maxmimum de munitions augmente de <e>10 %</e> jusqu'à ce que vous rechargiez. Cet effet peut se cumuler <e>10 fois</E>.",
+      "Pendant [Sprint], vous récupérez <e>10 %</e> de munitions par seconde et votre maxmimum de munitions augmente de <e>10 %</e> jusqu'à ce que vous rechargiez. Cet effet peut se cumuler <e>10 fois</e>.",
   },
   "15P011": {
     position: 8,

@@ -434,7 +434,7 @@ export default {
     position: 6,
     name: "Laceration",
     description:
-      "[Swift Strike] deals <e>35%</e> additional damage over <e>3s</E> to enemies hit.",
+      "[Swift Strike] deals <e>35%</e> additional damage over <e>3s</e> to enemies hit.",
   },
   "21P003": {
     position: 10,
@@ -481,7 +481,7 @@ export default {
     position: 1,
     name: "Cybernetic Speed",
     description:
-      "Dealing damage with [Shuriken] grants <e>2%</e> [Shuriken] Attack Speed for <e>3s</E>, stacking up to <e>15 times</e>.",
+      "Dealing damage with [Shuriken] grants <e>2%</e> [Shuriken] Attack Speed for <e>3s</e>, stacking up to <e>15 times</e>.",
   },
   "21P011": {
     position: 2,
