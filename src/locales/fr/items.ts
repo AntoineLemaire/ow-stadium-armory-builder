@@ -330,4 +330,14 @@ export default {
   "9S004": { position: 1, name: "S. Ingeblindé" },
   "9S005": { position: 2, name: "Propulseurs fortifiés" },
   "9S006": { position: 3, name: "Suppléments Simiesques" },
+  "27W001": { position: 1, name: "Omnibottes" },
+  "27A001": { position: 1, name: "Module d'accélération" },
+  "27A002": { position: 1, name: "Extension de chaîne" },
+  "27A003": { position: 2, name: "Acier Recyclé" },
+  "27A004": { position: 3, name: "Médicaments de Mitzi" },
+  "27S001": { position: 2, name: "Sacoche d'Écuyère" },
+  "27S002": { position: 1, name: "Cœeur Valkyrien" },
+  "27S003": { position: 1, name: "Incinérateur du Dragon" },
+  "27S004": { position: 3, name: "Bouclier de Lumière" },
+  "27S005": { position: 2, name: "Annulateur Neurotique" }
 };

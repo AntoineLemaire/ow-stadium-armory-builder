@@ -2471,5 +2471,121 @@
         }
       ]
     }
+  },
+  {
+    "id": 27,
+    "hp": 200,
+    "armor": 50,
+    "shields": 0,
+    "role": "Support",
+    "skills": {
+      "weapons": ["27I001"],
+      "abilities": ["27I002", "27I003", "27I004", "27I005"],
+      "passives": ["27I006"],
+      "ultimates": ["27I008"]
+    },
+    "powers": [
+      "27P001",
+      "27P002",
+      "27P003",
+      "27P004",
+      "27P005",
+      "27P006",
+      "27P007",
+      "27P008",
+      "27P009",
+      "27P010",
+      "27P011",
+      "27P012"
+    ],
+    "items": {
+      "common": [],
+      "rare": [
+        {
+          "id": "27W001",
+          "price": 4500,
+          "category": "Weapon",
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "WP", "value": 5, "unit": "%" }
+          ]
+        },
+        {
+          "id": "27A001",
+          "price": 4000,
+          "category": "Ability",
+          "attributes": [
+            { "type": "HP", "value": 25, "unit": "" },
+            { "type": "AP", "value": 5, "unit": "%" }
+          ]
+        },
+        {
+          "id": "27S001",
+          "price": 4000,
+          "category": "Survival",
+          "attributes": [
+            { "type": "AR", "value": 25, "unit": "" }
+          ]
+        },
+        {
+          "id": "27S002",
+          "price": 4000,
+          "category": "Survival",
+          "attributes": [
+            { "type": "AR", "value": 25, "unit": "" }
+          ]
+        }
+      ],
+      "epic": [
+        {
+          "id": "27A002",
+          "price": 9000,
+          "category": "Ability",
+          "attributes": [{ "type": "AP", "value": 15, "unit": "%" }]
+        },
+        {
+          "id": "27A003",
+          "price": 9500,
+          "category": "Ability",
+          "attributes": [
+            { "type": "AR", "value": 50, "unit": "" },
+            { "type": "CR", "value": 5, "unit": "%" }
+          ]
+        },
+        {
+          "id": "27A004",
+          "price": 10000,
+          "category": "Ability",
+          "attributes": [
+            { "type": "AP", "value": 10, "unit": "%" },
+            { "type": "CR", "value": 10, "unit": "%" }
+          ]
+        },
+        {
+          "id": "27S003",
+          "price": 9000,
+          "category": "Survival",
+          "attributes": [
+            { "type": "AR", "value": 25, "unit": "" }
+          ]
+        },
+        {
+          "id": "27S004",
+          "price": 10000,
+          "category": "Survival",
+          "attributes": [
+             { "type": "AR", "value": 25, "unit": "" }
+          ]
+        },
+        {
+          "id": "27S005",
+          "price": 10000,
+          "category": "Survival",
+          "attributes": [
+            { "type": "AR", "value": 50, "unit": "" }
+          ]
+        }
+      ]
+    }
   }
 ]

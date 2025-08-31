@@ -57,7 +57,7 @@ function PerkAttributes({
                 </Typography>
                 {Array.isArray(skills) &&
                   skills.filter((skill) =>
-                    skill.affectedBy.includes(attribute.type)
+                    skill.affectedBy?.includes(attribute.type)
                   ).length > 0 && (
                     <Typography
                       color={theme.palette.text.secondary}
@@ -67,7 +67,7 @@ function PerkAttributes({
                       (
                       {skills
                         .filter((skill) =>
-                          skill.affectedBy.includes(attribute.type)
+                          skill.affectedBy?.includes(attribute.type)
                         )
                         .map((skill) => skill.name)
                         .join(", ")}

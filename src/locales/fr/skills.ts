@@ -550,4 +550,32 @@ export default {
     primary:
       "Vous confère énormément de points de vie, mais vous pouvez uniquement sauter et frapper les ennemis.",
   },
+  "27I001": {
+    name: "Fléau à réaction",
+    primary: "Arme de mêlée avec une portée augmentée.",
+  },
+  "27I002": {
+    name: "Module de réparation",
+    primary: "Soigne un allié pendant une courte durée.",
+  },
+  "27I003": {
+    name: "Fléau Cinglant",
+    primary: "Vous propulsez la masse de votre fléau vers l'avant et repoussez votre cible.",
+  },
+  "27I004": {
+    name: "Bouclier-Écran",
+    primary: "Déployez un bouclier d'énergie devant vous.",
+  },
+  "27I005": {
+    name: "Charge de Bouclier",
+    primary: "Quand le bouclier-écran est déployé, vous pouvez vous projeter vers l'avant pour repousser votre adversaire.",
+  },
+  "27I006": {
+    name: "Inspiration",
+    primary: "Frappez les adversaires avec votre fléau et soignez en même temps les personnages alliés à proximité.",
+  },
+  "27I007": {
+    name: "Ralliement",
+    primary: "Vous obtenez de l'armure, votre bouclier-écran es renforcé et vous octroyez des points de vie supplémentaires aux personnages alliés proches.",
+  },
 };

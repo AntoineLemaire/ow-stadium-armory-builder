@@ -527,4 +527,32 @@ export default {
     name: "Primal Rage",
     primary: "Gain immense health, but you can only leap and punch enemies.",
   },
+  "27I001": {
+    name: "Rocket Flail",
+    primary: "Melee weapon with extended range.",
+  },
+  "27I002": {
+    name: "Repair Pack",
+    primary: "Heals an ally for a short duration.",
+  },
+  "27I003": {
+    name: "Whip Shot",
+    primary: "Launch your flail forward to knock an enemy away from you.",
+  },
+  "27I004": {
+    name: "Barrier Shield",
+    primary: "Deploy a front energy barrier.",
+  },
+  "27I005": {
+    name: "Shield Bash",
+    primary: "Available when Barrier Shield is deployed. Dash forward to knock back an enemy.",
+  },
+  "27I006": {
+    name: "Inspire",
+    primary: "Dealing damage to enemies heals nearby allies.",
+  },
+  "27I007": {
+    name: "Rally",
+    primary: "Gain armor, empower Barrier Shield, and provide extra health to nearby allies.",
+  },
 };

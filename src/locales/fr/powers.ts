@@ -1644,5 +1644,76 @@ export default {
     name: "Cuir Dur",
     description:
       "A l'activation de [Rage Primordiale], vous obtenez un montant d'armure supplémentaire égal à <e>100%</e> de votre armure maximum.",
+  },
+  "27P001": {
+    position: 3,
+    name: "Salve de soins",
+    description: "Utilisez [Coup en mêlée] pour consommer toutes les charges de [Module de réparation]. Pour chaque charge, vous récupérez <e>20 %</e> de vos points de vie maximum et votre vitesse d'attaque est augmentée de <e>5 %</e> pendant <e>3 s</e>. <e>(Temps de recharge: 10 s)</e>.",
+  },
+  "27P002": {
+    position: 2,
+    name: "Fléau Vertueux",
+    description:
+      "Après avoir utilisé [Charge de Bouclier] ou [Fléau Cinglant], votre prochain coup de [Fléau à réaction] soigne les personnages alliés dans un rayon de <e>5 m</e> à hauteur de <e>100 %</e> des dégâts infligés.",
+  },
+  "27P003": {
+    position: 1,
+    name: "Fléau Tourbillonnant",
+    description:
+      "Après avoir utilisé [Charge de Bouclier] ou [Fléau Cinglant], votre prochain coup de [Fléau à Réaction] touche toutes les cibles adverses dans un rayon de <e>5 m</e>.",
+  },
+  "27P004": {
+    position: 5,
+    name: "Optimisatrice",
+    description:
+      "Pour chaque [Module de Réparation] actif, vous augmentez les soins de [Module de Réparation] des <e>10 %</e> et vous vous soignez à hauteur de <e>5 %</e> de vos points de vie maximum par <e>seconde</e>.",
+  },
+  "27P005": {
+    position: 4,
+    name: "Collectrionneuse de Modules",
+    description:
+      "La durée de [Module de Réparation] est augmentée de <e>50 %</e>. Les dégâts de capacité augmentent la durée de tous les [Modules de Réparation] actifs de <e>1 s</e>.",
+  },
+  "27P006": {
+    position: 7,
+    name: "Rayon Divin",
+    description:
+      "Les dégâts de capacité infligés aux cibles à plus de <e>10 m</e> les <e>brûlent</e> en leur infligeant <e>4 %</e> de dégâts supplémentaires par <e>mètre</e> parcouru par la capacité.",
+  },
+  "27P007": {
+    position: 6,
+    name: "Masses dans vos Faces",
+    description:
+      "La taille de [Fléau Cinglant] est augmentée de <e>1 m</e> et il peut toucher plusieurs adversaires. [Inspiration] dure <e>1 s</e> de plus si elle est déclenchée par [Fléau Cinglant].",
+  },
+  "27P008": {
+    position: 8,
+    name: "Charge Réparatrice",
+    description:
+      "Après avoir utilisé [Charge de Bouclier], votre [Bouclier-écran] récupère <e>33 %</e> de ses points de vie et [Inspiration] se déclenche.",
+  },
+  "27P009": {
+    position: 9,
+    name: "Sköldkastning",
+    description:
+      "Lorsque vous utilisez [Charge de Bouclier], votre prochain coup de [Fléau à Réaction] projette un bouclier-boomerang qui inflige <e>60 %</e> des dégâts de [Charge de Bouclier].",
+  },
+  "27P010": {
+    position: 10,
+    name: "Mur des Lindholm",
+    description:
+      "La taille de [Bouclier-écran] est augmentée de <e>60 %</e> et ses points de vie de <e>100 %</e>. [Charge de Bouclier] peut toucher plusieurs adverasires.",
+  },
+  "27P011": {
+    position: 11,
+    name: "Partage d'Aura",
+    description:
+      "Tous les personnages affectés par [Inspiration] lorsque celle-ci est déclenchée par une capacité obtiennent un <e>surplus de points de vie</e> équivalent à <e>5 %</e> de vos points de vie maximum pendant <e>5 s</e>.",
+  },
+  "27P012": {
+    position: 12,
+    name: "Terre Consacrée",
+    description:
+      "<e>+25%</e> de charge de capacité ultime initiale. Lorsque [Ralliement] est actif, [Inspiration] se déclenche toutes les <e>1,5 s</e> et les temps de recharge des capacités sont réduits de <e>25 %</e>.",
   }
 };

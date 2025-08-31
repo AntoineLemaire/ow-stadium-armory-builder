@@ -1608,5 +1608,76 @@ export default {
     name: "Thick Skin",
     description:
       "When activating [Primal Rage], Winston gains additional Armor equal to <e>100%</e> of Max Armor.",
+  },
+  "27P001": {
+    position: 1,
+    name: "Burst Aid",
+    description: "Use [Quick Melee] to consume all [Repair Pack] charges. For each charge, heal <e>20%</e> of Max Life and gain <e>5%</e> Attack Speed for <e>3s</e>. <e>(10s Cooldown)</e>.",
+  },
+  "27P002": {
+    position: 2,
+    name: "Righteous Cleave",
+    description:
+      "After using [Shield Bash] or [Whip Shot], your next [Rocket Flail] swing heals allies within <e>5m</e> for <e>100%</e> of damage dealt.",
+  },
+  "27P003": {
+    position: 3,
+    name: "Whirlwhip",
+    description:
+      "After using [Shield Bash] or [Whip Shot], your next [Rocket Flail] swing hits all enemies around you within <e>5m</e>.",
+  },
+  "27P004": {
+    position: 4,
+    name: "Optimizer",
+    description:
+      "For each [Repair Pack] active, increase [Repair Pack] Healing by <e>10%</e> and heal yourself for <e>5%</e> of your Max Life every <e>1s</e>.",
+  },
+  "27P005": {
+    position: 5,
+    name: "Packstacker",
+    description:
+      "[Repair Pack] duration is increased by <e>50%</e>. Ability damage extends the duration of all active [Repair Packs] by <e>1s</e>.",
+  },
+  "27P006": {
+    position: 6,
+    name: "God Ray",
+    description:
+      "Ability damage to targets over <e>10m</e> away <e>Burns</e> them for <e>4%</e> bonus damage for every <e>1m</e> the ability traveled.",
+  },
+  "27P007": {
+    position: 7,
+    name: "Maces to Faces",
+    description:
+      "[Whip Shot]'s size is increased by <e>1m</e> and can hit multiple enemies. [Inspire] lasts <e>1s</e> longer when triggered by [Whip Shot].",
+  },
+  "27P008": {
+    position: 8,
+    name: "Mender Bender",
+    description:
+      "After using [Shield Bash], heal <e>33%</e> [Barrier Shield] Health and trigger [Inspire].",
+  },
+  "27P009": {
+    position: 9,
+    name: "Sköldkastning",
+    description:
+      "After using [Shield Bash], your next [Rocket Flail] swing projects a Shield Boomerang that deals <e>60%</e> [Shield Bast] damage.",
+  },
+  "27P010": {
+    position: 10,
+    name: "Lindholm Wall",
+    description:
+      "Increase [Barrier Shield] size by <e>60%</e> and [Barrier Shield] Health by <e>100%</e>. [Shield Bash] can hit multiple enemies.",
+  },
+  "27P011": {
+    position: 11,
+    name: "Aura Farming",
+    description:
+      "When [Inspire] is triggered by an ability, all heroes affected by it gain <e>Overhealth</e> equal to <e>5%</e> of your Max Life for <e>5s</e>.",
+  },
+  "27P012": {
+    position: 12,
+    name: "Consecrated Ground",
+    description:
+      "<e>+25%</e> Start Ultimate Charge. While [Rally] is active, trigger [Inspire] every <e>1.5s</e> and ability cooldowns refresh <e>25%</e> faster.",
   }
 };

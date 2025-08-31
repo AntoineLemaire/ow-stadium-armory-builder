@@ -1925,4 +1925,77 @@ export default {
       value: "[Barrier Projector]'s max health is increased by <ap>300</ap>.",
     },
   ],
+  "27W001": [
+    {
+      type: "[Shield Bash] Distance",
+      value: 40,
+      unit: "%",
+    },
+  ],
+  "27A001": [
+    {
+      type: "description",
+      value:
+        "[Repair Pack] grants <e>10%</e> Move Speed to target while active.",
+    },
+  ],
+  "27A002": [
+    {
+      type: "[Whip Shot] Range",
+      value: 50,
+      unit: "%",
+    },
+  ],
+  "27A003": [
+    {
+      type: "description",
+      value: "Ability damage grants <e>3%</e> Ultimate Charge.",
+    },
+  ],
+  "27A004": [
+    {
+      type: "description",
+      value:
+        "[Repair Pack] healing can overheal allies up to <e>75 Overhealth</e> while active.",
+    },
+  ],
+  "27S001": [
+    {
+      type: "description",
+      value:
+        "While using [Barrier Shield], gain <e>25%</e> Damage Reduction.",
+    }
+  ],
+  "27S002": [
+    {
+      type: "description",
+      value:
+        "After [Barrier Shield] is destroyed, it begins regenerating <e>50%</e> sooner.",
+    }
+  ],
+  "27S003": [
+    {
+      type: "[Rally] Duration",
+      value: 20,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value: "Enemies within [Rally] are burned for <e>5%</e> of their max Life every <e>1s</e>, healing you by the same amount.",
+    },
+  ],
+  "27S004": [
+    {
+      type: "description",
+      value:
+        "Increase [Barrier Shield] Health by <e>150%</e> of Max Armor.",
+    },
+  ],
+  "27S005": [
+    {
+      type: "description",
+      value:
+        "[Rocket Flail] damage reduces cooldown of [Repair Pack] by <e>0.5s</e>.",
+    },
+  ],
 };
