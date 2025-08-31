@@ -478,5 +478,34 @@
   {
     "id": "9I004",
     "affectedBy": ["AP", "ALS"]
+  },
+
+  {
+    "id": "27I001",
+    "affectedBy": ["WP", "WPLS", "AS", "MD"]
+  },
+  {
+    "id": "27I002",
+    "affectedBy": ["AP", "CR"]
+  },
+  {
+    "id": "27I003",
+    "affectedBy": ["AP", "ALS", "CR"]
+  },
+  {
+    "id": "27I004",
+    "affectedBy": []
+  },
+  {
+    "id": "27I005",
+    "affectedBy": ["AP", "ALS", "CR"]
+  },
+  {
+    "id": "27I006",
+    "affectedBy": ["AP"]
+  },
+  {
+    "id": "27I007",
+    "affectedBy": ["AP"]
   }
 ]

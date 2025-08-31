@@ -23,6 +23,7 @@ export default {
       // Support
       22, // Ana
       6, // Ange
+      27, // Brigitte
       41, // Juno
       35, // Kiriko
       16, // Lucio
@@ -45,6 +46,7 @@ export default {
       "2": "Faucheur",
       "15": "Soldat 76",
       "22": "Ana",
+      "27": "Brigitte",
       "41": "Juno",
       "35": "Kiriko",
       "16": "Lucio",
