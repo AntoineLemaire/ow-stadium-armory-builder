@@ -434,7 +434,7 @@ export default {
     position: 6,
     name: "Laceration",
     description:
-      "[Swift Strike] deals <e>35%</e> additional damage over <e>3s</E> to enemies hit.",
+      "[Swift Strike] deals <e>35%</e> additional damage over <e>3s</e> to enemies hit.",
   },
   "21P003": {
     position: 10,
@@ -481,7 +481,7 @@ export default {
     position: 1,
     name: "Cybernetic Speed",
     description:
-      "Dealing damage with [Shuriken] grants <e>2%</e> [Shuriken] Attack Speed for <e>3s</E>, stacking up to <e>15 times</e>.",
+      "Dealing damage with [Shuriken] grants <e>2%</e> [Shuriken] Attack Speed for <e>3s</e>, stacking up to <e>15 times</e>.",
   },
   "21P011": {
     position: 2,
@@ -1537,5 +1537,76 @@ export default {
     name: "Speed Kills",
     description:
       "Dealing Weapon Damage grants <e>5%</e> Move Speed and <e>3%</e> Attack Speed for <e>3s</e>, stacking up to <e>6 times</e>. Direct hits grand double stacks.",
+  },
+  "9P001": {
+    position: 1,
+    name: "Circuit Breaker",
+    description: "<e>Electric</e> damage is increased by <e>5%</e>. Gain <e>15%</e> of <e>Electric</e> damage as Overhealth, up to <e>100</e>.",
+  },
+  "9P002": {
+    position: 2,
+    name: "Electro Cluster",
+    description:
+      "<e>+20%</e> [Tesla Cannon] primary fire max range. [Tesla Cannon]'s primary fire deals <e>3%</e> increased damage per enemy being hit.",
+  },
+  "9P003": {
+    position: 3,
+    name: "Lightning Rod",
+    description:
+      "Hits with [Tesla Cannon]'s fully charged secondary fire bounce to all other enemies within <e>6m</e> for <e>50%</e> reduced damage.",
+  },
+  "9P004": {
+    position: 4,
+    name: "Volatile Volt",
+    description:
+      "[Tesla Cannon]'s secondary fire can critically hit for <e>175%</e> damage.",
+  },
+  "9P005": {
+    position: 5,
+    name: "Lunar Leap",
+    description:
+      "Gain <e>2%</e> bonus Ultimate Charge per enemy damaged by [Jump Pack]'s landing. While using [Jump Pack], gain <e>5%</e> of Max Life as Overhealth every <e>1s</e>, up to <ap>100</ap>.",
+  },
+  "9P006": {
+    position: 6,
+    name: "Moon Landing",
+    description:
+      "Heal for <e>7%</e> of Max Life per enemy damaged by [Jump Pack]'s landing.",
+  },
+  "9P007": {
+    position: 7,
+    name: "Primal Punch",
+    description:
+      "[Melee] or [Jump Pack] eliminations reset [Jump Pack] cooldown. For every <e>25</e> Armor you have, gain <e>5%</e> [Melee] damage.",
+  },
+  "9P008": {
+    position: 8,
+    name: "Pocket Projector",
+    description:
+      "Activating [Barrier Projector] attaches an additional, smaller [Barrier Projector] to Winston with <e>5%</e> health.",
+  },
+  "9P009": {
+    position: 9,
+    name: "Surge Protector",
+    description:
+      "Allies within [Barrier Projector] gain <ap>25</ap> temporary Overhealth every <e>1s</e>, up to <ap>100</ap>.",
+  },
+  "9P010": {
+    position: 10,
+    name: "Tesla Field",
+    description:
+      "Enemies within [Barrier Projector] take <ap>40</ap> <e>Electric</e> damage every <e>1s</e>.",
+  },
+  "9P011": {
+    position: 11,
+    name: "Primal Slam",
+    description:
+      "While using [Jump Pack], press jump to quickly slam toward your current facing direction. During [Primal Rage], slam speed is increased by <e>50%</e>.",
+  },
+  "9P012": {
+    position: 12,
+    name: "Thick Skin",
+    description:
+      "When activating [Primal Rage], Winston gains additional Armor equal to <e>100%</e> of Max Armor.",
   }
 };

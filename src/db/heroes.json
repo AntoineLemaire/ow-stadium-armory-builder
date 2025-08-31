@@ -2298,25 +2298,19 @@
           "id": "4A002",
           "price": 4000,
           "category": "Ability",
-          "attributes": [
-            { "type": "AP", "value": 10, "unit": "%" }
-          ]
+          "attributes": [{ "type": "AP", "value": 10, "unit": "%" }]
         },
         {
           "id": "4S001",
           "price": 4500,
           "category": "Survival",
-          "attributes": [
-            { "type": "HP", "value": 25, "unit": "" }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         },
         {
           "id": "4S002",
           "price": 4500,
           "category": "Survival",
-          "attributes": [
-            { "type": "HP", "value": 25, "unit": "" }
-          ]
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
         }
       ],
       "epic": [
@@ -2342,9 +2336,7 @@
           "id": "4S003",
           "price": 12000,
           "category": "Survival",
-          "attributes": [
-            { "type": "HP", "value": 50, "unit": "" }
-          ]
+          "attributes": [{ "type": "HP", "value": 50, "unit": "" }]
         },
         {
           "id": "4S004",
@@ -2354,6 +2346,128 @@
             { "type": "HP", "value": 25, "unit": "" },
             { "type": "AP", "value": 10, "unit": "%" }
           ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "hp": 425,
+    "armor": 200,
+    "shields": 0,
+    "role": "Tank",
+    "skills": {
+      "weapons": ["9I001"],
+      "abilities": ["9I002", "9I003"],
+      "passives": [],
+      "ultimates": ["9I004"]
+    },
+    "powers": [
+      "9P001",
+      "9P002",
+      "9P003",
+      "9P004",
+      "9P005",
+      "9P006",
+      "9P007",
+      "9P008",
+      "9P009",
+      "9P010",
+      "9P011",
+      "9P012"
+    ],
+    "items": {
+      "common": [
+        {
+          "id": "9S001",
+          "price": 3500,
+          "category": "Survival",
+          "attributes": [{ "type": "HP", "value": 10, "unit": "" }]
+        }
+      ],
+      "rare": [
+        {
+          "id": "9W001",
+          "price": 4000,
+          "category": "Weapon",
+          "attributes": [{ "type": "MA", "value": 15, "unit": "%" }]
+        },
+        {
+          "id": "9W002",
+          "price": 4000,
+          "category": "Weapon",
+          "attributes": [{ "type": "WPLS", "value": 10, "unit": "%" }]
+        },
+        {
+          "id": "9A001",
+          "price": 4000,
+          "category": "Ability",
+          "attributes": [
+            { "type": "CR", "value": 5, "unit": "%" },
+            { "type": "MS", "value": 5, "unit": "%" }
+          ]
+        },
+        {
+          "id": "9S002",
+          "price": 4000,
+          "category": "Survival",
+          "attributes": [{ "type": "HP", "value": 25, "unit": "" }]
+        },
+        {
+          "id": "9S003",
+          "price": 4000,
+          "category": "Survival",
+          "attributes": [{ "type": "AR", "value": 25, "unit": "" }]
+        }
+      ],
+      "epic": [
+        {
+          "id": "9W003",
+          "price": 10000,
+          "category": "Weapon",
+          "attributes": [{ "type": "WP", "value": 10, "unit": "%" }]
+        },
+        {
+          "id": "9W004",
+          "price": 12000,
+          "category": "Weapon",
+          "attributes": [{ "type": "MA", "value": 25, "unit": "%" }]
+        },
+        {
+          "id": "9A002",
+          "price": 11000,
+          "category": "Ability",
+          "attributes": [{ "type": "AP", "value": 20, "unit": "%" }]
+        },
+        {
+          "id": "9A003",
+          "price": 11000,
+          "category": "Ability",
+          "attributes": [{ "type": "CR", "value": 10, "unit": "%" }]
+        },
+        {
+          "id": "9A004",
+          "price": 12000,
+          "category": "Ability",
+          "attributes": []
+        },
+        {
+          "id": "9S004",
+          "price": 9000,
+          "category": "Survival",
+          "attributes": [{ "type": "AR", "value": 50, "unit": "" }]
+        },
+        {
+          "id": "9S005",
+          "price": 10000,
+          "category": "Survival",
+          "attributes": [{ "type": "AR", "value": 50, "unit": "" }]
+        },
+        {
+          "id": "9S006",
+          "price": 10000,
+          "category": "Survival",
+          "attributes": []
         }
       ]
     }

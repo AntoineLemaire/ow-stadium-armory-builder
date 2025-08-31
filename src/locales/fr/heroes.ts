@@ -6,6 +6,7 @@ export default {
       34, // Junker Queen
       5, // Reinhardt
       31, // Sigma
+      9, // Winston
       13, // Zarya
 
       // DPS
@@ -33,6 +34,8 @@ export default {
       "34": "Reine des Junkers",
       "24": "Orisa",
       "5": "Reinhardt",
+      "31": "Sigma",
+      "9": "Winston",
       "13": "Zarya",
       "29": "Ashe",
       "14": "Cassidy",
@@ -50,6 +53,5 @@ export default {
       "43": "Freja",
       "10": "Zenyatta",
       "18": "Chacal",
-      "31": "Sigma",
     },
   };

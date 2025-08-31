@@ -1367,7 +1367,7 @@ export default {
     {
       type: "description",
       value:
-        "While you are above <e>50%</e> Life, gain <e>10%</E> Ability Power. Otherwise, gain <e>15%</e> Ability Lifesteal and abilities refresh <e>10%</e> faster.",
+        "While you are above <e>50%</e> Life, gain <e>10%</e> Ability Power. Otherwise, gain <e>15%</e> Ability Lifesteal and abilities refresh <e>10%</e> faster.",
     },
   ],
   "00S017": [
@@ -1815,6 +1815,114 @@ export default {
       type: "description",
       value:
         "When you use [Barrage], gain <e>25%</e> of your Max Life as Overhealth for <e>3s</e>.",
+    },
+  ],
+  "9W001": [
+    {
+      type: "description",
+      value:
+        "[Tesla Cannon] deals <e>50%</e> more damage to deployable objects, such as turrents and barriers.",
+    },
+  ],
+  "9W002": [
+    {
+      type: "description",
+      value:
+        "Gain <e>15%</e> of damage dealt by [Tesla Cannon]'s secondary fire as Overhealth, up to <e>100</e>.",
+    },
+  ],
+  "9W003": [
+    {
+      type: "description",
+      value:
+        "[Barrier Projector] grants Winston <e>10%</e> increased Weapon Power while inside.",
+    },
+  ],
+  "9W004": [
+    {
+      type: "description",
+      value:
+        "[Tesla Cannon]'s secondary fire deals <e>25%</e> increased damage.",
+    },
+  ],
+  "9A001": [
+    {
+      type: "description",
+      value:
+        "After activating [Jump Pack], increase Move Speed by <e>50%</e> for <e>2s</e> when you next jump.",
+    },
+  ],
+  "9A002": [
+    {
+      type: "description",
+      value:
+        "[Jump Pack]'s landing area can increase by up to <e>100%</e> while airborne.",
+    },
+  ],
+  "9A003": [
+    {
+      type: "description",
+      value:
+        "[Barrier Projector] bursts when it is removed, dealing <ap>25</ap> <e>electric</e> damage to nearby enemies.",
+    },
+  ],
+  "9A004": [
+    {
+      type: "[Primal Rage] Duration",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "[Jump Pack] base damage",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value:
+        "During [Primal Rage], [Jump Pack]'s base damage becomes <e>Electric</e> and can increase up to an additional <e>100%</e> while airborne.",
+    },
+  ],
+  "9S001": [
+    {
+      type: "description",
+      value: "Winning a round awards Winston <e>2000</e> bonus cash.",
+    },
+  ],
+  "9S002": [
+    {
+      type: "description",
+      value: "Using [Jump Pack] cleanses all negative effects.",
+    },
+  ],
+  "9S003": [
+    {
+      type: "description",
+      value:
+        "While below <e>50%</e> Life, take <e>25%</e> reduced damage from Shotguns, such as Reaper, Junker Queen and D.va's primary fire.",
+    },
+  ],
+  "9S004": [
+    {
+      type: "description",
+      value: "When exiting [Primal Rage], gain <ap>150</ap> Overhealth.",
+    },
+  ],
+  "9S005": [
+    {
+      type: "description",
+      value: "Damage received during [Jump Pack] is reduced by <e>35%</e>.",
+    },
+  ],
+  "9S006": [
+    {
+      type: "[Barrier Projector] duration",
+      value: 50,
+      unit: "%",
+    },
+    {
+      type: "description",
+      value: "[Barrier Projector]'s max health is increased by <ap>300</ap>.",
     },
   ],
 };

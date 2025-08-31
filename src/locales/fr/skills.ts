@@ -530,4 +530,24 @@ export default {
     primary:
       "Maintenez [Space] pour planer. Vous chutez au ralenti lorsque vous n'avez plus de carburant. Le carburant ne se régénère qu'au sol.",
   },
+  "9I001": {
+    name: "Canon Tesla",
+    primary: "Arme projetant un cône électrique.",
+    secondary:
+      "Maintenez enfoncé pour charger de l'électricité concentrée, puis relâchez pour la projeter.",
+  },
+  "9I002": {
+    name: "Propulseurs",
+    primary:
+      "Vous bondissez vers l'avant. En atterrissant sur un ennemi, vous lui infligez des dégâts.",
+  },
+  "9I003": {
+    name: "Générateur d'écran",
+    primary: "Vous déployez un dôme d'énergie protectrice.",
+  },
+  "9I004": {
+    name: "Rage Primordiale",
+    primary:
+      "Vous confère énormément de points de vie, mais vous pouvez uniquement sauter et frapper les ennemis.",
+  },
 };
