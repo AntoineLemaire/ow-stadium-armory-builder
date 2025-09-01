@@ -501,58 +501,58 @@ export default {
     {
       type: "description",
       value:
-        "While not holding [Jagged Blade], [Quick Melee] deals 75% more damage and knocks back",
+        "While not holding [Jagged Blade], [Quick Melee] deals <e>75%</e> more damage and knocks back",
     },
   ],
   "34W002": [
     {
       type: "description",
-      value: "[Commanding Shout] grants you 15% Attack Speed",
+      value: "[Commanding Shout] grants you <e>15%</e> Attack Speed",
     },
   ],
   "34A001": [
     {
       type: "description",
-      value: "[Jagged Blade]'s pull strength is increased by 35%",
+      value: "[Jagged Blade]'s pull strength is increased by <e>35%</e>. Pulls downward if the enemy is airborne.",
     },
   ],
   "34S001": [
     {
       type: "description",
-      value: "When knocked back, gain 25% increased Move Speed for 3s",
+      value: "When knocked back, gain <e>25%</e> increased Move Speed for <e>3s</e>.",
     },
   ],
   "34S002": [
     {
       type: "description",
       value:
-        "When [Wound] gets removed instead of expiring, gain 10% of Max Life as Overhealth, up to 150",
+        "When [Wound] gets removed instead of expiring, gain <e>10%</e> of Max Life as Overhealth, up to <e>150</e>.",
     },
   ],
   "34S003": [
     {
       type: "description",
       value:
-        "While within 12m of an enemy with a [Wound], gain 5% Move Speed and 10% Attack Speed",
+        "While within <e>12m</e> of an enemy with a [Wound], gain <e>5%</e> Move Speed and <e>10%</e> Attack Speed",
     },
   ],
   "34W003": [
     {
       type: "description",
       value:
-        "When you [Wound] an enemy, gain 10% Attack Speed for 4s, stacking up to 3 times",
+        "When you [Wound] an enemy, gain <e>10%</e> Attack Speed for <e>4s</e>, stacking up to <e>3 times</e>.",
     },
   ],
   "34W004": [
     {
       type: "description",
-      value: "Gain 5% Weapon Power for each enemy with a [Wound] within 12m",
+      value: "Gain <e>5%</e> Weapon Power for each enemy with a [Wound] within <e>12m</e>.",
     },
   ],
   "34A002": [
     {
       type: "description",
-      value: "[Rampage] and [Carnage] hits grant 10% Attack Speed for 4s",
+      value: "[Rampage] and [Carnage] hits grant <e>10%</e> Attack Speed for <e>4s</e>.",
     },
   ],
   "34A003": [
@@ -560,20 +560,20 @@ export default {
     {
       type: "description",
       value:
-        "[Commanding Shout] will affect allies that are out of line of sight",
+        "[Commanding Shout] will affect allies that are out of line of sight.",
     },
   ],
   "34S004": [
     {
       type: "description",
       value:
-        "[Carnage] and [Jagged Blade] impact damage grants Overhealth equal to 40% of damage dealt",
+        "[Carnage] and [Jagged Blade] impact damage grants Overhealth equal to <e>40%</e> of damage dealt.",
     },
   ],
   "34S005": [
     {
       type: "description",
-      value: "While casting [Rampage] or [Carnage], gain 75% damage reduction",
+      value: "While casting [Rampage] or [Carnage], gain <e>75% damage reduction</e>.",
     },
   ],
   "34S006": [
@@ -585,7 +585,7 @@ export default {
     {
       type: "description",
       value:
-        "Allies affected by [Commanding Shout] are healed for 5% of Junker Queen 's life every second",
+        "Allies affected by [Commanding Shout] are healed for <e>5%</e> of Junker Queen 's life every <e>second</e>.",
     },
   ],
   "13W001": [

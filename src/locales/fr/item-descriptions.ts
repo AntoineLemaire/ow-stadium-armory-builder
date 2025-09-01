@@ -553,61 +553,61 @@ export default {
     {
       type: "description",
       value:
-        "Lorsque vous ne tenez pas votre [Lame crantée], les [coups en mélée] infligent 75% de dégâts supplémentaires et repoussent les adversaires.",
+        "Lorsque vous ne tenez pas votre [Lame crantée], les [coups en mélée] infligent <e>75 %</e> de dégâts supplémentaires et repoussent les adversaires.",
     },
   ],
   "34W002": [
     {
       type: "description",
-      value: "[Cri de commandement] augemente votre vitesse d'attaue de 15%.",
+      value: "[Cri de commandement] augemente votre vitesse d'attaue de <e>15 %</e>.",
     },
   ],
   "34A001": [
     {
       type: "description",
-      value: "La force d'attraction de [Lame crantée] erst augmentée de 35%.",
+      value: "La force d'attraction de [Lame crantée] erst augmentée de <e>35 %</e>. Elle attire la cible vers le bas si celle-ci est en l'air.",
     },
   ],
   "34S001": [
     {
       type: "description",
       value:
-        "Lorsque vous subissez un effet de recul, votre vitesse de déplacement est augmentée de 25% pendant 3 s.",
+        "Lorsque vous subissez un effet de recul, votre vitesse de déplacement est augmentée de <e>25 %</e> pendant <e>3 s</e>.",
     },
   ],
   "34S002": [
     {
       type: "description",
       value:
-        "Lorsque vos [blessures] sont soignées, au lieu d'erriver à leur terme, vous obtenez un surplus de points de vie égale à 10% de votre maximum de points de vie, jusqu'à une limite de 150.",
+        "Lorsque vos [blessures] sont soignées, au lieu d'erriver à leur terme, vous obtenez un surplus de points de vie égale à <e>10 %</e> de votre maximum de points de vie, jusqu'à une limite de <e>150</e>.",
     },
   ],
   "34S003": [
     {
       type: "description",
       value:
-        "Lorsque vous êtes à moins de 12 m d'un personnage adverse ayant subi des [blessures], votre vitesse de déplacement augmente de 5% et votre vitesse d'attaque de 10%.",
+        "Lorsque vous êtes à moins de <e>12 m</e> d'un personnage adverse ayant subi des [blessures], votre vitesse de déplacement augmente de <e>5 %</e> et votre vitesse d'attaque de <e>10 %</e>.",
     },
   ],
   "34W003": [
     {
       type: "description",
       value:
-        "Lorsque vous infligez des [blessures] à une cible adverse, votre vitesse d'attque augemente de 10% pendant 4 s. Cet effet peut se cumuler 3 fois.",
+        "Lorsque vous infligez des [blessures] à une cible adverse, votre vitesse d'attque augemente de <e>10 %</e> pendant <e>4 s</e>. Cet effet peut se cumuler <e>3 fois</e>.",
     },
   ],
   "34W004": [
     {
       type: "description",
       value:
-        "Votre puissance d'arme est augmentée de 5% pour chaque personnage adverse victime de [blessures] à moins de 12m.",
+        "Votre puissance d'arme est augmentée de <e>5 %</e> pour chaque personnage adverse victime de [blessures] à moins de <e>12 m</e>.",
     },
   ],
   "34A002": [
     {
       type: "description",
       value:
-        "Les coups de [Massacre] et [Carnage] augementent votre vitesse d'attaque de 10% pendant 4 s.",
+        "Les coups de [Massacre] et [Carnage] augementent votre vitesse d'attaque de <e>10 %</e> pendant <e>4 s</e>.",
     },
   ],
   "34A003": [
@@ -622,14 +622,14 @@ export default {
     {
       type: "description",
       value:
-        "Lorsque [Carnage] et [Lame crantée] touchent une cible, vous gagnez un surplus de points de vie égale à 40% des dégâts infligés.",
+        "Lorsque [Carnage] et [Lame crantée] touchent une cible, vous gagnez un surplus de points de vie égale à <e>40 %</e> des dégâts infligés.",
     },
   ],
   "34S005": [
     {
       type: "description",
       value:
-        "Lorsque vous utilisez [Massacre] ou [Carnage], vous obtenez 75% de réduction de dégâts.",
+        "Lorsque vous utilisez [Massacre] ou [Carnage], vous obtenez <e>75 %</e> de réduction de dégâts.",
     },
   ],
   "34S006": [
@@ -641,7 +641,7 @@ export default {
     {
       type: "description",
       value:
-        "Les personnages alliés affectés par [Cri de commandement] sont soignés chaque seconde à hauteur de 5% des points de vie de la Reine des Junkers.",
+        "Les personnages alliés affectés par [Cri de commandement] sont soignés chaque seconde à hauteur de <e>5 %</e> des points de vie de la Reine des Junkers.",
     },
   ],
   "13W001": [
