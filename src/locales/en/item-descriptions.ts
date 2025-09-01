@@ -280,21 +280,21 @@ export default {
     {
       type: "description",
       value:
-        "If your [Mech] detonates while mid-air, increase [Self-Destruct] explosion damage and range by 100%",
+        "If your [Mech] detonates while mid-air, increase [Self-Destruct] explosion damage and range by <e>100%</e>",
     },
   ],
   "19A002": [
     {
       type: "description",
       value:
-        "Every 200 damage you mitigate with [Defense Matrix] reduces [Micro Missiles] cooldown by 1s",
+        "Every <e>200</e> damage you mitigate with [Defense Matrix] reduces [Micro Missiles] cooldown by <e>1s</e>.",
     },
   ],
   "19A003": [
     {
       type: "description",
       value:
-        "Using [Self-Destruct] drops lava nearby that deals 80 damage every 1s",
+        "Using [Self-Destruct] drops lava nearby that deals <ap>80</ap> damage every <e>1s</e>.",
     },
   ],
   "19S001": [{ type: "[Boosters] Duration", value: 25, unit: "%" }],
@@ -302,34 +302,34 @@ export default {
     {
       type: "description",
       value:
-        "While [Defense Matrix] is active, gain 65% damage reduction against beams",
+        "While [Defense Matrix] is active, gain <e>65%</e> damage reduction against beams.",
     },
   ],
   "19S003": [
     {
       type: "description",
       value:
-        "When you mitigate damage with [Defense Matrix], gain Shields equal to 10% of the damage mitigated, up to 100. Resets when your [Mech] is destroyed",
+        "When you mitigate damage with [Defense Matrix], gain Shields equal to <e>10%</e> of the damage mitigated, up to <e>100</e>. Resets when your [Mech] is destroyed.",
     },
   ],
   "19A004": [
     {
       type: "description",
       value:
-        "[Light Gun] gains a secondary fire, which charges up to fire a piercing shot that deals 80 piercing damage. Doesn't generate Ultimate Charge.",
+        "[Light Gun] gains a secondary fire, which charges up to fire a piercing shot that deals <ap>80</ap> piercing damage. Doesn't generate Ultimate Charge.",
     },
   ],
   "19S004": [
     {
       type: "description",
-      value: "When you eject from your [Mech], gain [Nano Boost] for 4s",
+      value: "When you eject from your [Mech], gain [Nano Boost] for <e>4s</e>.",
     },
   ],
   "19S005": [
     {
       type: "description",
       value:
-        "When you deal damage to Barriers while in your [Mech], gain Shields equal to 10% of the damage dealt, up to 200. Resets when your [Mech] is destroyed",
+        "When you deal damage to Barriers while in your [Mech], gain Shields equal to <e>10%</e> of the damage dealt, up to <e>200</e>. Resets when your [Mech] is destroyed",
     },
   ],
   "19W001": [
@@ -342,14 +342,14 @@ export default {
     {
       type: "description",
       value:
-        "Gain 10% of damage mitigated by [Defense Matrix] as Ultimate Charge",
+        "Gain <e>10%</e> of damage mitigated by [Defense Matrix] as Ultimate Charge",
     },
   ],
   "19S008": [
     {
       type: "description",
       value:
-        "When you use [Boosters], other allies within 16m gain 25% Move Speed for 2s",
+        "When you use [Boosters], other allies within 16m gain <e>25%</e> Move Speed for <e>2s</e>.",
     },
   ],
   "19S009": [
@@ -363,14 +363,14 @@ export default {
     {
       type: "description",
       value:
-        "The quantity and duration of [Micro Missiles] is increased by 20%",
+        "The quantity and duration of [Micro Missiles] is increased by <e>20%</e>",
     },
   ],
   "19A006": [
     {
       type: "description",
       value:
-        "[Micro Missiles] deal 25% increased damage and have significantly increased knockback",
+        "[Micro Missiles] deal <e>25%</e> increased damage and have significantly increased knockback",
     },
   ],
   "21W001": [

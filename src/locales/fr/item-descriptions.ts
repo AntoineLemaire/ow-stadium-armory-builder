@@ -309,21 +309,21 @@ export default {
     {
       type: "description",
       value:
-        "Si votre [méca] explose dans les airs, les dégâts et la portée d'[Autodestruction] sont augmentés de 100%.",
+        "Si votre [Méca] explose dans les airs, les dégâts et la portée d'[Autodestruction] sont augmentés de <e>100 %</e>.",
     },
   ],
   "19A002": [
     {
       type: "description",
       value:
-        "Tous les 200 points de dégâts bloqués par [Matrice défensive], le temps de recharge de [Micro-missiles] est réduit de 1 s.",
+        "Tous les <e>200</e> points de dégâts bloqués par [Matrice défensive], le temps de recharge de [Micro-missiles] est réduit de <e>1 s</e>.",
     },
   ],
   "19A003": [
     {
       type: "description",
       value:
-        "Votre [Autodestruction] fait apparaître de la lave qui inflige 80 points de dégâts par seconde.",
+        "Votre [Autodestruction] fait apparaître de la lave qui inflige <ap>80</ap> points de dégâts par <e>seconde</e>.",
     },
   ],
   "19S001": [{ type: "Durée de [Turboréacteurs]", value: 25, unit: "%" }],
@@ -331,56 +331,56 @@ export default {
     {
       type: "description",
       value:
-        "Tant que [Matrice défensive] est active, les rayons vous infligent des dégâts réduits de 65%.",
+        "Tant que [Matrice défensive] est active, les rayons vous infligent des dégâts réduits de <e>65 %</e>.",
     },
   ],
   "19S003": [
     {
       type: "description",
       value:
-        "Lorsque vous bloquez des dégâts avec [Matrice défensive], vous gagnez des points de bouclier à hauteur de 10% des dégâts bloqués, jusqu'à un maximum de 100 points. Cet effet se réinitialise si votre [méca] est détruit.",
+        "Lorsque vous bloquez des dégâts avec [Matrice défensive], vous gagnez des points de bouclier à hauteur de <e>10 %</e> des dégâts bloqués, jusqu'à un maximum de <e>100</e> points. Cet effet se réinitialise si votre [Méca] est détruit.",
     },
   ],
   "19A004": [
     {
       type: "description",
       value:
-        "[Pistolaser] obtient un tir secondaire. Celui-ci se charge et tire un coup perforant explosif qui inflige 80 points de dégâts.",
+        "[Pistolaser] obtient un tir secondaire. Celui-ci se charge et tire un coup perforant explosif qui inflige <ap>80</ap> points de dégâts.",
     },
   ],
   "19S004": [
     {
       type: "description",
       value:
-        "Lorsque vous vous éjectez de votre [méca], vous bénéficiez de [Nanoboost] pendant 4s.",
+        "Lorsque vous vous éjectez de votre [Méca], vous bénéficiez de [Nanoboost] pendant <e>4 s</e>.",
     },
   ],
   "19S005": [
     {
       type: "description",
       value:
-        "Lorsque vous endommagez des écrans tout en étant dans votre [méca], vous gagnez des points de bouclier à hauteur de 10% des dégâts infligés, jusuq'à un maximum de 200 points. Cet effet se réinitialise si votre [méca] est détruits.",
+        "Lorsque vous endommagez des écrans tout en étant dans votre [Méca], vous gagnez des points de bouclier à hauteur de <e>10 %</e> des dégâts infligés, jusuq'à un maximum de <e>200</e> points. Cet effet se réinitialise si votre [Méca] est détruit.",
     },
   ],
   "19W001": [
     {
       type: "description",
       value:
-        "Vous pouvez désormais actionner vos [fusio-canons] tout en utilisant [Matrice défensive].",
+        "Vous pouvez désormais actionner vos [Fusio-Canons] tout en utilisant [Matrice défensive].",
     },
   ],
   "19S007": [
     {
       type: "description",
       value:
-        "Vos obtenez 10% des dégâts bloqués par [Matrice défensive] sous forme de charge de capacité ultime.",
+        "Vos obtenez <e>10 %</e> des dégâts bloqués par [Matrice défensive] sous forme de charge de capacité ultime.",
     },
   ],
   "19S008": [
     {
       type: "description",
       value:
-        "Votre vous utilisez [Turboréacteur], la vitesse des autres personnages alliés à moins de 16 m augmente de 25% pendant 2 s.",
+        "Votre vous utilisez [Turboréacteur], la vitesse des autres personnages alliés à moins de <e>16 m</e> augmente de <e>25 %</e> pendant <e>2 s</e>.",
     },
   ],
   "19S009": [
@@ -394,14 +394,14 @@ export default {
     {
       type: "description",
       value:
-        "La quantité et la durée de [Micro-missiles] sont augmentées de 20%.",
+        "La quantité et la durée de [Micro-missiles] sont augmentées de <e>20 %</e>.",
     },
   ],
   "19A006": [
     {
       type: "description",
       value:
-        "[Micro-missiles] voit ses dégâts augmentés de 25% et son effet de recul augmente considérablement.",
+        "[Micro-missiles] voit ses dégâts augmentés de <e>25 %</e> et son effet de recul augmente considérablement.",
     },
   ],
   "21W001": [
